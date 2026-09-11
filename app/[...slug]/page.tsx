@@ -1,3 +1,12 @@
+
+export function generateStaticParams() {
+  const topSlugs = Object.keys(pages).map((key) => ({ slug: [key] }));
+  const productSlugs = ["msg", "tepung-bumbu", "santan", "saus", "sambal-tradisional", "kaldu"].map((sub) => ({
+    slug: ["products", sub],
+  }));
+  return [...topSlugs, ...productSlugs];
+}
+
 const pages: Record<string, { title: string; eyebrow: string; text: string; color: string; image: string }> = {
   company: { eyebrow: 'TENTANG LIEFMARKET', title: 'Rasa yang tumbuh bersama Indonesia.', text: 'Sejak 1968, LIEFMARKET hadir menemani keluarga Indonesia membuat hidangan yang penuh cerita.', color: '#ed1c24', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85' },
   'life-at-sasa': { eyebrow: 'KEHIDUPAN DI LIEFMARKET', title: 'Bekerja dengan hati, bertumbuh bersama.', text: 'Di balik setiap rasa, ada orang-orang yang percaya bahwa hal baik selalu dimulai dari kebersamaan.', color: '#f5b61b', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85' },
