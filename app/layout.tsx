@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'LIEFMARKET — Bikin Makan Makin Berarti',
-  description: 'Rasa Indonesia untuk cerita di meja makan.',
+  title: 'LIEFMARKET — Solusi Perawatan & Produk Asli Terpercaya',
+  description: 'Katalog produk perawatan kecantikan, kesehatan herbal, dan kebutuhan keluarga resmi terdaftar BPOM.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

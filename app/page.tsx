@@ -4,122 +4,122 @@ import { useEffect, useState, useRef, useMemo } from "react";
 
 const recipesData = [
   {
-    name: "Ayam Goreng Kremes",
-    tag: "GURIH & RENYAH",
-    category: "MAKAN SIANG",
-    time: "35 Mnt",
-    level: "Mudah",
-    desc: "Renyah di luar, bumbu meresap sampai ke tulang dengan taburan kremes gurih keemasan.",
-    image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=750&q=85",
-    color: "#e6332a",
-  },
-  {
-    name: "Nasi Goreng Spesial",
-    tag: "FAVORIT KELUARGA",
-    category: "SARAPAN",
-    time: "20 Mnt",
-    level: "Praktis",
-    desc: "Aroma wajan smoky dengan racikan bumbu istimewa andalan keluarga Indonesia.",
-    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=750&q=85",
-    color: "#087b45",
-  },
-  {
-    name: "Soto Ayam Kuning",
-    tag: "HANGAT & LEZAT",
-    category: "MAKAN MALAM",
-    time: "45 Mnt",
-    level: "Sedang",
-    desc: "Kuah kuning kaya rempah yang gurih, hangat menenangkan di setiap sendok santap.",
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=750&q=85",
-    color: "#ed6a00",
-  },
-  {
-    name: "Mie Goreng Jawa",
-    tag: "PRAKTIS SEHARI-HARI",
-    category: "SARAPAN",
-    time: "15 Mnt",
-    level: "Praktis",
-    desc: "Perpaduan manis gurih bumbu rempah dengan sayuran segar dan taburan bawang goreng.",
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=750&q=85",
-    color: "#009ed2",
-  },
-  {
-    name: "Sambal Matah Bali",
-    tag: "PEDASNYA JUARA",
-    category: "CAMILAN",
-    time: "10 Mnt",
-    level: "Mudah",
-    desc: "Irisan bawang merah dan cabai rawit disiram minyak kelapa panas, aroma harum menggoda.",
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=750&q=85",
+    name: "Viva Velvet Cushion SPF 50",
+    tag: "4 SHADES LENGKAP",
+    category: "KOSMETIK",
+    time: "Viva Cosmetics",
+    level: "Matte Finish",
+    desc: "Cushion lembut dengan UV filter SPF 50 PA++++ dan formula pelembap tahan seharian.",
+    image: "/images/liefmarket-3/1.webp",
     color: "#c91620",
   },
   {
-    name: "Sayur Asem Segar",
-    tag: "ASAM GURIH SEGAR",
-    category: "MAKAN SIANG",
-    time: "25 Mnt",
-    level: "Mudah",
-    desc: "Kombinasi asam jawa asli dan sayuran segar renyah penghilang dahaga makan siang.",
-    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=750&q=85",
+    name: "Ovale 2in1 Facial Lotion",
+    tag: "ANTI ACNE CARE",
+    category: "SKINCARE",
+    time: "Ovale Official",
+    level: "Deep Control",
+    desc: "Pembersih dan penyegar wajah seketika dengan ekstrak lidah buaya dan jeruk nipis.",
+    image: "/images/liefmarket-32/10.webp",
     color: "#087b45",
   },
   {
-    name: "Opor Ayam Gurih",
-    tag: "ISTIMEWA NUSANTARA",
-    category: "MAKAN MALAM",
-    time: "50 Mnt",
-    level: "Sedang",
-    desc: "Kuah santan kental dengan aroma ketumbar dan lengkuas yang meresap sempurna.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=750&q=85",
+    name: "Dragon Menthol Gosok Po'peng",
+    tag: "HERBAL NUSANTARA",
+    category: "KESEHATAN",
+    time: "Cap Dragon",
+    level: "100% Menthol",
+    desc: "Membantu meredakan sakit kepala, hidung tersumbat, dan masuk angin sejak 1948.",
+    image: "/images/liefmarket-3/3.webp",
+    color: "#d97706",
+  },
+  {
+    name: "Viva Paket Clean Mask Pink",
+    tag: "5IN1 GLOWING SET",
+    category: "SKINCARE",
+    time: "Viva Cosmetics",
+    level: "Kulit Cerah",
+    desc: "Paket lengkap Milk Cleanser, Face Tonic, Clean Mask, Collagen Night Cream & Serum.",
+    image: "/images/liefmarket-32/70.webp",
+    color: "#e6337a",
+  },
+  {
+    name: "Garnier Sakura Glow Mask",
+    tag: "HYALURON NIGHT",
+    category: "SKINCARE",
+    time: "Garnier Night",
+    level: "Kulit Glowing",
+    desc: "Menutrisi kulit intensif di malam hari dengan ekstrak sakura Jepang alami.",
+    image: "/images/liefmarket-32/20.webp",
     color: "#e6332a",
+  },
+  {
+    name: "Harmony Sabun Buah Mix",
+    tag: "AROMA SEGAR",
+    category: "BODY CARE",
+    time: "Harmony Soap",
+    level: "Mood Enhancer",
+    desc: "Sensasi mandi segar dengan perpaduan ekstrak aneka buah tropis yang menyegarkan.",
+    image: "/images/liefmarket-32/50.webp",
+    color: "#009ed2",
+  },
+  {
+    name: "Mini Kidi Diaper Baby Wipes",
+    tag: "ALOE VERA LEMBUT",
+    category: "IBU & BAYI",
+    time: "Baby Wipes",
+    level: "Non-Alcohol",
+    desc: "Tisu basah 98% naturally derived ingredients, aman dan higienis untuk kulit bayi.",
+    image: "/images/liefmarket-32/30.webp",
+    color: "#087b45",
   },
 ];
 
 const productsData = [
   {
-    name: "SASA MSG GURIH",
-    tagline: "Penyedap Rasa Murni Sejak 1968",
-    desc: "Monosodium Glutamat murni dari tetes tebu alami, rahasia kelezatan masakan rumahan hingga restoran bintang lima.",
-    tags: ["✓ 100% Tetes Tebu Alami", "✓ Gurih Seimbang", "✓ Halal MUI"],
-    color: "#f1b82d",
-    bg: "radial-gradient(circle at 60% 45%, #2a2205 0%, #0d0c07 100%)",
-    image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=85",
+    name: "VIVA VELVET CUSHION",
+    tagline: "Flawless & SPF 50 PA++++",
+    desc: "Cushion bertekstur velvet lembut dengan coverage merata dan perlindungan maksimal dari sinar UV. Menjaga wajah segar bebas kilap sepanjang hari.",
+    tags: ["✓ SPF 50 PA++++", "✓ 4 Pilihan Shade", "✓ Halal & BPOM"],
+    color: "#c91620",
+    bg: "radial-gradient(circle at 60% 45%, #2a0508 0%, #0d0102 100%)",
+    image: "/images/liefmarket-3/1.webp",
   },
   {
-    name: "TEPUNG BUMBU",
-    tagline: "Kriuk Renyah Tahan 8 Jam",
-    desc: "Kombinasi rempah pilihan dengan racikan Platinum Crunch, bikin gorengan tetap renyah tanpa keras.",
-    tags: ["✓ Kriuk Tahan 8 Jam", "✓ Bumbu Meresap", "✓ Tanpa Pengawet"],
-    color: "#ff9900",
-    bg: "radial-gradient(circle at 60% 45%, #301703 0%, #120901 100%)",
-    image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "SANTAN KELAPA",
-    tagline: "Gurih Alami Buatan Rumah",
-    desc: "Diperas dari kelapa tua segar pilihan tanpa pewarna buatan. Aroma wangi pandan kelapa alami yang nikmat.",
-    tags: ["✓ Ekstrak Kelapa Segar", "✓ Bebas Kolesterol", "✓ Kental Alami"],
+    name: "OVALE 2IN1 FACIAL LOTION",
+    tagline: "Pembersih & Penyegar Wajah",
+    desc: "Formula aksi ganda membersihkan sisa riasan dan kotoran sekaligus mengontrol minyak berlebih dengan ekstrak lidah buaya dan jeruk nipis.",
+    tags: ["✓ Deep Cleansing", "✓ Anti Acne Care", "✓ 3 Pilihan Ukuran"],
     color: "#087b45",
     bg: "radial-gradient(circle at 60% 45%, #052615 0%, #02120a 100%)",
-    image: "https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=700&q=85",
+    image: "/images/liefmarket-32/10.webp",
   },
   {
-    name: "SAUS SAMBAL ASLI",
-    tagline: "Sensasi Pedas Cabai Pilihan",
-    desc: "Diproduksi dari cabai rawit merah segar pilihan yang dipetik langsung dari petani lokal nusantara.",
-    tags: ["✓ Cabai Rawit Segar", "✓ Pedas Nendang", "✓ Rasa Mantap"],
-    color: "#e6332a",
-    bg: "radial-gradient(circle at 60% 45%, #33080b 0%, #140203 100%)",
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "KALDU PELEZAT",
-    tagline: "Ekstrak Daging Rebusan Lama",
-    desc: "Aroma kaldu gurih dari daging segar pilihan yang direbus perlahan, memperkaya rasa masakan kuah.",
-    tags: ["✓ Ekstrak Daging Asli", "✓ Rempah Kaya Rasa", "✓ Praktis"],
+    name: "DRAGON MENTHOL GOSOK",
+    tagline: "Warisan Hangat Sejak 1948",
+    desc: "Menthol kristal murni 100% cap Dragon untuk meredakan masuk angin, pegal linu, dan hidung tersumbat secara cepat dan melegakan.",
+    tags: ["✓ 100% Menthol Alami", "✓ Hangat Tahan Lama", "✓ Praktis Higienis"],
     color: "#d97706",
     bg: "radial-gradient(circle at 60% 45%, #2e1803 0%, #110901 100%)",
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85",
+    image: "/images/liefmarket-3/2.webp",
+  },
+  {
+    name: "VIVA PAKET GLOWING SET",
+    tagline: "Rangkaian Perawatan Kulit Cerah",
+    desc: "Paket 5 produk unggulan perawatan wajah dengan ekstrak bengkoang, collagen, dan serum pencerah untuk kulit sehat dan bersinar alami.",
+    tags: ["✓ 5 Produk Unggulan", "✓ Collagen & Niacinamide", "✓ Teruji Klinis"],
+    color: "#e6337a",
+    bg: "radial-gradient(circle at 60% 45%, #2e051a 0%, #12010b 100%)",
+    image: "/images/liefmarket-32/70.webp",
+  },
+  {
+    name: "FRESHCARE SMASH SAKURA",
+    tagline: "Double Inhaler + Roll On 2in1",
+    desc: "Inovasi minyak aromaterapi roll-on hangat plus double inhaler segar dengan wangi bunga sakura yang menenangkan dan botol glow in the dark.",
+    tags: ["✓ 2in1 Inhaler + Roll On", "✓ Aroma Sakura Segar", "✓ Glow In The Dark"],
+    color: "#009ed2",
+    bg: "radial-gradient(circle at 60% 45%, #032333 0%, #010f17 100%)",
+    image: "/images/liefmarket-32/2.webp",
   },
 ];
 
@@ -150,7 +150,7 @@ function Header({ onMenu }: { onMenu: () => void }) {
       <a href="#top" className="logo">
         <i>L</i>
         <span>
-          LIEFMARKET<small>RASA UNTUK INDONESIA</small>
+          LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
         </span>
       </a>
       <div className="header-actions">
@@ -169,30 +169,30 @@ function Header({ onMenu }: { onMenu: () => void }) {
 function Menu({ close }: { close: () => void }) {
   const links = [
     ["Beranda", "/"],
-    ["Perusahaan", "/company"],
-    ["Kehidupan di Sasa", "/life-at-sasa"],
-    ["Produk", "/products"],
-    ["Resep", "/recipes"],
-    ["Food Service", "/food-service"],
-    ["Artikel", "/articles"],
+    ["Tentang Kami", "/company"],
+    ["Kehidupan di LiefMarket", "/life-at-liefmarket"],
+    ["Katalog Produk", "/products"],
+    ["Rekomendasi Produk", "/recipes"],
+    ["Mitra Bisnis", "/food-service"],
+    ["Artikel & Tips", "/articles"],
     ["Komunitas", "/community"],
     ["Kontak Kami", "/contact"],
     ["FAQ", "/faq"],
   ];
   const productLinks = [
-    ["Sasa MSG", "/products/msg"],
-    ["Tepung Bumbu", "/products/tepung-bumbu"],
-    ["Santan", "/products/santan"],
-    ["Saus", "/products/saus"],
-    ["Sambal Tradisional", "/products/sambal-tradisional"],
-    ["Kaldu", "/products/kaldu"],
+    ["Viva Cosmetics", "/products/viva"],
+    ["Ovale Skincare", "/products/ovale"],
+    ["Dragon Herbal", "/products/dragon"],
+    ["Garnier Care", "/products/garnier"],
+    ["FreshCare Aromatherapy", "/products/freshcare"],
+    ["Harmony Body Wash", "/products/harmony"],
   ];
 
   return (
     <div className="menu-overlay">
       <button className="close-menu" onClick={close}>×</button>
       <div className="menu-main">
-        <p className="eyebrow">JELAJAHI SASA</p>
+        <p className="eyebrow">JELAJAHI LIEFMARKET</p>
         {links.map(([item, href], i) => (
           <a href={href} onClick={close} key={item}>
             {item}<sup>0{i + 1}</sup>
@@ -207,9 +207,9 @@ function Menu({ close }: { close: () => void }) {
           </a>
         ))}
         <div className="menu-stamp">
-          ENAK<br />
-          <span>∞</span><br />
-          SELAMANYA
+          100%<br />
+          <span>ASLI</span><br />
+          BPOM
         </div>
       </div>
     </div>
@@ -253,21 +253,21 @@ function HeroSection() {
     <section className="hero deck-section deck-hero" onMouseMove={handleMouseMove}>
       <div className="hero-copy">
         <p className="eyebrow">
-          RASA UNTUK INDONESIA <span>✦</span>
+          LIEFMARKET SURABAYA <span>✦</span>
         </p>
         <h1>
-          Bikin Makan<br />
-          <em>Makin Berarti.</em>
+          Perawatan Terbaik<br />
+          <em>Keluarga Anda.</em>
         </h1>
         <p className="hero-desc">
-          Karena rasa bukan sekadar rasa. Ia adalah cerita, tawa, dan kehangatan yang selalu ingin diulang di setiap meja makan keluarga Indonesia.
+          Menghadirkan produk perawatan diri, kosmetik berkualitas, dan herbal alami nusantara 100% original dan bersertifikasi resmi BPOM.
         </p>
         <div className="hero-actions">
           <a className="red-button" href="#recipes">
-            JELAJAHI RESEP <Arrow />
+            JELAJAHI PRODUK <Arrow />
           </a>
           <a className="ghost-button" href="#class">
-            COOKING CLASS <Arrow />
+            WELLNESS CLUB <Arrow />
           </a>
         </div>
       </div>
@@ -285,7 +285,7 @@ function HeroSection() {
             transform: "rotate(4deg) translate(" + mouseOffset.x * 0.5 + "px, " + mouseOffset.y * 0.5 + "px)",
           }}
         >
-          <img src="/hero.jpg" alt="Hidangan hangat keluarga" />
+          <img src="/images/liefmarket-32/70.webp" alt="Paket Perawatan LiefMarket" />
         </div>
         <div
           className="hero-badge"
@@ -294,7 +294,7 @@ function HeroSection() {
           }}
         >
           100%<br />
-          <span>RASA<br />INDONESIA</span>
+          <span>ORIGINAL<br />BPOM</span>
         </div>
         <div
           className="floating-spice spice-a"
@@ -342,22 +342,22 @@ function IntroSection() {
       <KineticMarquee
         theme="light"
         items={[
-          "BIKIN MAKAN MAKIN BERARTI",
-          "100% RASA INDONESIA",
-          "GURIH MURNI SEJAK 1968",
-          "MASAK PAKAI SASA HABIS TANPA SISA",
+          "LIEFMARKET SURABAYA",
+          "100% PRODUK ORIGINAL & BPOM",
+          "PERAWATAN & KESEHATAN KELUARGA",
+          "BELANJA AMAN & TERPERCAYA",
         ]}
       />
 
       <div className="intro">
         <div className="intro-mark">✳</div>
-        <p className="eyebrow">SEJAK 1968</p>
+        <p className="eyebrow">SEJAK AWAL BERSAMA ANDA</p>
         <h2>
-          Masak pakai Sasa,<br />
-          <em>habis tanpa sisa.</em>
+          Pilihan terlengkap,<br />
+          <em>aman & terpercaya.</em>
         </h2>
         <p>
-          Teman setia keluarga Indonesia selama lebih dari setengah abad untuk menghadirkan rasa gurih murni dan momen kebersamaan yang penuh kehangatan.
+          LiefMarket menghadirkan produk perawatan diri, kosmetik pilihan, dan herbal kesehatan keluarga berkualitas tinggi dengan jaminan keaslian 100%.
         </p>
         <a className="text-link" href="#story">
           BACA CERITA KAMI <Arrow />
@@ -365,16 +365,16 @@ function IntroSection() {
 
         <div className="intro-stats">
           <div className="intro-stat-item">
-            <strong>56+</strong>
-            <span>TAHUN MENEMANI</span>
+            <strong>1000+</strong>
+            <span>PRODUK ORIGINAL</span>
           </div>
           <div className="intro-stat-item">
             <strong>100%</strong>
-            <span>RASA ASLI INDONESIA</span>
+            <span>TERSERTIFIKASI BPOM</span>
           </div>
           <div className="intro-stat-item">
-            <strong>34</strong>
-            <span>PROVINSI DIJANGKAU</span>
+            <strong>50rb+</strong>
+            <span>PELANGGAN SETIA</span>
           </div>
         </div>
       </div>
@@ -388,7 +388,7 @@ function HorizontalRecipeSection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeCategory, setActiveCategory] = useState("SEMUA");
 
-  const categories = ["SEMUA", "SARAPAN", "MAKAN SIANG", "MAKAN MALAM", "CAMILAN"];
+  const categories = ["SEMUA", "SKINCARE", "KOSMETIK", "KESEHATAN", "BODY CARE", "IBU & BAYI"];
 
   const filteredRecipes = useMemo(() => {
     if (activeCategory === "SEMUA") return recipesData;
@@ -445,13 +445,13 @@ function HorizontalRecipeSection() {
       <div className="deck-recipes-sticky">
         <div className="recipe-header-bar">
           <div className="section-heading light">
-            <p className="eyebrow">DARI DAPUR SASA ✦</p>
+            <p className="eyebrow">KATALOG LIEFMARKET ✦</p>
             <h2>
-              KREASI YANG<br />
-              <em>BIKIN RINDU.</em>
+              PRODUK PILIHAN<br />
+              <em>FAVORIT KELUARGA.</em>
             </h2>
             <p className="section-copy">
-              Scroll ke bawah untuk menjelajahi kartu resep secara horizontal.
+              Scroll ke bawah untuk menjelajahi katalog produk unggulan secara horizontal.
             </p>
           </div>
 
@@ -475,7 +475,7 @@ function HorizontalRecipeSection() {
                 <div className="recipe-card-photo">
                   <img src={recipe.image} alt={recipe.name} />
                   <span className="recipe-tag-pill">{recipe.tag}</span>
-                  <span className="recipe-time-pill">⏱ {recipe.time}</span>
+                  <span className="recipe-time-pill">✓ {recipe.time}</span>
                 </div>
                 <div className="recipe-card-body">
                   <div>
@@ -483,9 +483,9 @@ function HorizontalRecipeSection() {
                     <p>{recipe.desc}</p>
                   </div>
                   <div className="recipe-card-foot">
-                    <span className="recipe-difficulty">⚡ {recipe.level}</span>
-                    <a className="recipe-view-btn" href="/recipes">
-                      LIHAT RESEP <Arrow />
+                    <span className="recipe-difficulty">★ {recipe.level}</span>
+                    <a className="recipe-view-btn" href="/products">
+                      LIHAT PRODUK <Arrow />
                     </a>
                   </div>
                 </div>
@@ -534,33 +534,33 @@ function CookingClassSection() {
     <section className="deck-section deck-class" id="class">
       <div className="class-section-inner">
         <div className="class-content">
-          <p className="eyebrow">SASA COOKING CLUB ✦</p>
+          <p className="eyebrow">LIEFMARKET WELLNESS CLUB ✦</p>
           <h2>
-            MASAK ITU<br />
-            <em>GEMBIRA.</em>
+            RAWAT DIRI,<br />
+            <em>PERCAYA DIRI.</em>
           </h2>
           <p>
-            Belajar langsung teknik memasak dari chef profesional, eksplorasi bumbu rahasia nusantara, dan temukan serunya memasak bersama keluarga tercinta.
+            Dapatkan inspirasi gaya hidup sehat, tips merawat kulit harian, serta panduan memilih produk kecantikan dan herbal yang tepat untuk keluarga Anda.
           </p>
           <a className="dark-button" href="/community">
-            DAFTAR KELAS SEKARANG <Arrow />
+            GABUNG KOMUNITAS SEKARANG <Arrow />
           </a>
         </div>
 
         <div className="class-photo-wrapper">
           <div className="class-photo">
             <img
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1100&q=90"
-              alt="Memasak bersama chef Sasa"
+              src="/images/liefmarket-3/1.webp"
+              alt="Perawatan Kulit LiefMarket"
             />
           </div>
           <div className="class-floating-badge">
-            COOK<br />
-            WITH<br />
-            LOVE
+            BEAUTY<br />
+            &amp;<br />
+            HEALTH
           </div>
           <div className="class-stats-pill">
-            <span>★</span> 4.9/5 Rating dari 50,000+ Alumni
+            <span>★</span> 4.9/5 Rating dari 50,000+ Pelanggan
           </div>
         </div>
       </div>
@@ -569,10 +569,10 @@ function CookingClassSection() {
         theme="dark"
         reverse={true}
         items={[
-          "SASA COOKING CLUB",
-          "KREASI TANPA BATAS",
-          "SEMUA BISA JADI KOKI",
-          "RASA YANG SELALU DIRINDUKAN",
+          "LIEFMARKET WELLNESS CLUB",
+          "KECANTIKAN ALAMI",
+          "KESEHATAN KELUARGA",
+          "PRODUK RESMI & TERPERCAYA",
         ]}
       />
     </section>
@@ -626,7 +626,7 @@ function Product3DSection() {
         <div className="section-heading light">
           <p className="eyebrow">PRODUK UNGGULAN KAMI ✦</p>
           <h2>
-            RASA YANG<br />
+            PILIHAN YANG<br />
             <em>SELALU ADA.</em>
           </h2>
         </div>
@@ -652,7 +652,7 @@ function Product3DSection() {
                 BELI SEKARANG <Arrow />
               </a>
               <a className="ghost-button" href="/recipes">
-                RESEP TERKAIT <Arrow />
+                PRODUK TERKAIT <Arrow />
               </a>
             </div>
           </div>
@@ -706,21 +706,21 @@ function StorySection() {
       <div className="story-section-inner">
         <div className="story-image-wrap">
           <img
-            src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=1100&q=85"
-            alt="Keluarga di meja makan"
+            src="/images/liefmarket-3/5.webp"
+            alt="Perawatan keluarga LiefMarket"
           />
         </div>
         <div className="story-copy">
-          <p className="eyebrow">CERITA DI BALIK RASA</p>
+          <p className="eyebrow">CERITA LIEFMARKET</p>
           <h2>
             Lebih dari<br />
-            <em>sekadar bumbu.</em>
+            <em>sekadar berbelanja.</em>
           </h2>
           <div className="story-quote-card">
-            <p>"Di setiap rumah, selalu ada rasa yang menyatukan. Di setiap rasa, ada cerita yang tak pernah usai."</p>
+            <p>"Kesehatan dan rasa percaya diri berawal dari produk terbaik yang aman untuk seluruh anggota keluarga."</p>
           </div>
           <p>
-            Bagi kami, memasak adalah ungkapan cinta paling tulus. Lewat setiap butir bumbu berkualitas, kami hadir merawat kehangatan keluarga di seluruh penjuru Indonesia.
+            Bagi kami, merawat keluarga adalah wujud kasih sayang yang paling bermakna. Lewat setiap produk yang terjamin keasliannya dan terdaftar di BPOM, kami siap mendampingi hari-hari Anda dengan rasa tenang.
           </p>
           <a className="text-link" href="/company">
             PELAJARI PERJALANAN KAMI <Arrow />
@@ -736,14 +736,14 @@ function Footer() {
     <footer className="deck-section deck-footer">
       <div className="footer-brand">
         <a href="#top" className="logo logo-white">
-          <i>S</i>
+          <i>L</i>
           <span>
-            SASA<small>RASA UNTUK INDONESIA</small>
+            LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
           </span>
         </a>
         <p>
-          Untuk setiap masakan yang dibuat<br />
-          dengan hati dan kehangatan.
+          Solusi terpercaya produk perawatan kecantikan,<br />
+          kesehatan herbal, dan kebutuhan keluarga Indonesia.
         </p>
         <div className="socials">
           <a href="#instagram" aria-label="Instagram">ig</a>
@@ -755,10 +755,10 @@ function Footer() {
       <div className="footer-links">
         <div>
           <p className="eyebrow">JELAJAHI</p>
-          <a href="/company">Tentang Sasa</a>
+          <a href="/company">Tentang LiefMarket</a>
           <a href="/products">Katalog Produk</a>
-          <a href="/recipes">Koleksi Resep</a>
-          <a href="/articles">Artikel & Tips</a>
+          <a href="/recipes">Rekomendasi Favorit</a>
+          <a href="/articles">Artikel & Tips Perawatan</a>
         </div>
         <div>
           <p className="eyebrow">BANTUAN</p>
@@ -767,9 +767,9 @@ function Footer() {
           <a href="/community">Komunitas</a>
         </div>
         <div className="newsletter">
-          <p className="eyebrow">INSPIRASI RESEP</p>
+          <p className="eyebrow">INSPIRASI PERAWATAN</p>
           <p>
-            Dapatkan ide menu masakan baru langsung ke email kamu setiap minggu.
+            Dapatkan promo menarik dan tips perawatan kulit langsung ke email kamu setiap minggu.
           </p>
           <div className="email-input">
             <span>Ketik alamat email kamu</span>
@@ -779,8 +779,8 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© 2024 SASA INDONESIA. ALL RIGHTS RESERVED.</span>
-        <span>MADE WITH RASA IN INDONESIA</span>
+        <span>© 2024 LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.</span>
+        <span>AUTHENTIC CARE FOR INDONESIA</span>
       </div>
     </footer>
   );
@@ -809,11 +809,11 @@ function Loader({ onDone }: { onDone: () => void }) {
       <div className="loader-logo">
         <i>L</i>
         <span>
-          LIEFMARKET<small>RASA UNTUK INDONESIA</small>
+          LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
         </span>
       </div>
       <div className="loader-bottom">
-        <span>MENYIAPKAN RASA</span>
+        <span>MENYIAPKAN KATALOG</span>
         <b>{Math.round(progress * 100)}%</b>
         <div>
           <i style={{ transform: "scaleX(" + progress + ")" }}></i>
@@ -850,7 +850,7 @@ export default function Home() {
 
       <div className="market-widget" onClick={() => window.open("/products", "_self")}>
         <span>✦</span>
-        <b>BELI<br />SASA</b>
+        <b>BELI<br />SEKARANG</b>
       </div>
 
       <button className="chat-button" aria-label="Bantuan">•••</button>

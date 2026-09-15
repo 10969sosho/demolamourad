@@ -240,12 +240,14 @@ button {
 }
 
 .deck-story {
+  position: relative;
   z-index: 60;
   min-height: 100vh;
   background: var(--cream);
   color: var(--dark);
   display: flex;
   align-items: center;
+  padding: 80px 0;
 }
 
 .deck-footer {
@@ -1347,15 +1349,15 @@ footer {
 }
 
 footer:before {
-  content: "SASA";
+  content: "LIEFMARKET";
   position: absolute;
   font-family: var(--font-serif);
-  font-size: 24vw;
+  font-size: 15vw;
   font-weight: 900;
-  letter-spacing: -0.12em;
+  letter-spacing: -0.08em;
   opacity: 0.08;
   right: -2vw;
-  bottom: -6vw;
+  bottom: -4vw;
   pointer-events: none;
 }
 
