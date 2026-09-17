@@ -1373,16 +1373,20 @@ footer {
 }
 
 footer:before {
-  content: "liefmarket";
+  content: "LIEFMARKET";
   position: absolute;
   font-family: var(--font-logo);
   font-size: 15vw;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
   opacity: 0.05;
-  right: -2vw;
-  bottom: -3vw;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2vw;
+  width: 100%;
+  text-align: center;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .logo-white {
