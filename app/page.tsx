@@ -803,10 +803,8 @@ function Loader({ onDone }: { onDone: () => void }) {
     <div className="loader">
       <div className="loader-orbit"></div>
       <div className="loader-logo">
-        <i>L</i>
-        <span>
-          LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
-        </span>
+        <span className="brand-lief">lief</span>
+        <span className="brand-market">market</span>
       </div>
       <div className="loader-bottom">
         <span>MENYIAPKAN KATALOG</span>

@@ -1680,21 +1680,25 @@ footer:before {
 }
 
 .loader:after {
-  content: "LIEF";
+  content: "liefmarket";
   position: absolute;
-  font-family: var(--font-serif);
-  font-size: 28vw;
-  opacity: 0.05;
-  right: -5vw;
-  bottom: -8vw;
-  line-height: 0.7;
+  font-family: var(--font-logo);
+  font-size: 20vw;
+  font-weight: 900;
+  opacity: 0.04;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12%;
+  line-height: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .loader-orbit {
   position: absolute;
   width: 270px;
   height: 270px;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(127, 166, 151, 0.35);
   border-radius: 50%;
   animation: spin 6s linear infinite;
 }
@@ -1704,6 +1708,7 @@ footer:before {
   content: "✦";
   position: absolute;
   font-size: 16px;
+  color: var(--sage);
 }
 
 .loader-orbit:before {
@@ -1717,33 +1722,25 @@ footer:before {
 }
 
 .loader-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
   position: relative;
   z-index: 1;
-  font-size: 34px;
-  letter-spacing: -0.08em;
-  font-weight: 800;
+  font-family: var(--font-logo);
+  font-size: clamp(36px, 5.5vw, 54px);
+  letter-spacing: -0.02em;
+  line-height: 1;
   animation: loader-pop 0.6s both;
 }
 
-.loader-logo i {
-  font-family: var(--font-serif);
-  font-size: 64px;
-  font-style: italic;
-  letter-spacing: -0.2em;
+.loader-logo .brand-lief {
+  color: #a3c4b7;
+  font-weight: 500;
 }
 
-.loader-logo span {
-  display: flex;
-  flex-direction: column;
-}
-
-.loader-logo small {
-  font-size: 8px;
-  letter-spacing: 0.2em;
-  margin-top: 5px;
+.loader-logo .brand-market {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .loader-bottom {
