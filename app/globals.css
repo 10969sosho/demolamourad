@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
 
 :root {
   --sage: #7fa697;
@@ -17,7 +17,8 @@
   --green: #426756;
   --orange: #525956;
   --line: rgba(51, 55, 53, 0.1);
-  --font-main: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-logo: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-main: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
 }
 
@@ -77,35 +78,35 @@ button {
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  font-size: 24px;
-  line-height: 0.85;
-}
-
-.logo i {
-  font-family: var(--font-serif);
-  font-size: 44px;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.2em;
-  margin-right: 2px;
-}
-
-.logo span {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo small {
-  font-size: 7.5px;
-  letter-spacing: 0.24em;
+  gap: 0;
+  font-family: var(--font-logo);
   font-weight: 700;
-  margin-top: 5px;
-  opacity: 0.9;
+  font-size: 26px;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo .brand-lief {
+  color: #7fa697;
+  font-weight: 600;
+}
+
+.logo .brand-market {
+  color: #333735;
+  font-weight: 800;
+}
+
+.logo-white .brand-lief {
+  color: #a3c4b7;
+  font-weight: 600;
+}
+
+.logo-white .brand-market {
+  color: #ffffff;
+  font-weight: 800;
 }
 
 .header-actions {
@@ -1366,15 +1367,15 @@ footer {
 }
 
 footer:before {
-  content: "LIEFMARKET";
+  content: "liefmarket";
   position: absolute;
-  font-family: var(--font-serif);
+  font-family: var(--font-logo);
   font-size: 15vw;
   font-weight: 900;
-  letter-spacing: -0.08em;
-  opacity: 0.08;
+  letter-spacing: -0.04em;
+  opacity: 0.05;
   right: -2vw;
-  bottom: -4vw;
+  bottom: -3vw;
   pointer-events: none;
 }
 

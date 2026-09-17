@@ -148,10 +148,8 @@ function Header({ onMenu }: { onMenu: () => void }) {
       <span className="anchor-target" id="facebook"></span>
       <span className="anchor-target" id="youtube"></span>
       <a href="#top" className="logo">
-        <i>L</i>
-        <span>
-          LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
-        </span>
+        <span className="brand-lief">lief</span>
+        <span className="brand-market">market</span>
       </a>
       <div className="header-actions">
         <a href="/admin" className="admin-link">CMS</a>
@@ -736,10 +734,8 @@ function Footer() {
     <footer className="deck-section deck-footer">
       <div className="footer-brand">
         <a href="#top" className="logo logo-white">
-          <i>L</i>
-          <span>
-            LIEFMARKET<small>PRODUK RESMI & TERPERCAYA</small>
-          </span>
+          <span className="brand-lief">lief</span>
+          <span className="brand-market">market</span>
         </a>
         <p>
           Solusi terpercaya produk perawatan kecantikan,<br />
