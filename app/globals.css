@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
 
 :root {
-  --red: #ed1c24;
-  --dark-red: #c91620;
-  --dark: #1b1b1b;
-  --cream: #fffaf7;
-  --yellow: #f5b61b;
-  --blue: #009ed2;
-  --green: #087b45;
-  --orange: #ed6a00;
-  --line: rgba(32, 32, 32, 0.12);
+  --sage: #7fa697;
+  --sage-light: #c0d2cb;
+  --sage-dark: #3a5b4e;
+  --sage-bg: #f4f7f5;
+  --charcoal: #333735;
+  --charcoal-dark: #1f2422;
+  --charcoal-light: #555555;
+  --red: #4a7061;
+  --dark-red: #333735;
+  --dark: #242927;
+  --cream: #f4f7f5;
+  --yellow: #c0d2cb;
+  --blue: #5b8574;
+  --green: #4a7061;
+  --orange: #555555;
+  --line: rgba(51, 55, 53, 0.12);
   --font-main: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
 }
@@ -136,7 +143,7 @@ button {
 }
 
 .menu-button {
-  background: var(--red);
+  background: var(--sage-dark);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -144,12 +151,12 @@ button {
   place-content: center;
   gap: 5px;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s;
-  box-shadow: 0 6px 16px rgba(237, 28, 36, 0.35);
+  box-shadow: 0 6px 16px rgba(58, 91, 78, 0.35);
 }
 
 .menu-button:hover {
   transform: scale(1.08) rotate(90deg);
-  background: var(--dark-red);
+  background: var(--charcoal);
 }
 
 .menu-button span {
@@ -212,7 +219,7 @@ button {
   width: 100%;
   border-radius: 48px 48px 0 0;
   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.25);
-  background: radial-gradient(circle at 80% 20%, #ff2a34 0%, #b80f17 100%);
+  background: radial-gradient(circle at 80% 20%, #3a5449 0%, #1f2f28 100%);
   color: #fff;
   overflow: hidden;
   display: flex;
@@ -223,8 +230,8 @@ button {
 .deck-class {
   z-index: 40;
   min-height: 100vh;
-  background: var(--yellow);
-  color: var(--dark);
+  background: var(--sage-light);
+  color: var(--charcoal-dark);
   display: flex;
   align-items: center;
 }
@@ -232,7 +239,7 @@ button {
 .deck-products {
   z-index: 50;
   min-height: 100vh;
-  background: #0d1e33;
+  background: #192420;
   color: #fff;
   display: flex;
   align-items: center;
@@ -253,7 +260,7 @@ button {
 .deck-footer {
   position: relative;
   z-index: 70;
-  background: #9d0c13;
+  background: var(--charcoal-dark);
   color: #fff;
   border-radius: 48px 48px 0 0;
   box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.35);
@@ -265,7 +272,7 @@ button {
 .hero {
   height: 100vh;
   min-height: 720px;
-  background: radial-gradient(circle at 75% 35%, #ff2e38 0%, #ca141e 70%, #9e0811 100%);
+  background: radial-gradient(circle at 75% 35%, #425e52 0%, #293d35 65%, #182520 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -351,8 +358,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 22px;
-  background: #fff;
-  color: var(--red);
+  background: var(--sage-light);
+  color: var(--charcoal-dark);
   font-size: 11px;
   letter-spacing: 0.16em;
   font-weight: 800;
@@ -364,6 +371,8 @@ button {
 
 .red-button:hover,
 .dark-button:hover {
+  background: #fff;
+  color: var(--charcoal-dark);
   gap: 32px;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
@@ -611,12 +620,12 @@ button {
 }
 
 .marquee-item span.star {
-  color: var(--yellow);
+  color: var(--sage);
   font-size: 18px;
 }
 
 .marquee-dark .marquee-item span.star {
-  color: var(--red);
+  color: var(--sage-light);
 }
 
 @keyframes marquee-scroll {
@@ -1002,10 +1011,10 @@ button {
   bottom: -15px;
   right: 15px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--charcoal-dark);
   width: 125px;
   height: 125px;
-  color: #fff;
+  color: var(--sage-light);
   display: grid;
   place-content: center;
   text-align: center;
@@ -1013,7 +1022,7 @@ button {
   line-height: 1.1;
   font-weight: 800;
   transform: rotate(10deg);
-  box-shadow: 0 12px 30px rgba(237, 28, 36, 0.45);
+  box-shadow: 0 12px 30px rgba(31, 36, 34, 0.35);
   animation: float 4s ease-in-out infinite;
 }
 
@@ -1466,8 +1475,8 @@ footer:before {
   right: 0;
   top: 48%;
   z-index: 90;
-  background: var(--yellow);
-  color: var(--dark);
+  background: var(--sage);
+  color: #fff;
   width: 58px;
   height: 130px;
   border-radius: 28px 0 0 28px;
@@ -1483,6 +1492,7 @@ footer:before {
 
 .market-widget:hover {
   transform: translateX(-6px);
+  background: var(--charcoal);
 }
 
 .market-widget span {
@@ -1518,7 +1528,7 @@ footer:before {
 .chat-button {
   right: 24px;
   bottom: 24px;
-  color: var(--red);
+  color: var(--charcoal);
   letter-spacing: 2px;
   font-size: 18px;
 }
@@ -1526,7 +1536,7 @@ footer:before {
 .top-button {
   left: 24px;
   bottom: 24px;
-  color: var(--red);
+  color: var(--charcoal);
   font-size: 22px;
 }
 
@@ -1543,7 +1553,7 @@ footer:before {
 }
 
 .menu-main {
-  background: var(--red);
+  background: var(--charcoal-dark);
   color: #fff;
   padding: 110px 8vw 50px;
   display: flex;
@@ -1563,6 +1573,7 @@ footer:before {
   transform: translateX(12px);
   font-family: var(--font-serif);
   font-style: italic;
+  color: var(--sage-light);
 }
 
 .menu-main sup {
@@ -1576,8 +1587,8 @@ footer:before {
 }
 
 .menu-products {
-  background: var(--cream);
-  color: var(--red);
+  background: #eaf1ee;
+  color: var(--charcoal-dark);
   padding: 110px 8vw;
   position: relative;
   display: flex;
@@ -1588,15 +1599,17 @@ footer:before {
 .menu-products a {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(201, 22, 32, 0.25);
+  border-bottom: 1px solid rgba(192, 210, 203, 0.6);
   padding: 14px 0;
   font-size: 20px;
   font-weight: 700;
-  transition: transform 0.2s;
+  transition: transform 0.2s, color 0.2s;
+  color: var(--charcoal-dark);
 }
 
 .menu-products a:hover {
   transform: translateX(8px);
+  color: var(--sage-dark);
 }
 
 .menu-stamp {
@@ -1608,6 +1621,7 @@ footer:before {
   line-height: 0.8;
   transform: rotate(-12deg);
   font-weight: 800;
+  color: var(--sage-dark);
 }
 
 .menu-stamp span {
@@ -1636,7 +1650,7 @@ footer:before {
 .loader {
   position: fixed;
   inset: 0;
-  background: var(--red);
+  background: var(--charcoal-dark);
   z-index: 200;
   display: grid;
   place-items: center;
@@ -1647,11 +1661,11 @@ footer:before {
 }
 
 .loader:after {
-  content: "RASA";
+  content: "LIEF";
   position: absolute;
   font-family: var(--font-serif);
   font-size: 28vw;
-  opacity: 0.08;
+  opacity: 0.05;
   right: -5vw;
   bottom: -8vw;
   line-height: 0.7;
@@ -1793,7 +1807,7 @@ footer:before {
 
 .admin-nav.active,
 .admin-nav:hover {
-  background: #c91620;
+  background: var(--sage-dark);
   border-radius: 8px;
   color: #fff;
 }
@@ -1900,7 +1914,7 @@ footer:before {
 }
 
 .editor-head .eyebrow {
-  color: #ed1c24;
+  color: var(--sage-dark);
   margin-bottom: 8px;
 }
 

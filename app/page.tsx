@@ -11,7 +11,7 @@ const recipesData = [
     level: "Matte Finish",
     desc: "Cushion lembut dengan UV filter SPF 50 PA++++ dan formula pelembap tahan seharian.",
     image: "/images/liefmarket-3/1.webp",
-    color: "#c91620",
+    color: "#7fa697",
   },
   {
     name: "Ovale 2in1 Facial Lotion",
@@ -21,7 +21,7 @@ const recipesData = [
     level: "Deep Control",
     desc: "Pembersih dan penyegar wajah seketika dengan ekstrak lidah buaya dan jeruk nipis.",
     image: "/images/liefmarket-32/10.webp",
-    color: "#087b45",
+    color: "#8fb8a7",
   },
   {
     name: "Dragon Menthol Gosok Po'peng",
@@ -31,7 +31,7 @@ const recipesData = [
     level: "100% Menthol",
     desc: "Membantu meredakan sakit kepala, hidung tersumbat, dan masuk angin sejak 1948.",
     image: "/images/liefmarket-3/3.webp",
-    color: "#d97706",
+    color: "#555555",
   },
   {
     name: "Viva Paket Clean Mask Pink",
@@ -41,7 +41,7 @@ const recipesData = [
     level: "Kulit Cerah",
     desc: "Paket lengkap Milk Cleanser, Face Tonic, Clean Mask, Collagen Night Cream & Serum.",
     image: "/images/liefmarket-32/70.webp",
-    color: "#e6337a",
+    color: "#4a7061",
   },
   {
     name: "Garnier Sakura Glow Mask",
@@ -51,7 +51,7 @@ const recipesData = [
     level: "Kulit Glowing",
     desc: "Menutrisi kulit intensif di malam hari dengan ekstrak sakura Jepang alami.",
     image: "/images/liefmarket-32/20.webp",
-    color: "#e6332a",
+    color: "#6e9484",
   },
   {
     name: "Harmony Sabun Buah Mix",
@@ -61,7 +61,7 @@ const recipesData = [
     level: "Mood Enhancer",
     desc: "Sensasi mandi segar dengan perpaduan ekstrak aneka buah tropis yang menyegarkan.",
     image: "/images/liefmarket-32/50.webp",
-    color: "#009ed2",
+    color: "#5b8574",
   },
   {
     name: "Mini Kidi Diaper Baby Wipes",
@@ -71,7 +71,7 @@ const recipesData = [
     level: "Non-Alcohol",
     desc: "Tisu basah 98% naturally derived ingredients, aman dan higienis untuk kulit bayi.",
     image: "/images/liefmarket-32/30.webp",
-    color: "#087b45",
+    color: "#3a5b4e",
   },
 ];
 
@@ -81,8 +81,8 @@ const productsData = [
     tagline: "Flawless & SPF 50 PA++++",
     desc: "Cushion bertekstur velvet lembut dengan coverage merata dan perlindungan maksimal dari sinar UV. Menjaga wajah segar bebas kilap sepanjang hari.",
     tags: ["✓ SPF 50 PA++++", "✓ 4 Pilihan Shade", "✓ Halal & BPOM"],
-    color: "#c91620",
-    bg: "radial-gradient(circle at 60% 45%, #2a0508 0%, #0d0102 100%)",
+    color: "#7fa697",
+    bg: "radial-gradient(circle at 60% 45%, #23372f 0%, #111b17 100%)",
     image: "/images/liefmarket-3/1.webp",
   },
   {
@@ -90,8 +90,8 @@ const productsData = [
     tagline: "Pembersih & Penyegar Wajah",
     desc: "Formula aksi ganda membersihkan sisa riasan dan kotoran sekaligus mengontrol minyak berlebih dengan ekstrak lidah buaya dan jeruk nipis.",
     tags: ["✓ Deep Cleansing", "✓ Anti Acne Care", "✓ 3 Pilihan Ukuran"],
-    color: "#087b45",
-    bg: "radial-gradient(circle at 60% 45%, #052615 0%, #02120a 100%)",
+    color: "#8fb8a7",
+    bg: "radial-gradient(circle at 60% 45%, #1e332a 0%, #0e1914 100%)",
     image: "/images/liefmarket-32/10.webp",
   },
   {
@@ -99,8 +99,8 @@ const productsData = [
     tagline: "Warisan Hangat Sejak 1948",
     desc: "Menthol kristal murni 100% cap Dragon untuk meredakan masuk angin, pegal linu, dan hidung tersumbat secara cepat dan melegakan.",
     tags: ["✓ 100% Menthol Alami", "✓ Hangat Tahan Lama", "✓ Praktis Higienis"],
-    color: "#d97706",
-    bg: "radial-gradient(circle at 60% 45%, #2e1803 0%, #110901 100%)",
+    color: "#c0d2cb",
+    bg: "radial-gradient(circle at 60% 45%, #2b3933 0%, #141b18 100%)",
     image: "/images/liefmarket-3/2.webp",
   },
   {
@@ -108,8 +108,8 @@ const productsData = [
     tagline: "Rangkaian Perawatan Kulit Cerah",
     desc: "Paket 5 produk unggulan perawatan wajah dengan ekstrak bengkoang, collagen, dan serum pencerah untuk kulit sehat dan bersinar alami.",
     tags: ["✓ 5 Produk Unggulan", "✓ Collagen & Niacinamide", "✓ Teruji Klinis"],
-    color: "#e6337a",
-    bg: "radial-gradient(circle at 60% 45%, #2e051a 0%, #12010b 100%)",
+    color: "#a2c2b5",
+    bg: "radial-gradient(circle at 60% 45%, #253931 0%, #121d18 100%)",
     image: "/images/liefmarket-32/70.webp",
   },
   {
@@ -117,8 +117,8 @@ const productsData = [
     tagline: "Double Inhaler + Roll On 2in1",
     desc: "Inovasi minyak aromaterapi roll-on hangat plus double inhaler segar dengan wangi bunga sakura yang menenangkan dan botol glow in the dark.",
     tags: ["✓ 2in1 Inhaler + Roll On", "✓ Aroma Sakura Segar", "✓ Glow In The Dark"],
-    color: "#009ed2",
-    bg: "radial-gradient(circle at 60% 45%, #032333 0%, #010f17 100%)",
+    color: "#6e9484",
+    bg: "radial-gradient(circle at 60% 45%, #1d3128 0%, #0d1713 100%)",
     image: "/images/liefmarket-32/2.webp",
   },
 ];
