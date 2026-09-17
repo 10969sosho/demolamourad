@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
 
 :root {
   --sage: #7fa697;
@@ -17,7 +17,7 @@
   --green: #426756;
   --orange: #525956;
   --line: rgba(51, 55, 53, 0.1);
-  --font-logo: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-logo: "Comfortaa", -apple-system, BlinkMacSystemFont, cursive, sans-serif;
   --font-main: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
 }
@@ -91,22 +91,22 @@ button {
 
 .logo .brand-lief {
   color: #7fa697;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .logo .brand-market {
   color: #333735;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .logo-white .brand-lief {
   color: #a3c4b7;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .logo-white .brand-market {
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .header-actions {
