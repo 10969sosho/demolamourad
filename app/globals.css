@@ -83,29 +83,46 @@ button {
   gap: 0;
   font-family: var(--font-logo);
   font-weight: 700;
-  font-size: 26px;
+  font-size: 21px;
   line-height: 1;
   text-decoration: none;
   letter-spacing: -0.02em;
+  background: #f4f8f6;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  background: #ffffff;
 }
 
 .logo .brand-lief {
-  color: #7fa697;
-  font-weight: 500;
+  color: #588574;
+  font-weight: 600;
 }
 
 .logo .brand-market {
-  color: #333735;
+  color: #262c29;
   font-weight: 700;
 }
 
+.logo-white {
+  background: #f4f8f6;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+}
+
 .logo-white .brand-lief {
-  color: #a3c4b7;
-  font-weight: 500;
+  color: #588574;
+  font-weight: 600;
 }
 
 .logo-white .brand-market {
-  color: #ffffff;
+  color: #262c29;
   font-weight: 700;
 }
 
