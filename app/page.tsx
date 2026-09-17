@@ -445,8 +445,8 @@ function HorizontalRecipeSection() {
           <div className="section-heading light">
             <p className="eyebrow">KATALOG LIEFMARKET ✦</p>
             <h2>
-              PRODUK PILIHAN<br />
-              <em>FAVORIT KELUARGA.</em>
+              Produk pilihan,<br />
+              <em>favorit keluarga.</em>
             </h2>
             <p className="section-copy">
               Scroll ke bawah untuk menjelajahi katalog produk unggulan secara horizontal.
@@ -534,8 +534,8 @@ function CookingClassSection() {
         <div className="class-content">
           <p className="eyebrow">LIEFMARKET WELLNESS CLUB ✦</p>
           <h2>
-            RAWAT DIRI,<br />
-            <em>PERCAYA DIRI.</em>
+            Rawat diri,<br />
+            <em>percaya diri.</em>
           </h2>
           <p>
             Dapatkan inspirasi gaya hidup sehat, tips merawat kulit harian, serta panduan memilih produk kecantikan dan herbal yang tepat untuk keluarga Anda.
@@ -624,8 +624,8 @@ function Product3DSection() {
         <div className="section-heading light">
           <p className="eyebrow">PRODUK UNGGULAN KAMI ✦</p>
           <h2>
-            PILIHAN YANG<br />
-            <em>SELALU ADA.</em>
+            Pilihan tepat,<br />
+            <em>selalu ada.</em>
           </h2>
         </div>
 
