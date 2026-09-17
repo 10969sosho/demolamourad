@@ -2,21 +2,21 @@
 
 :root {
   --sage: #7fa697;
-  --sage-light: #c0d2cb;
-  --sage-dark: #3a5b4e;
-  --sage-bg: #f4f7f5;
+  --sage-light: #d8e5df;
+  --sage-dark: #355346;
+  --sage-bg: #f4f8f6;
   --charcoal: #333735;
-  --charcoal-dark: #1f2422;
-  --charcoal-light: #555555;
-  --red: #4a7061;
-  --dark-red: #333735;
-  --dark: #242927;
-  --cream: #f4f7f5;
-  --yellow: #c0d2cb;
-  --blue: #5b8574;
-  --green: #4a7061;
-  --orange: #555555;
-  --line: rgba(51, 55, 53, 0.12);
+  --charcoal-dark: #262c29;
+  --charcoal-light: #525956;
+  --red: #426756;
+  --dark-red: #2c3330;
+  --dark: #262c29;
+  --cream: #f8faf8;
+  --yellow: #d8e5df;
+  --blue: #557d6e;
+  --green: #426756;
+  --orange: #525956;
+  --line: rgba(51, 55, 53, 0.1);
   --font-main: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
 }
@@ -218,19 +218,20 @@ button {
   height: 100vh;
   width: 100%;
   border-radius: 48px 48px 0 0;
-  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.25);
-  background: radial-gradient(circle at 80% 20%, #3a5449 0%, #1f2f28 100%);
+  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.15);
+  background: radial-gradient(circle at 80% 20%, #446456 0%, #283a32 100%);
   color: #fff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 90px;
 }
 
 .deck-class {
   z-index: 40;
   min-height: 100vh;
-  background: var(--sage-light);
+  background: #d8e5df;
   color: var(--charcoal-dark);
   display: flex;
   align-items: center;
@@ -239,7 +240,7 @@ button {
 .deck-products {
   z-index: 50;
   min-height: 100vh;
-  background: #192420;
+  background: #23332c;
   color: #fff;
   display: flex;
   align-items: center;
@@ -260,10 +261,10 @@ button {
 .deck-footer {
   position: relative;
   z-index: 70;
-  background: var(--charcoal-dark);
+  background: #1f2522;
   color: #fff;
   border-radius: 48px 48px 0 0;
-  box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.25);
 }
 
 /* ==========================================================================
@@ -272,7 +273,7 @@ button {
 .hero {
   height: 100vh;
   min-height: 720px;
-  background: radial-gradient(circle at 75% 35%, #425e52 0%, #293d35 65%, #182520 100%);
+  background: radial-gradient(circle at 75% 35%, #4f7363 0%, #354e43 65%, #22332c 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -341,10 +342,10 @@ button {
 
 .hero-desc {
   font-size: 18px;
-  line-height: 1.55;
-  max-width: 420px;
+  line-height: 1.6;
+  max-width: 540px;
   margin: 28px 0 34px;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .hero-actions {
@@ -663,10 +664,10 @@ button {
 }
 
 .intro > p:not(.eyebrow) {
-  max-width: 540px;
+  max-width: 680px;
   margin: 0 auto 36px;
-  color: #584c49;
-  line-height: 1.65;
+  color: #525956;
+  line-height: 1.7;
   font-size: 18px;
 }
 
@@ -709,19 +710,22 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   padding: 0 6vw;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  gap: 30px;
 }
 
 .section-heading h2 {
-  font-size: clamp(38px, 4.5vw, 64px);
+  font-size: clamp(32px, 3.8vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
 }
 
 .section-heading.light .section-copy {
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 380px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 560px;
   font-size: 15px;
-  line-height: 1.5;
-  margin: 10px 0 0;
+  line-height: 1.55;
+  margin: 12px 0 0;
 }
 
 .recipe-category-pills {
@@ -953,22 +957,24 @@ button {
 .class-section-inner {
   padding: 100px 8vw;
   display: grid;
-  grid-template-columns: 42% 1fr;
-  gap: 8vw;
+  grid-template-columns: 50% 1fr;
+  gap: 6vw;
   align-items: center;
   width: 100%;
 }
 
 .class-content h2 {
-  font-size: clamp(44px, 5.2vw, 74px);
+  font-size: clamp(40px, 4.8vw, 70px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .class-content > p:not(.eyebrow) {
-  line-height: 1.6;
-  max-width: 380px;
-  margin: 24px 0 32px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 24px 0 34px;
   font-size: 17px;
-  color: #3b3330;
+  color: #2b3531;
 }
 
 .dark-button {
@@ -1077,7 +1083,7 @@ button {
 
 .product-3d-stage {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 48% 52%;
   align-items: center;
   min-height: 460px;
   margin-top: 15px;
@@ -1099,19 +1105,19 @@ button {
 }
 
 .product-info-panel h3 {
-  font-size: clamp(38px, 4.2vw, 64px);
-  letter-spacing: -0.06em;
+  font-size: clamp(34px, 3.8vw, 58px);
+  letter-spacing: -0.04em;
   margin: 0 0 16px;
-  line-height: 0.98;
+  line-height: 1.05;
   font-weight: 800;
 }
 
 .product-info-panel p.product-desc {
   font-size: 16px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 380px;
-  margin: 0 0 22px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
+  margin: 0 0 24px;
 }
 
 .product-feature-tags {
@@ -1299,15 +1305,17 @@ button {
 }
 
 .story-copy h2 {
-  font-size: clamp(44px, 5.5vw, 72px);
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .story-copy > p:not(.eyebrow) {
-  line-height: 1.65;
-  max-width: 380px;
+  line-height: 1.7;
+  max-width: 540px;
   margin: 24px 0 30px;
   font-size: 17px;
-  color: #5d514d;
+  color: #4a5450;
 }
 
 .story-quote-card {

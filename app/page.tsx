@@ -82,7 +82,7 @@ const productsData = [
     desc: "Cushion bertekstur velvet lembut dengan coverage merata dan perlindungan maksimal dari sinar UV. Menjaga wajah segar bebas kilap sepanjang hari.",
     tags: ["✓ SPF 50 PA++++", "✓ 4 Pilihan Shade", "✓ Halal & BPOM"],
     color: "#7fa697",
-    bg: "radial-gradient(circle at 60% 45%, #23372f 0%, #111b17 100%)",
+    bg: "radial-gradient(circle at 60% 45%, #32473e 0%, #1f2d27 100%)",
     image: "/images/liefmarket-3/1.webp",
   },
   {
@@ -91,7 +91,7 @@ const productsData = [
     desc: "Formula aksi ganda membersihkan sisa riasan dan kotoran sekaligus mengontrol minyak berlebih dengan ekstrak lidah buaya dan jeruk nipis.",
     tags: ["✓ Deep Cleansing", "✓ Anti Acne Care", "✓ 3 Pilihan Ukuran"],
     color: "#8fb8a7",
-    bg: "radial-gradient(circle at 60% 45%, #1e332a 0%, #0e1914 100%)",
+    bg: "radial-gradient(circle at 60% 45%, #2c4238 0%, #1c2a24 100%)",
     image: "/images/liefmarket-32/10.webp",
   },
   {
@@ -100,7 +100,7 @@ const productsData = [
     desc: "Menthol kristal murni 100% cap Dragon untuk meredakan masuk angin, pegal linu, dan hidung tersumbat secara cepat dan melegakan.",
     tags: ["✓ 100% Menthol Alami", "✓ Hangat Tahan Lama", "✓ Praktis Higienis"],
     color: "#c0d2cb",
-    bg: "radial-gradient(circle at 60% 45%, #2b3933 0%, #141b18 100%)",
+    bg: "radial-gradient(circle at 60% 45%, #3a4b44 0%, #24312b 100%)",
     image: "/images/liefmarket-3/2.webp",
   },
   {
@@ -109,7 +109,7 @@ const productsData = [
     desc: "Paket 5 produk unggulan perawatan wajah dengan ekstrak bengkoang, collagen, dan serum pencerah untuk kulit sehat dan bersinar alami.",
     tags: ["✓ 5 Produk Unggulan", "✓ Collagen & Niacinamide", "✓ Teruji Klinis"],
     color: "#a2c2b5",
-    bg: "radial-gradient(circle at 60% 45%, #253931 0%, #121d18 100%)",
+    bg: "radial-gradient(circle at 60% 45%, #344a40 0%, #202e28 100%)",
     image: "/images/liefmarket-32/70.webp",
   },
   {
@@ -118,7 +118,7 @@ const productsData = [
     desc: "Inovasi minyak aromaterapi roll-on hangat plus double inhaler segar dengan wangi bunga sakura yang menenangkan dan botol glow in the dark.",
     tags: ["✓ 2in1 Inhaler + Roll On", "✓ Aroma Sakura Segar", "✓ Glow In The Dark"],
     color: "#6e9484",
-    bg: "radial-gradient(circle at 60% 45%, #1d3128 0%, #0d1713 100%)",
+    bg: "radial-gradient(circle at 60% 45%, #2c4137 0%, #1b2923 100%)",
     image: "/images/liefmarket-32/2.webp",
   },
 ];
