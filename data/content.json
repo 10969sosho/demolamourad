@@ -1,0 +1,257 @@
+{
+  "theme": {
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#1e40af",
+    "accentColor": "#93c5fd",
+    "bgColor": "#111111",
+    "textColor": "#1e293b",
+    "navbarBg": "#fffaf7"
+  },
+  "navbar": {
+    "brandName": "lam",
+    "brandSub": "ourad",
+    "links": [
+      {
+        "label": "Beranda",
+        "href": "/"
+      },
+      {
+        "label": "Tentang Kami",
+        "href": "/company"
+      },
+      {
+        "label": "Kehidupan di LiefMarket",
+        "href": "/life-at-liefmarket"
+      },
+      {
+        "label": "Katalog Produk",
+        "href": "/products"
+      },
+      {
+        "label": "Rekomendasi Produk",
+        "href": "/recipes"
+      },
+      {
+        "label": "Mitra Bisnis",
+        "href": "/food-service"
+      },
+      {
+        "label": "Artikel & Tips",
+        "href": "/articles"
+      },
+      {
+        "label": "Komunitas",
+        "href": "/community"
+      },
+      {
+        "label": "Kontak Kami",
+        "href": "/contact"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Perawatan Terbaik\nKeluarga Anda.",
+    "description": "Menghadirkan produk perawatan diri, kosmetik berkualitas, dan herbal alami nusantara 100% original dan bersertifikasi resmi BPOM.",
+    "badge": "100%\nORIGINAL\nBPOM",
+    "primaryBtnText": "JELAJAHI PRODUK",
+    "primaryBtnLink": "#recipes",
+    "secondaryBtnText": "WELLNESS CLUB",
+    "secondaryBtnLink": "#class",
+    "bgImage": "/images/liefmarket-32/70.webp"
+  },
+  "intro": {
+    "title": "Pilihan terlengkap,\naman & terpercaya.",
+    "subtitle": "LiefMarket menghadirkan produk perawatan diri, kosmetik pilihan, dan herbal kesehatan keluarga berkualitas tinggi dengan jaminan keaslian 100%.",
+    "items": [
+      {
+        "value": "1000+",
+        "label": "PRODUK ORIGINAL"
+      },
+      {
+        "value": "100%",
+        "label": "TERSERTIFIKASI BPOM"
+      },
+      {
+        "value": "50rb+",
+        "label": "PELANGGAN SETIA"
+      }
+    ]
+  },
+  "products": [
+    {
+      "name": "Viva Velvet Cushion SPF 50",
+      "tag": "4 SHADES LENGKAP",
+      "category": "KOSMETIK",
+      "time": "Viva Cosmetics",
+      "level": "Matte Finish",
+      "desc": "Cushion lembut dengan UV filter SPF 50 PA++++ dan formula pelembap tahan seharian.",
+      "image": "/images/liefmarket-3/1.webp",
+      "color": "#7f8ca6",
+      "price": "Rp 89.000",
+      "link": "/products/viva"
+    },
+    {
+      "name": "Ovale 2in1 Facial Lotion",
+      "tag": "ANTI ACNE CARE",
+      "category": "SKINCARE",
+      "time": "Ovale Official",
+      "level": "Deep Control",
+      "desc": "Pembersih dan penyegar wajah seketika dengan ekstrak lidah buaya dan jeruk nipis.",
+      "image": "/images/liefmarket-32/10.webp",
+      "color": "#8f9db8",
+      "price": "Rp 55.000",
+      "link": "/products/ovale"
+    },
+    {
+      "name": "Dragon Menthol Gosok Po'peng",
+      "tag": "HERBAL NUSANTARA",
+      "category": "KESEHATAN",
+      "time": "Cap Dragon",
+      "level": "100% Menthol",
+      "desc": "Membantu meredakan sakit kepala, hidung tersumbat, dan masuk angin sejak 1948.",
+      "image": "/images/liefmarket-3/3.webp",
+      "color": "#555555",
+      "price": "Rp 25.000",
+      "link": "/products/dragon"
+    },
+    {
+      "name": "Viva Paket Clean Mask Pink",
+      "tag": "5IN1 GLOWING SET",
+      "category": "SKINCARE",
+      "time": "Viva Cosmetics",
+      "level": "Kulit Cerah",
+      "desc": "Paket lengkap Milk Cleanser, Face Tonic, Clean Mask, Collagen Night Cream & Serum.",
+      "image": "/images/liefmarket-32/70.webp",
+      "color": "#4a5770",
+      "price": "Rp 145.000",
+      "link": "/products/viva"
+    },
+    {
+      "name": "Garnier Sakura Glow Mask",
+      "tag": "HYALURON NIGHT",
+      "category": "SKINCARE",
+      "time": "Garnier Night",
+      "level": "Kulit Glowing",
+      "desc": "Menutrisi kulit intensif di malam hari dengan ekstrak sakura Jepang alami.",
+      "image": "/images/liefmarket-32/20.webp",
+      "color": "#6e7b94",
+      "price": "Rp 35.000",
+      "link": "/products/garnier"
+    },
+    {
+      "name": "Harmony Sabun Buah Mix",
+      "tag": "AROMA SEGAR",
+      "category": "BODY CARE",
+      "time": "Harmony Soap",
+      "level": "Mood Enhancer",
+      "desc": "Sensasi mandi segar dengan perpaduan ekstrak aneka buah tropis yang menyegarkan.",
+      "image": "/images/liefmarket-32/50.webp",
+      "color": "#5b6985",
+      "price": "Rp 18.000",
+      "link": "/products/harmony"
+    },
+    {
+      "name": "Mini Kidi Diaper Baby Wipes",
+      "tag": "ALOE VERA LEMBUT",
+      "category": "IBU & BAYI",
+      "time": "Baby Wipes",
+      "level": "Non-Alcohol",
+      "desc": "Tisu basah 98% naturally derived ingredients, aman dan higienis untuk kulit bayi.",
+      "image": "/images/liefmarket-32/30.webp",
+      "color": "#3a455b",
+      "price": "Rp 22.000",
+      "link": "/products"
+    }
+  ],
+  "articles": [
+    {
+      "title": "5 Langkah Perawatan Wajah Setiap Pagi",
+      "desc": "Rutinitas sederhana yang membuat kulit tetap sehat, lembap, dan terlindungi sepanjang hari.",
+      "image": "/images/liefmarket-3/11.webp",
+      "tag": "SKINCARE",
+      "date": "12 Okt 2024"
+    },
+    {
+      "title": "Mengenal Khasiat Herbal Menthol Nusantara",
+      "desc": "Warisan obat gosok tradisional yang terbukti meredakan masuk angin dan pegal linu.",
+      "image": "/images/liefmarket-3/20.webp",
+      "tag": "HERBAL",
+      "date": "28 Sep 2024"
+    },
+    {
+      "title": "Memilih Kosmetik Aman & Bersertifikat BPOM",
+      "desc": "Panduan memeriksa izin edar dan kode produksi sebelum membeli produk kecantikan.",
+      "image": "/images/liefmarket-3/27.webp",
+      "tag": "TIPS",
+      "date": "05 Sep 2024"
+    }
+  ],
+  "cta": {
+    "title": "Rawat diri,\npercaya diri.",
+    "desc": "Dapatkan inspirasi gaya hidup sehat, tips merawat kulit harian, serta panduan memilih produk kecantikan dan herbal yang tepat untuk keluarga Anda.",
+    "btnText": "GABUNG KOMUNITAS SEKARANG",
+    "btnLink": "/community"
+  },
+  "footer": {
+    "about": "Solusi terpercaya produk perawatan kecantikan, kesehatan herbal, dan kebutuhan keluarga Indonesia.",
+    "copyright": "© 2024 LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.",
+    "socialLinks": [
+      {
+        "label": "ig",
+        "href": "#instagram"
+      },
+      {
+        "label": "f",
+        "href": "#facebook"
+      },
+      {
+        "label": "▶",
+        "href": "#youtube"
+      }
+    ],
+    "columns": [
+      {
+        "title": "JELAJAHI",
+        "links": [
+          {
+            "label": "Tentang LiefMarket",
+            "href": "/company"
+          },
+          {
+            "label": "Katalog Produk",
+            "href": "/products"
+          },
+          {
+            "label": "Rekomendasi Favorit",
+            "href": "/recipes"
+          },
+          {
+            "label": "Artikel & Tips Perawatan",
+            "href": "/articles"
+          }
+        ]
+      },
+      {
+        "title": "BANTUAN",
+        "links": [
+          {
+            "label": "Kontak Kami",
+            "href": "/contact"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          },
+          {
+            "label": "Komunitas",
+            "href": "/community"
+          }
+        ]
+      }
+    ]
+  }
+}

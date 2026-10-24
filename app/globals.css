@@ -1,22 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap");
 
 :root {
-  --sage: #7fa697;
-  --sage-light: #d8e5df;
-  --sage-dark: #355346;
-  --sage-bg: #f4f8f6;
-  --charcoal: #333735;
-  --charcoal-dark: #262c29;
-  --charcoal-light: #525956;
-  --red: #426756;
-  --dark-red: #2c3330;
-  --dark: #262c29;
-  --cream: #f8faf8;
-  --yellow: #d8e5df;
-  --blue: #557d6e;
-  --green: #426756;
-  --orange: #525956;
-  --line: rgba(51, 55, 53, 0.1);
+  --sage: #1e40af;
+  --sage-light: #dbeafe;
+  --sage-dark: #1e3a8a;
+  --sage-bg: #eff6ff;
+  --charcoal: #1e293b;
+  --charcoal-dark: #0f172a;
+  --charcoal-light: #475569;
+  --red: #2563eb;
+  --dark-red: #1d4ed8;
+  --dark: #0f172a;
+  --cream: #f8fafc;
+  --yellow: #93c5fd;
+  --blue: #3b82f6;
+  --green: #2563eb;
+  --orange: #475569;
+  --line: rgba(30, 64, 175, 0.12);
   --font-logo: "Comfortaa", -apple-system, BlinkMacSystemFont, cursive, sans-serif;
   --font-main: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
@@ -32,7 +32,7 @@ html {
 
 body {
   margin: 0;
-  background: #111;
+  background: var(--bg, #111);
   color: var(--dark);
   font-family: var(--font-main);
   overflow-x: hidden;
@@ -70,7 +70,7 @@ button {
 }
 
 .header.scrolled {
-  background: rgba(255, 250, 247, 0.92);
+  background: var(--navbar-bg, rgba(255, 250, 247, 0.92));
   color: var(--dark);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(14px);
@@ -87,7 +87,7 @@ button {
   line-height: 1;
   text-decoration: none;
   letter-spacing: -0.02em;
-  background: #f4f8f6;
+  background: #eff6ff;
   padding: 10px 22px;
   border-radius: 9999px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
@@ -102,27 +102,27 @@ button {
 }
 
 .logo .brand-lief {
-  color: #588574;
+  color: #1e40af;
   font-weight: 600;
 }
 
 .logo .brand-market {
-  color: #262c29;
+  color: #26282c;
   font-weight: 700;
 }
 
 .logo-white {
-  background: #f4f8f6;
+  background: #eff6ff;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
 }
 
 .logo-white .brand-lief {
-  color: #588574;
+  color: #1e40af;
   font-weight: 600;
 }
 
 .logo-white .brand-market {
-  color: #262c29;
+  color: #26282c;
   font-weight: 700;
 }
 
@@ -237,7 +237,7 @@ button {
   width: 100%;
   border-radius: 48px 48px 0 0;
   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.15);
-  background: radial-gradient(circle at 80% 20%, #446456 0%, #283a32 100%);
+  background: radial-gradient(circle at 80% 20%, #444f64 0%, #282e3a 100%);
   color: #fff;
   overflow: hidden;
   display: flex;
@@ -259,7 +259,7 @@ button {
 .deck-products {
   z-index: 50;
   min-height: 100vh;
-  background: #23332c;
+  background: #232833;
   color: #fff;
   display: flex;
   align-items: center;
@@ -280,7 +280,7 @@ button {
 .deck-footer {
   position: relative;
   z-index: 70;
-  background: #1f2522;
+  background: #1f2125;
   color: #fff;
   border-radius: 48px 48px 0 0;
   box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.25);
@@ -292,7 +292,7 @@ button {
 .hero {
   height: 100vh;
   min-height: 720px;
-  background: radial-gradient(circle at 75% 35%, #4f7363 0%, #354e43 65%, #22332c 100%);
+  background: radial-gradient(circle at 75% 35%, #4f5b73 0%, #353d4e 65%, #222833 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -998,7 +998,7 @@ button {
   max-width: 620px;
   margin: 22px 0 32px;
   font-size: 17px;
-  color: #2b3531;
+  color: #2b2e35;
 }
 
 .dark-button {
@@ -1339,7 +1339,7 @@ button {
   max-width: 540px;
   margin: 24px 0 30px;
   font-size: 17px;
-  color: #4a5450;
+  color: #4a4d54;
 }
 
 .story-quote-card {
@@ -1390,7 +1390,7 @@ footer {
 }
 
 footer:before {
-  content: "LIEFMARKET";
+  content: "LAMOURAD";
   position: absolute;
   font-family: var(--font-logo);
   font-size: 15vw;
@@ -1442,7 +1442,7 @@ footer:before {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 36px;
   position: relative;
   z-index: 1;
@@ -1697,7 +1697,7 @@ footer:before {
 }
 
 .loader:after {
-  content: "liefmarket";
+  content: "lamourad";
   position: absolute;
   font-family: var(--font-logo);
   font-size: 20vw;
@@ -1751,7 +1751,7 @@ footer:before {
 }
 
 .loader-logo .brand-lief {
-  color: #a3c4b7;
+  color: #93c5fd;
   font-weight: 500;
 }
 
@@ -1804,7 +1804,7 @@ footer:before {
 
 .admin-sidebar {
   width: 245px;
-  background: #ee1c25;
+  background: #1e40af;
   color: #fff;
   padding: 35px 25px;
   display: flex;
@@ -1891,7 +1891,7 @@ footer:before {
 .admin-banner {
   padding: 23px 28px;
   background: #e8f3e9;
-  border: 1px solid #bddfc1;
+  border: 1px solid #bdc8df;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -1900,7 +1900,7 @@ footer:before {
 }
 
 .admin-banner .eyebrow {
-  color: #087b45;
+  color: #082e7b;
   margin-bottom: 9px;
 }
 
@@ -1911,15 +1911,15 @@ footer:before {
 
 .admin-banner p:last-child {
   font-size: 12px;
-  color: #657168;
+  color: #656971;
   margin: 0;
 }
 
 .live-pill {
   font-size: 9px;
-  color: #087b45;
+  color: #082e7b;
   font-weight: 700;
-  background: #d4eed7;
+  background: #d4ddee;
   border-radius: 20px;
   padding: 9px 12px;
   letter-spacing: 0.1em;
@@ -2332,4 +2332,237 @@ footer:before {
     flex-direction: column;
     gap: 8px;
   }
+}
+
+/* ==========================================================================
+   ADMIN CMS EXTENSIONS (LOGIN, FORMS, TOAST)
+   ========================================================================== */
+.admin-login {
+  min-height: 100vh;
+  background: #111;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.admin-login-card {
+  background: #1e40af;
+  padding: 48px 40px;
+  border-radius: 16px;
+  width: 380px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.admin-login-card h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -0.05em;
+}
+
+.admin-login-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.admin-login-card input {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 16px;
+  letter-spacing: 0.3em;
+}
+
+.admin-login-card button {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.admin-login-card a {
+  font-size: 11px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.editor-card input[type="text"],
+.editor-card input:not([type]),
+.editor-card input[type="url"],
+.editor-card input[type="color"] {
+  font: inherit;
+}
+
+.editor-card label input:not([type]) {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 11px 12px;
+  font-size: 13px;
+  color: #444;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.editor-card > label,
+.field-row label,
+.color-field {
+  font-size: 11px;
+  display: block;
+  font-weight: 700;
+  margin: 0 0 18px;
+  color: #333;
+}
+
+.editor-card + .editor-card {
+  margin-top: 20px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.color-field span,
+.color-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+.color-field input[type="color"],
+.color-inline input[type="color"] {
+  width: 42px;
+  height: 34px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 2px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.list-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: #888;
+  margin: 24px 0 10px;
+}
+
+.list-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.list-row input,
+.col-title {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #444;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-icon {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn-add {
+  background: none;
+  border: 1px dashed #bbb;
+  color: #555;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.btn-add:hover {
+  border-color: #1e40af;
+  color: #1e40af;
+}
+
+.product-editor {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.product-editor-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.product-editor-head strong {
+  font-size: 14px;
+}
+
+.admin-actions-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-ghost {
+  background: none !important;
+  border: 1px solid #ccc;
+  color: #444 !important;
+  padding: 12px 16px !important;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.admin-toast {
+  position: fixed;
+  bottom: 80px;
+  right: 28px;
+  background: #111;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 300;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  animation: rise 0.3s both;
 }
