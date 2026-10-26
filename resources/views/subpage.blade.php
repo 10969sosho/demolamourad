@@ -15,7 +15,7 @@
             <p class="eyebrow">{{ $page['eyebrow'] }}</p>
             <h1>{{ $page['title'] }}</h1>
             <p>{{ $page['text'] }}</p>
-            <a class="dark-button" href="/">JELAJAHI LAMOURAD <span>→</span></a>
+            <a class="dark-button" href="/">JELAJAHI LIEFMARKET <span>→</span></a>
         </div>
         <div class="inner-image">
             <img src="{{ $page['image'] }}" alt="{{ $page['title'] }}">

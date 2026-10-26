@@ -1390,7 +1390,7 @@ footer {
 }
 
 footer:before {
-  content: "LAMOURAD";
+  content: "LIEFMARKET";
   position: absolute;
   font-family: var(--font-logo);
   font-size: 15vw;
@@ -1697,7 +1697,7 @@ footer:before {
 }
 
 .loader:after {
-  content: "lamourad";
+  content: "liefmarket";
   position: absolute;
   font-family: var(--font-logo);
   font-size: 20vw;

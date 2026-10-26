@@ -11,7 +11,7 @@
             <p>{{ $contact['text'] ?? '' }}</p>
         </div>
         <div class="inner-image">
-            <img src="{{ $contact['heroImage'] ?? '/images/lamourad-32/2.webp' }}" alt="Kontak Lamourad">
+            <img src="{{ $contact['heroImage'] ?? '/images/liefmarket-32/2.webp' }}" alt="Kontak LiefMarket">
         </div>
     </section>
 
@@ -22,7 +22,7 @@
                 <h3>Alamat</h3>
                 <p>{{ $contact['address'] ?? '—' }}</p>
             </a>
-            <a class="contact-card" href="https://wa.me/{{ preg_replace('/\D/', '', $whatsapp) }}?text={{ rawurlencode('Halo Lamourad, saya ingin bertanya.') }}" target="_blank" rel="noopener">
+            <a class="contact-card" href="https://wa.me/{{ preg_replace('/\D/', '', $whatsapp) }}?text={{ rawurlencode('Halo LiefMarket, saya ingin bertanya.') }}" target="_blank" rel="noopener">
                 <span class="contact-card-icon">☎</span>
                 <h3>WhatsApp CS</h3>
                 <p>+{{ $whatsapp }}</p>
@@ -112,7 +112,7 @@
         }
         errorEl.style.display = 'none';
 
-        var text = 'Halo Lamourad, saya ingin mengirim pesan.%0A%0A' +
+        var text = 'Halo LiefMarket, saya ingin mengirim pesan.%0A%0A' +
             '*Nama:* ' + encodeURIComponent(nama) + '%0A' +
             '*WhatsApp:* ' + encodeURIComponent(wa) + '%0A' +
             '*Subjek:* ' + encodeURIComponent(subjek) + '%0A' +

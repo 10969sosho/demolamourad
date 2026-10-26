@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@lamourad.com',
+            'email' => 'admin@liefmarket.com',
             'password' => 'password123',
         ]);
     }

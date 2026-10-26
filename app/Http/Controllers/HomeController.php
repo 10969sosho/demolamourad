@@ -16,15 +16,15 @@ class HomeController extends Controller
      * @var array<string, array{eyebrow: string, title: string, text: string, color: string, image: string}>
      */
     private const PAGES = [
-        'company' => ['eyebrow' => 'TENTANG LAMOURAD', 'title' => 'Solusi terpercaya produk resmi & original.', 'text' => 'LAMOURAD hadir melayani keluarga Indonesia dengan jaminan produk perawatan, kosmetik, dan herbal berizin resmi BPOM.', 'color' => '#4a5770', 'image' => '/images/lamourad-32/70.webp'],
-        'life-at-lamourad' => ['eyebrow' => 'KEHIDUPAN DI LAMOURAD', 'title' => 'Melayani dengan hati, bertumbuh bersama.', 'text' => 'Di balik setiap produk yang tiba di rumah Anda, ada tim berdedikasi yang menjaga standar keaslian dan mutu terbaik.', 'color' => '#7f8ca6', 'image' => '/images/lamourad-3/1.webp'],
-        'products' => ['eyebrow' => 'PRODUK LAMOURAD', 'title' => 'Sahabat terbaik untuk perawatan keluarga.', 'text' => 'Temukan berbagai produk perawatan kulit, kecantikan, dan herbal berkualitas dengan jaminan 100% original.', 'color' => '#333735', 'image' => '/images/lamourad-32/10.webp'],
-        'recipes' => ['eyebrow' => 'REKOMENDASI LAMOURAD', 'title' => 'Rawat diri lebih optimal, hidup lebih sehat.', 'text' => 'Rekomendasi paket perawatan dan tips pemakaian untuk hasil maksimal dan aman bagi keluarga.', 'color' => '#56627a', 'image' => '/images/lamourad-32/20.webp'],
-        'food-service' => ['eyebrow' => 'MITRA BISNIS & GROSIR', 'title' => 'Pasokan resmi untuk usaha dan apotek.', 'text' => 'Solusi pengadaan produk perawatan, obat gosok, dan kosmetik dalam jumlah besar dengan harga kompetitif.', 'color' => '#7f8ca6', 'image' => '/images/lamourad-3/2.webp'],
-        'articles' => ['eyebrow' => 'ARTIKEL & TIPS', 'title' => 'Inspirasi cantik dan sehat setiap hari.', 'text' => 'Baca ulasan produk, tips perawatan wajah, dan khasiat herbal alami untuk kesehatan harian keluarga.', 'color' => '#3a455b', 'image' => '/images/lamourad-32/50.webp'],
-        'community' => ['eyebrow' => 'KOMUNITAS LAMOURAD', 'title' => 'Tampil percaya diri bersama komunitas.', 'text' => 'Bergabung dengan keluarga besar LAMOURAD dan dapatkan promo eksklusif serta tips perawatan.', 'color' => '#4a5770', 'image' => '/images/lamourad-3/5.webp'],
-        'contact' => ['eyebrow' => 'KONTAK KAMI', 'title' => 'Kami siap membantu kebutuhan Anda.', 'text' => 'Punya pertanyaan mengenai produk, pesanan grosir, atau kemitraan? Tim kami siap melayani Anda.', 'color' => '#333735', 'image' => '/images/lamourad-32/2.webp'],
-        'faq' => ['eyebrow' => 'FAQ', 'title' => 'Pertanyaan yang sering ditanyakan.', 'text' => 'Temukan jawaban seputar keaslian produk BPOM, proses pengiriman, dan cara pemesanan di Lamourad.', 'color' => '#7f8ca6', 'image' => '/images/lamourad-32/30.webp'],
+        'company' => ['eyebrow' => 'TENTANG LIEFMARKET', 'title' => 'Solusi terpercaya produk resmi & original.', 'text' => 'LIEFMARKET hadir melayani keluarga Indonesia dengan jaminan produk perawatan, kosmetik, dan herbal berizin resmi BPOM.', 'color' => '#4a5770', 'image' => '/images/liefmarket-32/70.webp'],
+        'life-at-liefmarket' => ['eyebrow' => 'KEHIDUPAN DI LIEFMARKET', 'title' => 'Melayani dengan hati, bertumbuh bersama.', 'text' => 'Di balik setiap produk yang tiba di rumah Anda, ada tim berdedikasi yang menjaga standar keaslian dan mutu terbaik.', 'color' => '#7f8ca6', 'image' => '/images/liefmarket-3/1.webp'],
+        'products' => ['eyebrow' => 'PRODUK LIEFMARKET', 'title' => 'Sahabat terbaik untuk perawatan keluarga.', 'text' => 'Temukan berbagai produk perawatan kulit, kecantikan, dan herbal berkualitas dengan jaminan 100% original.', 'color' => '#333735', 'image' => '/images/liefmarket-32/10.webp'],
+        'recipes' => ['eyebrow' => 'REKOMENDASI LIEFMARKET', 'title' => 'Rawat diri lebih optimal, hidup lebih sehat.', 'text' => 'Rekomendasi paket perawatan dan tips pemakaian untuk hasil maksimal dan aman bagi keluarga.', 'color' => '#56627a', 'image' => '/images/liefmarket-32/20.webp'],
+        'food-service' => ['eyebrow' => 'MITRA BISNIS & GROSIR', 'title' => 'Pasokan resmi untuk usaha dan apotek.', 'text' => 'Solusi pengadaan produk perawatan, obat gosok, dan kosmetik dalam jumlah besar dengan harga kompetitif.', 'color' => '#7f8ca6', 'image' => '/images/liefmarket-3/2.webp'],
+        'articles' => ['eyebrow' => 'ARTIKEL & TIPS', 'title' => 'Inspirasi cantik dan sehat setiap hari.', 'text' => 'Baca ulasan produk, tips perawatan wajah, dan khasiat herbal alami untuk kesehatan harian keluarga.', 'color' => '#3a455b', 'image' => '/images/liefmarket-32/50.webp'],
+        'community' => ['eyebrow' => 'KOMUNITAS LIEFMARKET', 'title' => 'Tampil percaya diri bersama komunitas.', 'text' => 'Bergabung dengan keluarga besar LIEFMARKET dan dapatkan promo eksklusif serta tips perawatan.', 'color' => '#4a5770', 'image' => '/images/liefmarket-3/5.webp'],
+        'contact' => ['eyebrow' => 'KONTAK KAMI', 'title' => 'Kami siap membantu kebutuhan Anda.', 'text' => 'Punya pertanyaan mengenai produk, pesanan grosir, atau kemitraan? Tim kami siap melayani Anda.', 'color' => '#333735', 'image' => '/images/liefmarket-32/2.webp'],
+        'faq' => ['eyebrow' => 'FAQ', 'title' => 'Pertanyaan yang sering ditanyakan.', 'text' => 'Temukan jawaban seputar keaslian produk BPOM, proses pengiriman, dan cara pemesanan di LiefMarket.', 'color' => '#7f8ca6', 'image' => '/images/liefmarket-32/30.webp'],
     ];
 
     public function index(): View
@@ -130,7 +130,7 @@ class HomeController extends Controller
             $page = self::PAGES[$key];
         } elseif ($detailName !== null) {
             $page = [
-                'eyebrow' => $slug === 'recipes' ? 'REKOMENDASI LAMOURAD' : 'PRODUK LAMOURAD',
+                'eyebrow' => $slug === 'recipes' ? 'REKOMENDASI LIEFMARKET' : 'PRODUK LIEFMARKET',
                 'title' => $detailName,
                 'text' => 'Temukan keaslian produk, komposisi, dan sertifikasi resmi BPOM untuk pilihan favorit keluarga Indonesia.',
             ] + ($parent ?? self::PAGES['products']);

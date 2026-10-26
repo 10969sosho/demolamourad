@@ -6,20 +6,20 @@
 
     <section class="inner-hero">
         <div>
-            <p class="eyebrow">{{ $about['eyebrow'] ?? 'TENTANG LAMOURAD' }} ✦</p>
+            <p class="eyebrow">{{ $about['eyebrow'] ?? 'TENTANG LIEFMARKET' }} ✦</p>
             <h1>{!! nl2br(e($about['title'] ?? 'Solusi terpercaya produk resmi & original.')) !!}</h1>
             <p>{{ data_get($content, 'hero.description') }}</p>
             <a class="dark-button" href="/products">JELAJAHI PRODUK <span aria-hidden>→</span></a>
         </div>
         <div class="inner-image">
-            <img src="{{ $about['heroImage'] ?? '/images/lamourad-32/70.webp' }}" alt="Tentang Lamourad">
+            <img src="{{ $about['heroImage'] ?? '/images/liefmarket-32/70.webp' }}" alt="Tentang LiefMarket">
         </div>
     </section>
 
     <section class="about-story">
         <div class="story-section-inner">
             <div class="story-image-wrap">
-                <img src="{{ $about['storyImage'] ?? '/images/lamourad-3/5.webp' }}" alt="Cerita Lamourad">
+                <img src="{{ $about['storyImage'] ?? '/images/liefmarket-3/5.webp' }}" alt="Cerita LiefMarket">
             </div>
             <div class="story-copy">
                 <p class="eyebrow">{{ $about['storyEyebrow'] ?? 'CERITA KAMI' }}</p>
@@ -53,7 +53,7 @@
     <section class="about-pillars">
         <div class="about-pillars-inner">
             <div class="section-heading">
-                <p class="eyebrow">MENGAPA LAMOURAD ✦</p>
+                <p class="eyebrow">MENGAPA LIEFMARKET ✦</p>
                 <h2>{{ $about['pillarsTitle'] ?? '4 Pilar Keunggulan Kami' }}</h2>
             </div>
             <div class="pillar-grid">
@@ -87,7 +87,7 @@
                 <a class="text-link" href="/contact">HUBUNGI TIM KAMI <span aria-hidden>→</span></a>
             </div>
             <div class="story-image-wrap">
-                <img src="{{ $about['qualityImage'] ?? '/images/lamourad-3/2.webp' }}" alt="Standar Kualitas Lamourad">
+                <img src="{{ $about['qualityImage'] ?? '/images/liefmarket-3/2.webp' }}" alt="Standar Kualitas LiefMarket">
             </div>
         </div>
     </section>

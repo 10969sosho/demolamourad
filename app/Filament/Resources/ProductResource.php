@@ -31,7 +31,7 @@ class ProductResource extends Resource
                         Forms\Components\TextInput::make('level')->maxLength(255),
                         Forms\Components\TextInput::make('price')->maxLength(255),
                         Forms\Components\TextInput::make('image')->maxLength(255)
-                            ->helperText('Path gambar, contoh: /images/lamourad-3/1.webp'),
+                            ->helperText('Path gambar, contoh: /images/liefmarket-3/1.webp'),
                         Forms\Components\ColorPicker::make('color'),
                         Forms\Components\TextInput::make('link')->maxLength(255),
                         Forms\Components\TextInput::make('sort_order')->numeric()->default(0),

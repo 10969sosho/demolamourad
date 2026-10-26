@@ -67,7 +67,7 @@
     <div class="menu-overlay" id="menu-overlay" style="display: none">
         <button class="close-menu" id="menu-close">×</button>
         <div class="menu-main">
-            <p class="eyebrow">JELAJAHI LAMOURAD</p>
+            <p class="eyebrow">JELAJAHI LIEFMARKET</p>
             @foreach ($menuLinks as $i => $link)
                 <a href="{{ $link['href'] }}" data-menu-close>
                     {{ $link['label'] }}<sup>0{{ $i + 1 }}</sup>
@@ -92,7 +92,7 @@
     <section class="hero deck-section deck-hero" id="hero">
         <div class="hero-copy">
             <p class="eyebrow">
-                LAMOURAD SURABAYA <span>✦</span>
+                LIEFMARKET SURABAYA <span>✦</span>
             </p>
             <h1>
                 {{ $heroTitleFirst }}
@@ -115,7 +115,7 @@
         <div class="hero-art" id="hero-art">
             <div class="sun" id="hero-sun"></div>
             <div class="hero-photo" id="hero-photo">
-                <img src="{{ $hero['bgImage'] }}" alt="Paket Perawatan Lamourad">
+                <img src="{{ $hero['bgImage'] }}" alt="Paket Perawatan LiefMarket">
             </div>
             <div class="hero-badge" id="hero-badge">
                 {{ $heroBadgeFirst }}
@@ -145,8 +145,8 @@
         <div class="marquee-container marquee-light">
             <div class="marquee-track">
                 @foreach (array_merge(
-                    ['LAMOURAD SURABAYA', '100% PRODUK ORIGINAL & BPOM', 'PERAWATAN & KESEHATAN KELUARGA', 'BELANJA AMAN & TERPERCAYA'],
-                    ['LAMOURAD SURABAYA', '100% PRODUK ORIGINAL & BPOM', 'PERAWATAN & KESEHATAN KELUARGA', 'BELANJA AMAN & TERPERCAYA'],
+                    ['LIEFMARKET SURABAYA', '100% PRODUK ORIGINAL & BPOM', 'PERAWATAN & KESEHATAN KELUARGA', 'BELANJA AMAN & TERPERCAYA'],
+                    ['LIEFMARKET SURABAYA', '100% PRODUK ORIGINAL & BPOM', 'PERAWATAN & KESEHATAN KELUARGA', 'BELANJA AMAN & TERPERCAYA'],
                 ) as $index => $marqueeItem)
                     <span class="marquee-item">
                         <span class="star">✦</span> {{ $marqueeItem }}
@@ -185,7 +185,7 @@
         <div class="deck-recipes-sticky">
             <div class="recipe-header-bar">
                 <div class="section-heading light">
-                    <p class="eyebrow">KATALOG LAMOURAD ✦</p>
+                    <p class="eyebrow">KATALOG LIEFMARKET ✦</p>
                     <h2>
                         Produk pilihan,<br>
                         <em>favorit keluarga.</em>
@@ -252,7 +252,7 @@
     <section class="deck-section deck-class" id="class">
         <div class="class-section-inner">
             <div class="class-content">
-                <p class="eyebrow">LAMOURAD WELLNESS CLUB ✦</p>
+                <p class="eyebrow">LIEFMARKET WELLNESS CLUB ✦</p>
                 <h2>
                     {{ $ctaTitleFirst }}
                     @if ($ctaTitle)
@@ -268,7 +268,7 @@
 
             <div class="class-photo-wrapper">
                 <div class="class-photo">
-                    <img src="/images/lamourad-3/1.webp" alt="Perawatan Kulit Lamourad">
+                    <img src="/images/liefmarket-3/1.webp" alt="Perawatan Kulit LiefMarket">
                 </div>
                 <div class="class-floating-badge">
                     BEAUTY<br>
@@ -284,8 +284,8 @@
         <div class="marquee-container marquee-dark marquee-reverse">
             <div class="marquee-track">
                 @foreach (array_merge(
-                    ['LAMOURAD WELLNESS CLUB', 'KECANTIKAN ALAMI', 'KESEHATAN KELUARGA', 'PRODUK RESMI & TERPERCAYA'],
-                    ['LAMOURAD WELLNESS CLUB', 'KECANTIKAN ALAMI', 'KESEHATAN KELUARGA', 'PRODUK RESMI & TERPERCAYA'],
+                    ['LIEFMARKET WELLNESS CLUB', 'KECANTIKAN ALAMI', 'KESEHATAN KELUARGA', 'PRODUK RESMI & TERPERCAYA'],
+                    ['LIEFMARKET WELLNESS CLUB', 'KECANTIKAN ALAMI', 'KESEHATAN KELUARGA', 'PRODUK RESMI & TERPERCAYA'],
                 ) as $marqueeItem)
                     <span class="marquee-item">
                         <span class="star">✦</span> {{ $marqueeItem }}
@@ -356,10 +356,10 @@
     <section class="deck-section deck-story" id="story">
         <div class="story-section-inner">
             <div class="story-image-wrap">
-                <img src="/images/lamourad-3/5.webp" alt="Perawatan keluarga Lamourad">
+                <img src="/images/liefmarket-3/5.webp" alt="Perawatan keluarga LiefMarket">
             </div>
             <div class="story-copy">
-                <p class="eyebrow">CERITA LAMOURAD</p>
+                <p class="eyebrow">CERITA LIEFMARKET</p>
                 <h2>
                     Lebih dari<br>
                     <em>sekadar berbelanja.</em>

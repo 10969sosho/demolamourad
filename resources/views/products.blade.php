@@ -9,12 +9,12 @@
 
     <section class="inner-hero catalog-hero">
         <div>
-            <p class="eyebrow">PRODUK LAMOURAD ✦</p>
+            <p class="eyebrow">PRODUK LIEFMARKET ✦</p>
             <h1>Sahabat terbaik untuk perawatan keluarga.</h1>
             <p>Temukan berbagai produk perawatan kulit, kecantikan, dan herbal berkualitas dengan jaminan 100% original dan terdaftar BPOM.</p>
         </div>
         <div class="inner-image">
-            <img src="/images/lamourad-32/10.webp" alt="Katalog Produk Lamourad">
+            <img src="/images/liefmarket-32/10.webp" alt="Katalog Produk LiefMarket">
         </div>
     </section>
 
@@ -69,7 +69,7 @@
                             <strong class="catalog-card-price">{{ $product['price'] }}</strong>
                             <a
                                 class="wa-button"
-                                href="https://wa.me/{{ preg_replace('/\D/', '', $whatsapp) }}?text={{ rawurlencode('Halo Lamourad, saya ingin memesan: '.$product['name'].' ('.$product['price'].'). Apakah ready?') }}"
+                                href="https://wa.me/{{ preg_replace('/\D/', '', $whatsapp) }}?text={{ rawurlencode('Halo LiefMarket, saya ingin memesan: '.$product['name'].' ('.$product['price'].'). Apakah ready?') }}"
                                 target="_blank"
                                 rel="noopener"
                             >Pesan Sekarang</a>
@@ -185,7 +185,7 @@
         img.src = p.image || '';
         img.alt = p.name;
         document.getElementById('pm-wa').href = 'https://wa.me/' + waNumber +
-            '?text=' + encodeURIComponent('Halo Lamourad, saya ingin memesan: ' + p.name + ' (' + p.price + '). Apakah ready?');
+            '?text=' + encodeURIComponent('Halo LiefMarket, saya ingin memesan: ' + p.name + ' (' + p.price + '). Apakah ready?');
         modal.style.display = 'grid';
         document.body.style.overflow = 'hidden';
     }
