@@ -1,101 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="inner-page about-page" style="--page-color: #4a5770">
+@php
+    $storyImage = data_get($about, 'storyImage') ?: data_get($about, 'heroImage') ?: '/images/liefmarket-32/70.webp';
+    $qualityImage = data_get($about, 'qualityImage') ?: data_get($about, 'heroImage') ?: '/images/liefmarket-32/70.webp';
+    $storyImage = str_starts_with($storyImage, '/') || preg_match('~^https?://~i', $storyImage) ? $storyImage : asset('storage/'.$storyImage);
+    $qualityImage = str_starts_with($qualityImage, '/') || preg_match('~^https?://~i', $qualityImage) ? $qualityImage : asset('storage/'.$qualityImage);
+@endphp
+<div class="clean-page about-page">
     @include('partials.site-nav')
 
-    <section class="inner-hero">
-        <div>
-            <p class="eyebrow">{{ $about['eyebrow'] ?? 'TENTANG LIEFMARKET' }} ✦</p>
-            <h1>{!! nl2br(e($about['title'] ?? 'Solusi terpercaya produk resmi & original.')) !!}</h1>
-            <p>{{ data_get($content, 'hero.description') }}</p>
-            <a class="dark-button" href="/products">JELAJAHI PRODUK <span aria-hidden>→</span></a>
-        </div>
-        <div class="inner-image">
-            <img src="{{ $about['heroImage'] ?? '/images/liefmarket-32/70.webp' }}" alt="Tentang LiefMarket">
-        </div>
-    </section>
+    <main class="clean-main about-editorial-main">
+        <header class="clean-page-header about-editorial-header">
+            <p class="clean-eyebrow">{{ data_get($about, 'eyebrow', 'TENTANG LIEFMARKET') }}</p>
+            <h1>{{ data_get($about, 'title', 'Solusi Terpercaya Produk Resmi & Original untuk Keluarga Indonesia') }}</h1>
+            <p class="about-editorial-lead">
+                <span>{{ data_get($about, 'storyEyebrow') }}</span>
+                {{ data_get($about, 'storyTitle') }}
+            </p>
+        </header>
 
-    <section class="about-story">
-        <div class="story-section-inner">
-            <div class="story-image-wrap">
-                <img src="{{ $about['storyImage'] ?? '/images/liefmarket-3/5.webp' }}" alt="Cerita LiefMarket">
-            </div>
-            <div class="story-copy">
-                <p class="eyebrow">{{ $about['storyEyebrow'] ?? 'CERITA KAMI' }}</p>
-                <h2>{!! nl2br(e($about['storyTitle'] ?? 'Lebih dari sekadar berbelanja.')) !!}</h2>
-                <div class="story-quote-card">
-                    <p>"{{ $about['storyQuote'] ?? '' }}"</p>
-                </div>
-                <p>{{ $about['storyText'] ?? '' }}</p>
-            </div>
-        </div>
-    </section>
+        <figure class="about-article-figure">
+            <img
+                src="{{ $storyImage }}"
+                alt="{{ data_get($about, 'storyImageAlt', data_get($about, 'storyTitle', 'CERITA LIEFMARKET')) }}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='/images/liefmarket-32/70.webp'"
+            >
+            <figcaption>{{ data_get($about, 'storyImageCaption', 'Cerita dan komitmen LiefMarket untuk keluarga Indonesia.') }}</figcaption>
+        </figure>
 
-    <section class="about-vision">
-        <div class="about-vision-inner">
-            <div class="about-vision-copy">
-                <p class="eyebrow">VISI & MISI ✦</p>
-                <h2>{{ $about['visionTitle'] ?? 'Visi & Misi' }}</h2>
-                <p>{{ $about['visionText'] ?? '' }}</p>
-            </div>
-            <ol class="about-mission-list">
-                @foreach (($about['missionItems'] ?? []) as $index => $item)
-                    <li>
-                        <span>0{{ $index + 1 }}</span>
-                        <p>{{ is_array($item) ? ($item['value'] ?? '') : $item }}</p>
-                    </li>
-                @endforeach
-            </ol>
-        </div>
-    </section>
+        <section class="about-article-body" aria-label="{{ data_get($about, 'storyEyebrow', 'Cerita dan komitmen') }}">
+            <p>{{ data_get($about, 'storyText') }}</p>
+            @if (data_get($about, 'storyQuote'))
+                <blockquote class="about-article-quote">“{{ data_get($about, 'storyQuote') }}”</blockquote>
+            @endif
+            <p>{{ data_get($about, 'authenticityText', 'Kami berkomitmen menghadirkan produk 100% original dengan izin edar dan sertifikasi BPOM yang terverifikasi, agar setiap pilihan terasa aman dan tepercaya.') }}</p>
+        </section>
 
-    <section class="about-pillars">
-        <div class="about-pillars-inner">
-            <div class="section-heading">
-                <p class="eyebrow">MENGAPA LIEFMARKET ✦</p>
-                <h2>{{ $about['pillarsTitle'] ?? '4 Pilar Keunggulan Kami' }}</h2>
-            </div>
-            <div class="pillar-grid">
-                @foreach (($about['pillars'] ?? []) as $pillar)
-                    <div class="pillar-card">
-                        <div class="pillar-icon">
-                            @if (($pillar['icon'] ?? '') === 'leaf')
-                                ❋
-                            @elseif (($pillar['icon'] ?? '') === 'heart')
-                                ♥
-                            @elseif (($pillar['icon'] ?? '') === 'star')
-                                ★
-                            @else
-                                ✦
-                            @endif
-                        </div>
-                        <h3>{{ $pillar['title'] }}</h3>
-                        <p>{{ $pillar['desc'] }}</p>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+        <figure class="about-article-figure">
+            <img
+                src="{{ $qualityImage }}"
+                alt="{{ data_get($about, 'qualityImageAlt', data_get($about, 'qualityTitle', 'Standar kualitas LiefMarket')) }}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='/images/liefmarket-32/70.webp'"
+            >
+            <figcaption>{{ data_get($about, 'qualityImageCaption', 'Standar kualitas dan kurasi PRODUK LIEFMARKET.') }}</figcaption>
+        </figure>
 
-    <section class="about-quality">
-        <div class="story-section-inner about-quality-inner">
-            <div class="story-copy">
-                <p class="eyebrow">{{ $about['qualityEyebrow'] ?? 'STANDAR KUALITAS' }}</p>
-                <h2>{!! nl2br(e($about['qualityTitle'] ?? 'Kualitas yang dijaga di setiap tahap.')) !!}</h2>
-                <p>{{ $about['qualityText'] ?? '' }}</p>
-                <a class="text-link" href="/contact">HUBUNGI TIM KAMI <span aria-hidden>→</span></a>
-            </div>
-            <div class="story-image-wrap">
-                <img src="{{ $about['qualityImage'] ?? '/images/liefmarket-3/2.webp' }}" alt="Standar Kualitas LiefMarket">
-            </div>
-        </div>
-    </section>
+        <section class="about-article-body about-article-vision">
+            <h2>{{ data_get($about, 'visionTitle', 'Visi & Nilai Layanan Kami') }}</h2>
+            <p>{{ data_get($about, 'visionText') }}</p>
+            <p>{{ data_get($about, 'qualityText') }}</p>
+            @if (data_get($about, 'pillars', []))
+                <p class="about-pillars-inline" aria-label="{{ data_get($about, 'pillarsTitle', 'Pilar nilai layanan') }}">
+                    @foreach (data_get($about, 'pillars', []) as $pillar)
+                        @if (data_get($pillar, 'title'))
+                            <span>{{ data_get($pillar, 'title') }}</span>@if (! $loop->last)<span aria-hidden="true">·</span>@endif
+                        @endif
+                    @endforeach
+                </p>
+            @endif
+        </section>
 
-    <footer class="inner-footer">
-        <p class="eyebrow">Siap mencoba produk kami?</p>
-        <h2>Temukan pilihan<br><em>favorit keluarga.</em></h2>
-        <a class="dark-button" href="/products">LIHAT KATALOG <span aria-hidden>→</span></a>
-    </footer>
-</main>
+        <nav class="about-editorial-actions" aria-label="{{ data_get($about, 'actionsLabel', 'JELAJAHI LIEFMARKET') }}">
+            <a class="clean-button" href="/products">{{ data_get($about, 'productsBtnText', 'Jelajahi Katalog Produk →') }}</a>
+            <a class="about-contact-link" href="/contact">{{ data_get($about, 'contactBtnText', 'Hubungi Tim Kami') }}</a>
+        </nav>
+    </main>
+
+    @include('partials.site-footer')
+</div>
 @endsection

@@ -4,8 +4,7 @@
 <main class="inner-page" style="--page-color: {{ $page['color'] }}">
     <header class="inner-header">
         <a href="/" class="logo">
-            <span class="brand-lief">{{ $content['navbar']['brandName'] }}</span>
-            <span class="brand-market">{{ $content['navbar']['brandSub'] }}</span>
+            <span class="brand-lief">{{ data_get($content, 'navbar.brandName', 'LiefMarket') }}</span>
         </a>
         <a href="/" class="back-home">← KEMBALI KE BERANDA</a>
     </header>
@@ -18,7 +17,7 @@
             <a class="dark-button" href="/">JELAJAHI LIEFMARKET <span>→</span></a>
         </div>
         <div class="inner-image">
-            <img src="{{ $page['image'] }}" alt="{{ $page['title'] }}">
+            <img src="{{ str_starts_with($page['image'], '/') || preg_match('~^https?://~i', $page['image']) ? $page['image'] : asset('storage/'.$page['image']) }}" alt="{{ $page['title'] }}" onerror="this.onerror=null;this.src='/images/liefmarket-32/1.webp'">
         </div>
     </section>
 

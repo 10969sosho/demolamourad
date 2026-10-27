@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['title', 'desc', 'tag', 'date', 'image', 'sort_order', 'is_active'])]
+#[Fillable(['title', 'desc', 'content', 'tag', 'date', 'image', 'sort_order', 'is_active'])]
 class Article extends Model
 {
     protected function casts(): array

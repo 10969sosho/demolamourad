@@ -21,10 +21,12 @@ class DatabaseSeeder extends Seeder
         $settings = [
             'theme' => $content['theme'],
             'navbar.brandName' => $content['navbar']['brandName'],
-            'navbar.brandSub' => $content['navbar']['brandSub'],
+            'navbar.links' => $content['navbar']['links'],
             'hero' => $content['hero'],
             'intro' => $content['intro'],
             'cta' => $content['cta'],
+            'about' => $content['about'],
+            'contact' => $content['contact'],
             'footer.about' => $content['footer']['about'],
             'footer.copyright' => $content['footer']['copyright'],
             'footer.socialLinks' => $content['footer']['socialLinks'],

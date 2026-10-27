@@ -1,55 +1,41 @@
 {
   "theme": {
-    "primaryColor": "#2563eb",
-    "secondaryColor": "#1e40af",
-    "accentColor": "#93c5fd",
-    "bgColor": "#111111",
+    "fontFamily": "Nunito",
+    "primaryColor": "#173324",
+    "secondaryColor": "#244634",
+    "accentColor": "#c5a880",
+    "bgColor": "#f4f7f4",
     "textColor": "#1e293b",
-    "navbarBg": "#fffaf7"
+    "navbarBg": "#ffffff",
+    "navbarText": "#27352a"
+  },
+  "site": {
+    "title": "LiefMarket — Solusi Perawatan & Produk Asli Terpercaya",
+    "description": "Menghadirkan produk perawatan diri, kosmetik berkualitas, dan herbal alami nusantara 100% original dan bersertifikasi resmi BPOM.",
+    "favicon": "favicon.ico"
   },
   "navbar": {
-    "brandName": "Lief",
-    "brandSub": "Market",
+    "brandName": "LiefMarket",
     "links": [
       {
         "label": "Beranda",
         "href": "/"
       },
       {
-        "label": "Tentang Kami",
-        "href": "/company"
-      },
-      {
-        "label": "Kehidupan di LiefMarket",
-        "href": "/life-at-liefmarket"
-      },
-      {
-        "label": "Katalog Produk",
+        "label": "Produk",
         "href": "/products"
       },
       {
-        "label": "Rekomendasi Produk",
-        "href": "/recipes"
-      },
-      {
-        "label": "Mitra Bisnis",
-        "href": "/food-service"
-      },
-      {
-        "label": "Artikel & Tips",
+        "label": "Artikel",
         "href": "/articles"
       },
       {
-        "label": "Komunitas",
-        "href": "/community"
+        "label": "Tentang Kami",
+        "href": "/about"
       },
       {
-        "label": "Kontak Kami",
+        "label": "Kontak",
         "href": "/contact"
-      },
-      {
-        "label": "FAQ",
-        "href": "/faq"
       }
     ]
   },
@@ -58,9 +44,9 @@
     "description": "Menghadirkan produk perawatan diri, kosmetik berkualitas, dan herbal alami nusantara 100% original dan bersertifikasi resmi BPOM.",
     "badge": "100%\nORIGINAL\nBPOM",
     "primaryBtnText": "JELAJAHI PRODUK",
-    "primaryBtnLink": "#recipes",
-    "secondaryBtnText": "WELLNESS CLUB",
-    "secondaryBtnLink": "#class",
+    "primaryBtnLink": "/products",
+    "secondaryBtnText": "HUBUNGI KAMI",
+    "secondaryBtnLink": "/contact",
     "bgImage": "/images/liefmarket-32/70.webp"
   },
   "intro": {
@@ -193,10 +179,11 @@
   "cta": {
     "title": "Rawat diri,\npercaya diri.",
     "desc": "Dapatkan inspirasi gaya hidup sehat, tips merawat kulit harian, serta panduan memilih produk kecantikan dan herbal yang tepat untuk keluarga Anda.",
-    "btnText": "GABUNG KOMUNITAS SEKARANG",
-    "btnLink": "/community"
+    "btnText": "HUBUNGI KAMI",
+    "btnLink": "/contact"
   },
   "footer": {
+    "tagline": "Perawatan terpercaya untuk setiap keluarga.",
     "about": "Solusi terpercaya produk perawatan kecantikan, kesehatan herbal, dan kebutuhan keluarga Indonesia.",
     "copyright": "© 2024 LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.",
     "socialLinks": [
@@ -218,7 +205,7 @@
         "title": "JELAJAHI",
         "links": [
           {
-            "label": "Tentang LiefMarket",
+            "label": "TENTANG LIEFMARKET",
             "href": "/company"
           },
           {
@@ -251,6 +238,82 @@
             "href": "/community"
           }
         ]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "TENTANG LIEFMARKET",
+    "title": "Solusi terpercaya\nproduk resmi & original.",
+    "heroImage": "/images/liefmarket-32/70.webp",
+    "storyEyebrow": "CERITA KAMI",
+    "storyTitle": "Lebih dari\nsekadar berbelanja.",
+    "storyText": "Bagi kami, merawat keluarga adalah wujud kasih sayang yang paling bermakna. Lewat setiap produk yang terjamin keasliannya dan terdaftar di BPOM, kami siap mendampingi hari-hari Anda dengan rasa tenang.",
+    "storyQuote": "Kesehatan dan rasa percaya diri berawal dari produk terbaik yang aman untuk seluruh anggota keluarga.",
+    "storyImage": "/images/liefmarket-3/5.webp",
+    "visionTitle": "Visi & Misi",
+    "visionText": "Menjadi mitra keluarga Indonesia dalam produk perawatan, kecantikan, dan kesehatan yang 100% original, resmi, dan terjangkau.",
+    "missionItems": [
+      "Menyediakan produk perawatan dan kesehatan yang 100% original dan terdaftar BPOM.",
+      "Menghadirkan herbal alami nusantara dengan kualitas terbaik.",
+      "Melayani setiap pelanggan dengan cepat, ramah, dan terpercaya.",
+      "Menjaga kepercayaan melalui layanan dan harga yang transparan."
+    ],
+    "pillarsTitle": "4 Pilar Keunggulan Kami",
+    "pillars": [
+      {
+        "icon": "shield",
+        "title": "100% Original BPOM",
+        "desc": "Seluruh produk dijamin keasliannya dan terdaftar resmi di BPOM."
+      },
+      {
+        "icon": "leaf",
+        "title": "Herbal Alami Nusantara",
+        "desc": "Menghadirkan warisan herbal tradisional Indonesia dengan standar mutu modern."
+      },
+      {
+        "icon": "heart",
+        "title": "Aman untuk Keluarga",
+        "desc": "Dipilih dengan ketat agar aman digunakan oleh seluruh anggota keluarga."
+      },
+      {
+        "icon": "star",
+        "title": "Layanan Terpercaya",
+        "desc": "Tim kami siap membantu mulai dari konsultasi hingga pesanan tiba di rumah."
+      }
+    ],
+    "qualityEyebrow": "STANDAR KUALITAS",
+    "qualityTitle": "Kualitas yang dijaga\ndi setiap tahap.",
+    "qualityText": "Tim quality assurance kami memeriksa kemasan, izin edar, dan masa simpan setiap produk sebelum dikirim ke tangan Anda. Kepercayaan Anda adalah standar yang tidak bisa ditawar.",
+    "qualityImage": "/images/liefmarket-3/2.webp"
+  },
+  "contact": {
+    "eyebrow": "KONTAK KAMI",
+    "title": "Kami siap\nmembantu Anda.",
+    "text": "Punya pertanyaan mengenai produk, pesanan grosir, atau kemitraan? Tim kami siap melayani Anda setiap hari kerja.",
+    "heroImage": "/images/liefmarket-32/2.webp",
+    "whatsapp": "6281234567890",
+    "address": "Jl. Raya Gubeng No. 123, Surabaya, Jawa Timur",
+    "email": "halo@liefmarket.id",
+    "hours": "Senin–Sabtu, 08.00–21.00 WIB",
+    "formTitle": "Kirim Pesan",
+    "formNote": "Isi formulir di bawah, pesan Anda akan terbuka langsung di WhatsApp kami.",
+    "faqTitle": "Pertanyaan Umum",
+    "faq": [
+      {
+        "q": "Apakah semua produk original?",
+        "a": "Ya. Seluruh produk yang kami jual 100% original, resmi, dan terdaftar di BPOM."
+      },
+      {
+        "q": "Bagaimana cara memesan produk?",
+        "a": "Klik tombol 'Pesan Sekarang' pada produk atau hubungi kami lewat WhatsApp. Kami akan membantu proses pesanan Anda."
+      },
+      {
+        "q": "Apakah melayani pesanan grosir?",
+        "a": "Ya, kami melayani pengadaan grosir untuk apotek, toko, dan mitra bisnis dengan harga kompetitif."
+      },
+      {
+        "q": "Berapa lama pengiriman?",
+        "a": "Pesanan diproses maksimal 1×24 jam kerja. Estimasi pengiriman menyesuaikan lokasi Anda."
       }
     ]
   }
