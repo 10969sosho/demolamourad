@@ -19,11 +19,11 @@
 
     // Categories
     $categories = [
-        ['title' => 'Skincare & Glow', 'slug' => 'SKINCARE', 'desc' => 'Serum, toner, dan masker pelembap', 'img' => '/images/liefmarket-32/10.webp', 'color' => '#f0f5ff'],
-        ['title' => 'Body & Bath', 'slug' => 'BODY CARE', 'desc' => 'Sabun aromaterapi dan lotion badan', 'img' => '/images/liefmarket-32/50.webp', 'color' => '#f8f9fc'],
-        ['title' => 'Herbal Nusantara', 'slug' => 'KESEHATAN', 'desc' => 'Minyak gosok, balsem, dan menthol', 'img' => '/images/liefmarket-3/3.webp', 'color' => '#f0fdf4'],
-        ['title' => 'Kosmetik Alami', 'slug' => 'KOSMETIK', 'desc' => 'Cushion, bedak, dan pewarna bibir', 'img' => '/images/liefmarket-3/1.webp', 'color' => '#fdf2f8'],
-        ['title' => 'Ibu & Bayi Sehat', 'slug' => 'IBU & BAYI', 'desc' => 'Tisu basah dan perawatan anak aman', 'img' => '/images/liefmarket-32/30.webp', 'color' => '#eff6ff'],
+        ['title' => 'Skincare & Glow', 'slug' => 'SKINCARE', 'desc' => 'Serum, toner, dan masker pelembap', 'img' => '/images/liefmarket-3/10.png', 'color' => '#f0f5ff'],
+        ['title' => 'Body & Bath', 'slug' => 'BODY CARE', 'desc' => 'Sabun aromaterapi dan lotion badan', 'img' => '/images/liefmarket-3/12.png', 'color' => '#f8f9fc'],
+        ['title' => 'Herbal Nusantara', 'slug' => 'KESEHATAN', 'desc' => 'Minyak gosok, balsem, dan menthol', 'img' => '/images/liefmarket-3/3.png', 'color' => '#f0fdf4'],
+        ['title' => 'Kosmetik Alami', 'slug' => 'KOSMETIK', 'desc' => 'Cushion, bedak, dan pewarna bibir', 'img' => '/images/liefmarket-3/1.png', 'color' => '#fdf2f8'],
+        ['title' => 'Ibu & Bayi Sehat', 'slug' => 'IBU & BAYI', 'desc' => 'Tisu basah dan perawatan anak aman', 'img' => '/images/liefmarket-3/14.png', 'color' => '#eff6ff'],
     ];
 @endphp
 
@@ -572,7 +572,7 @@
 
             <div class="lm-hero-right">
                 <div class="lm-hero-img-wrapper">
-                    <img src="{{ !empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-32/70.webp' }}" alt="LiefMarket Hero Collection">
+                    <img src="{{ !empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-3/1.png' }}" alt="LiefMarket Hero Collection">
                     <div class="lm-hero-badge">
                         <span>100%</span>
                         <span style="font-size: 8px;">ORIGINAL</span>
@@ -656,12 +656,12 @@
                     $prodWaUrl = $whatsappNumber !== ''
                         ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin LiefMarket, saya ingin berkonsultasi / memesan '.$p->name.' ('.$p->price.'). Apakah stok masih tersedia?')
                         : route('contact');
-                    $imgSrc = $p->image ? (str_starts_with($p->image, '/') || preg_match('~^https?://~i', $p->image) ? $p->image : asset('storage/'.$p->image)) : '/images/liefmarket-32/1.webp';
+                    $imgSrc = $p->image ? (str_starts_with($p->image, '/') || preg_match('~^https?://~i', $p->image) ? $p->image : asset('storage/'.$p->image)) : '/images/liefmarket-3/2.png';
                 @endphp
                 <article class="lm-prod-card">
                     <span class="lm-prod-badge">{{ $p->tag ?: 'PRODUK PILIHAN' }}</span>
                     <div class="lm-prod-img-box">
-                        <img src="{{ $imgSrc }}" alt="{{ $p->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-32/1.webp'">
+                        <img src="{{ $imgSrc }}" alt="{{ $p->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-3/2.png'">
                     </div>
                     <div class="lm-prod-body">
                         <span class="lm-prod-brand">{{ $p->time ?: 'LiefMarket Official' }}</span>

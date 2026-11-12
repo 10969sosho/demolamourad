@@ -47,7 +47,7 @@
     "primaryBtnLink": "/products",
     "secondaryBtnText": "HUBUNGI KAMI",
     "secondaryBtnLink": "/contact",
-    "bgImage": "/images/liefmarket-32/70.webp"
+    "bgImage": "/images/liefmarket-3/1.png"
   },
   "intro": {
     "title": "Pilihan terlengkap,\naman & terpercaya.",
@@ -75,7 +75,7 @@
       "time": "Viva Cosmetics",
       "level": "Matte Finish",
       "desc": "Cushion lembut dengan UV filter SPF 50 PA++++ dan formula pelembap tahan seharian.",
-      "image": "/images/liefmarket-3/1.webp",
+      "image": "/images/liefmarket-3/1.png",
       "color": "#7f8ca6",
       "price": "Rp 89.000",
       "link": "/products/viva"
@@ -87,7 +87,7 @@
       "time": "Ovale Official",
       "level": "Deep Control",
       "desc": "Pembersih dan penyegar wajah seketika dengan ekstrak lidah buaya dan jeruk nipis.",
-      "image": "/images/liefmarket-32/10.webp",
+      "image": "/images/liefmarket-3/2.png",
       "color": "#8f9db8",
       "price": "Rp 55.000",
       "link": "/products/ovale"
@@ -99,7 +99,7 @@
       "time": "Cap Dragon",
       "level": "100% Menthol",
       "desc": "Membantu meredakan sakit kepala, hidung tersumbat, dan masuk angin sejak 1948.",
-      "image": "/images/liefmarket-3/3.webp",
+      "image": "/images/liefmarket-3/3.png",
       "color": "#555555",
       "price": "Rp 25.000",
       "link": "/products/dragon"
@@ -111,7 +111,7 @@
       "time": "Viva Cosmetics",
       "level": "Kulit Cerah",
       "desc": "Paket lengkap Milk Cleanser, Face Tonic, Clean Mask, Collagen Night Cream & Serum.",
-      "image": "/images/liefmarket-32/70.webp",
+      "image": "/images/liefmarket-3/4.png",
       "color": "#4a5770",
       "price": "Rp 145.000",
       "link": "/products/viva"
@@ -123,7 +123,7 @@
       "time": "Garnier Night",
       "level": "Kulit Glowing",
       "desc": "Menutrisi kulit intensif di malam hari dengan ekstrak sakura Jepang alami.",
-      "image": "/images/liefmarket-32/20.webp",
+      "image": "/images/liefmarket-3/5.png",
       "color": "#6e7b94",
       "price": "Rp 35.000",
       "link": "/products/garnier"
@@ -135,7 +135,7 @@
       "time": "Harmony Soap",
       "level": "Mood Enhancer",
       "desc": "Sensasi mandi segar dengan perpaduan ekstrak aneka buah tropis yang menyegarkan.",
-      "image": "/images/liefmarket-32/50.webp",
+      "image": "/images/liefmarket-3/6.png",
       "color": "#5b6985",
       "price": "Rp 18.000",
       "link": "/products/harmony"
@@ -147,7 +147,7 @@
       "time": "Baby Wipes",
       "level": "Non-Alcohol",
       "desc": "Tisu basah 98% naturally derived ingredients, aman dan higienis untuk kulit bayi.",
-      "image": "/images/liefmarket-32/30.webp",
+      "image": "/images/liefmarket-3/7.png",
       "color": "#3a455b",
       "price": "Rp 22.000",
       "link": "/products"
@@ -157,21 +157,21 @@
     {
       "title": "5 Langkah Perawatan Wajah Setiap Pagi",
       "desc": "Rutinitas sederhana yang membuat kulit tetap sehat, lembap, dan terlindungi sepanjang hari.",
-      "image": "/images/liefmarket-3/11.webp",
+      "image": "/images/liefmarket-3/11.png",
       "tag": "SKINCARE",
       "date": "12 Okt 2024"
     },
     {
       "title": "Mengenal Khasiat Herbal Menthol Nusantara",
       "desc": "Warisan obat gosok tradisional yang terbukti meredakan masuk angin dan pegal linu.",
-      "image": "/images/liefmarket-3/20.webp",
+      "image": "/images/liefmarket-3/20.png",
       "tag": "HERBAL",
       "date": "28 Sep 2024"
     },
     {
       "title": "Memilih Kosmetik Aman & Bersertifikat BPOM",
       "desc": "Panduan memeriksa izin edar dan kode produksi sebelum membeli produk kecantikan.",
-      "image": "/images/liefmarket-3/27.webp",
+      "image": "/images/liefmarket-3/27.png",
       "tag": "TIPS",
       "date": "05 Sep 2024"
     }
@@ -244,12 +244,12 @@
   "about": {
     "eyebrow": "TENTANG LIEFMARKET",
     "title": "Solusi terpercaya\nproduk resmi & original.",
-    "heroImage": "/images/liefmarket-32/70.webp",
+    "heroImage": "/images/liefmarket-3/21.png",
     "storyEyebrow": "CERITA KAMI",
     "storyTitle": "Lebih dari\nsekadar berbelanja.",
     "storyText": "Bagi kami, merawat keluarga adalah wujud kasih sayang yang paling bermakna. Lewat setiap produk yang terjamin keasliannya dan terdaftar di BPOM, kami siap mendampingi hari-hari Anda dengan rasa tenang.",
     "storyQuote": "Kesehatan dan rasa percaya diri berawal dari produk terbaik yang aman untuk seluruh anggota keluarga.",
-    "storyImage": "/images/liefmarket-3/5.webp",
+    "storyImage": "/images/liefmarket-3/5.png",
     "visionTitle": "Visi & Misi",
     "visionText": "Menjadi mitra keluarga Indonesia dalam produk perawatan, kecantikan, dan kesehatan yang 100% original, resmi, dan terjangkau.",
     "missionItems": [
@@ -284,13 +284,13 @@
     "qualityEyebrow": "STANDAR KUALITAS",
     "qualityTitle": "Kualitas yang dijaga\ndi setiap tahap.",
     "qualityText": "Tim quality assurance kami memeriksa kemasan, izin edar, dan masa simpan setiap produk sebelum dikirim ke tangan Anda. Kepercayaan Anda adalah standar yang tidak bisa ditawar.",
-    "qualityImage": "/images/liefmarket-3/2.webp"
+    "qualityImage": "/images/liefmarket-3/2.png"
   },
   "contact": {
     "eyebrow": "KONTAK KAMI",
     "title": "Kami siap\nmembantu Anda.",
     "text": "Punya pertanyaan mengenai produk, pesanan grosir, atau kemitraan? Tim kami siap melayani Anda setiap hari kerja.",
-    "heroImage": "/images/liefmarket-32/2.webp",
+    "heroImage": "/images/liefmarket-3/4.png",
     "whatsapp": "6281234567890",
     "address": "Jl. Raya Gubeng No. 123, Surabaya, Jawa Timur",
     "email": "halo@liefmarket.id",
