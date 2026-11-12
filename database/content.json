@@ -1,16 +1,16 @@
 {
   "theme": {
-    "fontFamily": "Nunito",
-    "primaryColor": "#173324",
-    "secondaryColor": "#244634",
-    "accentColor": "#c5a880",
-    "bgColor": "#f4f7f4",
-    "textColor": "#1e293b",
+    "fontFamily": "Plus Jakarta Sans",
+    "primaryColor": "#0d55ff",
+    "secondaryColor": "#0b42cc",
+    "accentColor": "#0d55ff",
+    "bgColor": "#ffffff",
+    "textColor": "#1a1f2c",
     "navbarBg": "#ffffff",
-    "navbarText": "#27352a"
+    "navbarText": "#1a1f2c"
   },
   "site": {
-    "title": "LiefMarket — Solusi Perawatan & Produk Asli Terpercaya",
+    "title": "LiefMarket \u2014 Solusi Perawatan & Produk Asli Terpercaya",
     "description": "Menghadirkan produk perawatan diri, kosmetik berkualitas, dan herbal alami nusantara 100% original dan bersertifikasi resmi BPOM.",
     "favicon": "favicon.ico"
   },
@@ -185,7 +185,7 @@
   "footer": {
     "tagline": "Perawatan terpercaya untuk setiap keluarga.",
     "about": "Solusi terpercaya produk perawatan kecantikan, kesehatan herbal, dan kebutuhan keluarga Indonesia.",
-    "copyright": "© 2024 LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.",
+    "copyright": "\u00a9 2024 LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.",
     "socialLinks": [
       {
         "label": "ig",
@@ -196,7 +196,7 @@
         "href": "#facebook"
       },
       {
-        "label": "▶",
+        "label": "\u25b6",
         "href": "#youtube"
       }
     ],
@@ -294,7 +294,7 @@
     "whatsapp": "6281234567890",
     "address": "Jl. Raya Gubeng No. 123, Surabaya, Jawa Timur",
     "email": "halo@liefmarket.id",
-    "hours": "Senin–Sabtu, 08.00–21.00 WIB",
+    "hours": "Senin\u2013Sabtu, 08.00\u201321.00 WIB",
     "formTitle": "Kirim Pesan",
     "formNote": "Isi formulir di bawah, pesan Anda akan terbuka langsung di WhatsApp kami.",
     "faqTitle": "Pertanyaan Umum",
@@ -313,7 +313,7 @@
       },
       {
         "q": "Berapa lama pengiriman?",
-        "a": "Pesanan diproses maksimal 1×24 jam kerja. Estimasi pengiriman menyesuaikan lokasi Anda."
+        "a": "Pesanan diproses maksimal 1\u00d724 jam kerja. Estimasi pengiriman menyesuaikan lokasi Anda."
       }
     ]
   }

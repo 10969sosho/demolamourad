@@ -6,49 +6,148 @@
     $address = data_get($contact, 'address', '');
 @endphp
 
-<footer class="deck-section deck-footer site-grand-footer">
-    <div class="footer-brand">
-        <a href="{{ route('home') }}" class="logo logo-white">
-            <span class="brand-lief">{{ data_get($brand, 'brandName', 'LiefMarket') }}</span>
-        </a>
-        <p class="footer-tagline">{{ data_get($footer, 'tagline', '') }}</p>
-        <p class="footer-about">{{ data_get($footer, 'about', '') }}</p>
-        <div class="socials">
-            @foreach (data_get($footer, 'socialLinks', []) as $social)
-                <a href="{{ data_get($social, 'href', '#') }}" aria-label="{{ data_get($social, 'label', 'Sosial media') }}">{{ data_get($social, 'label', '') }}</a>
-            @endforeach
-        </div>
-    </div>
+@push('head')
+<style>
+    .lief-footer {
+        background: #f7f9fc;
+        color: #4a5568;
+        border-top: 1px solid #eef1f6;
+        padding: 72px 0 36px;
+        font-family: inherit;
+    }
+    .lief-footer-inner {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 4vw, 48px);
+    }
+    .lief-footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 48px;
+        margin-bottom: 56px;
+    }
+    .lief-footer-brand .brand-logo {
+        font-size: 24px;
+        font-weight: 800;
+        color: #0d55ff;
+        text-decoration: none;
+        letter-spacing: -0.5px;
+        display: inline-block;
+        margin-bottom: 16px;
+    }
+    .lief-footer-brand .brand-logo span {
+        color: #1a1f2c;
+    }
+    .lief-footer-brand p {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 340px;
+        margin: 0 0 20px;
+    }
+    .lief-footer-col h4 {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #1a1f2c;
+        margin: 0 0 20px;
+    }
+    .lief-footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .lief-footer-col a {
+        color: #64748b;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+    .lief-footer-col a:hover {
+        color: #0d55ff;
+    }
+    .lief-footer-bottom {
+        padding-top: 32px;
+        border-top: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        color: #94a3b8;
+    }
+    @media (max-width: 860px) {
+        .lief-footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+        .lief-footer-bottom {
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+        }
+    }
+    @media (max-width: 520px) {
+        .lief-footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+@endpush
 
-    <div class="footer-links">
-        @foreach (data_get($footer, 'columns', []) as $column)
-            <div>
-                <p class="eyebrow">{{ data_get($column, 'title', '') }}</p>
-                @foreach (data_get($column, 'links', []) as $link)
-                    <a href="{{ data_get($link, 'href', '#') }}">{{ data_get($link, 'label', '') }}</a>
-                @endforeach
+<footer class="lief-footer">
+    <div class="lief-footer-inner">
+        <div class="lief-footer-grid">
+            <div class="lief-footer-brand">
+                <a href="/" class="brand-logo">LIEF<span>Market</span></a>
+                <p>{{ data_get($footer, 'about') ?: 'Kurasi produk perawatan diri, kesehatan herbal, dan kebutuhan harian keluarga berkualitas tinggi 100% original berizin resmi BPOM.' }}</p>
+                <div style="font-size: 13px; color: #64748b;">
+                    <strong>Office / Hub:</strong><br>
+                    {{ $address ?: 'Surabaya, Jawa Timur, Indonesia' }}
+                </div>
             </div>
-        @endforeach
 
-        <div class="footer-contact">
-            <p class="eyebrow">KONTAK RESMI</p>
-            @if ($address)
-                <a href="https://maps.google.com/?q={{ urlencode($address) }}" target="_blank" rel="noopener">{{ $address }}</a>
-            @endif
-            @if ($whatsapp !== '')
-                <a href="https://wa.me/{{ $whatsapp }}">WhatsApp +{{ $whatsapp }}</a>
-            @endif
-            @if (data_get($contact, 'email'))
-                <a href="mailto:{{ data_get($contact, 'email') }}">{{ data_get($contact, 'email') }}</a>
-            @endif
-            @if (data_get($contact, 'hours'))
-                <p>{{ data_get($contact, 'hours') }}</p>
-            @endif
+            <div class="lief-footer-col">
+                <h4>Belanja</h4>
+                <ul>
+                    <li><a href="/products">Semua Produk</a></li>
+                    <li><a href="/products?category=SKINCARE">Perawatan Wajah</a></li>
+                    <li><a href="/products?category=BODY+CARE">Perawatan Tubuh</a></li>
+                    <li><a href="/products?category=KESEHATAN">Herbal & Kesehatan</a></li>
+                    <li><a href="/products?category=KOSMETIK">Kosmetik Pilihan</a></li>
+                </ul>
+            </div>
+
+            <div class="lief-footer-col">
+                <h4>Bantuan</h4>
+                <ul>
+                    <li><a href="/about">Tentang LiefMarket</a></li>
+                    <li><a href="/articles">Artikel & Tips</a></li>
+                    <li><a href="/contact">Hubungi Kami</a></li>
+                    <li><a href="/faq">FAQ & Pengiriman</a></li>
+                </ul>
+            </div>
+
+            <div class="lief-footer-col">
+                <h4>Official Contact</h4>
+                <ul>
+                    @if ($whatsapp !== '')
+                        <li><a href="https://wa.me/{{ $whatsapp }}" target="_blank" rel="noopener">WhatsApp: +{{ $whatsapp }}</a></li>
+                    @endif
+                    @if (data_get($contact, 'email'))
+                        <li><a href="mailto:{{ data_get($contact, 'email') }}">{{ data_get($contact, 'email') }}</a></li>
+                    @endif
+                    <li><span style="color: #64748b; font-size: 14px;">Buka: Senin - Sabtu (08.00 - 17.00 WIB)</span></li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <span>{{ data_get($footer, 'copyright', '© '.date('Y').' LiefMarket') }}</span>
-        <span>{{ data_get($footer, 'tagline', '') }}</span>
+        <div class="lief-footer-bottom">
+            <span>{{ data_get($footer, 'copyright') ?: '© '.date('Y').' LiefMarket Indonesia. All Rights Reserved.' }}</span>
+            <span>GOOD THINGS FOR YOUR EVERYDAY</span>
+        </div>
     </div>
 </footer>

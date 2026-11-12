@@ -2,306 +2,684 @@
 
 @section('content')
 @php
-    $hero = $content['hero'];
-    $intro = $content['intro'];
-    $brand = $content['navbar'];
-    $heroTitle = explode("\n", $hero['title']);
-    $heroTitleFirst = array_shift($heroTitle);
-    $introTitle = explode("\n", $intro['title']);
-    $introTitleFirst = array_shift($introTitle);
-    $marqueeList = [
-        'LIEFMARKET SURABAYA',
-        '100% PRODUK ORIGINAL & BPOM',
-        'PERAWATAN KULIT & KESEHATAN KELUARGA',
-        'LAYANAN CEPAT & TERPERCAYA',
-        'PRODUK ASLI DARI DISTRIBUTOR RESMI',
-        'AMAN UNTUK SELURUH KELUARGA',
-        'GARANSI KEASLIAN PRODUK',
-        'PENGIRIMAN AMAN SELURUH INDONESIA',
+    $hero = data_get($content, 'hero', []);
+    $intro = data_get($content, 'intro', []);
+    $brand = data_get($content, 'navbar', []);
+    $whatsappNumber = preg_replace('/\D/', '', (string) data_get($content, 'contact.whatsapp', ''));
+
+    // Brands partner in LiefMarket
+    $brands = [
+        ['name' => 'Viva Cosmetics', 'desc' => 'Perawatan Tradisional Legendaris Indonesia', 'badge' => 'Since 1962'],
+        ['name' => 'Ovale Official', 'desc' => 'Pembersih Wajah Ekstrak Alami', 'badge' => 'BPOM Certified'],
+        ['name' => 'Dragon Menthol', 'desc' => 'Herbal & Minyak Gosok Tradisi Nusantara', 'badge' => '100% Herbal'],
+        ['name' => 'Garnier Natural', 'desc' => 'Serum & Masker Ekstrak Sakura Cerah', 'badge' => 'Dermatologist Tested'],
+        ['name' => 'Harmony Soap', 'desc' => 'Sabun Mandi Buah Aromaterapi Segar', 'badge' => 'Family Care'],
+        ['name' => 'Mini Kidi Care', 'desc' => 'Tisu Basah Lembut Khusus Ibu & Bayi', 'badge' => 'Safe for Sensitive'],
+    ];
+
+    // Categories
+    $categories = [
+        ['title' => 'Skincare & Glow', 'slug' => 'SKINCARE', 'desc' => 'Serum, toner, dan masker pelembap', 'img' => '/images/liefmarket-32/10.webp', 'color' => '#f0f5ff'],
+        ['title' => 'Body & Bath', 'slug' => 'BODY CARE', 'desc' => 'Sabun aromaterapi dan lotion badan', 'img' => '/images/liefmarket-32/50.webp', 'color' => '#f8f9fc'],
+        ['title' => 'Herbal Nusantara', 'slug' => 'KESEHATAN', 'desc' => 'Minyak gosok, balsem, dan menthol', 'img' => '/images/liefmarket-3/3.webp', 'color' => '#f0fdf4'],
+        ['title' => 'Kosmetik Alami', 'slug' => 'KOSMETIK', 'desc' => 'Cushion, bedak, dan pewarna bibir', 'img' => '/images/liefmarket-3/1.webp', 'color' => '#fdf2f8'],
+        ['title' => 'Ibu & Bayi Sehat', 'slug' => 'IBU & BAYI', 'desc' => 'Tisu basah dan perawatan anak aman', 'img' => '/images/liefmarket-32/30.webp', 'color' => '#eff6ff'],
     ];
 @endphp
 
 @push('head')
 <style>
-    .clean-home .site-nav{position:fixed;top:0;right:0;left:0;z-index:100}
-    .clean-home .loader-logo .brand-lief{color:var(--sage-light)}
+    /* Reset & Base modern styling */
+    .lm-home {
+        background: #ffffff;
+        color: #1a1f2c;
+        overflow-x: hidden;
+    }
+
+    /* 1. HERO SECTION FULL SCREEN */
+    .lm-hero-fullscreen {
+        position: relative;
+        min-height: calc(100vh - 105px);
+        display: flex;
+        align-items: center;
+        background: #fafcff;
+        overflow: hidden;
+        padding: 40px clamp(20px, 4vw, 64px);
+    }
+    .lm-hero-container {
+        max-width: 1360px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+        gap: 48px;
+        position: relative;
+        z-index: 2;
+    }
+    .lm-hero-left {
+        max-width: 580px;
+    }
+    .lm-hero-tagline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0d55ff;
+        margin-bottom: 20px;
+    }
+    .lm-hero-title {
+        font-size: clamp(38px, 5.2vw, 68px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        color: #0f172a;
+        margin: 0 0 24px;
+    }
+    .lm-hero-title span.blue-text {
+        color: #0d55ff;
+    }
+    .lm-hero-desc {
+        font-size: clamp(16px, 1.8vw, 18px);
+        line-height: 1.65;
+        color: #64748b;
+        margin: 0 0 36px;
+    }
+    .lm-hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .lm-btn-primary {
+        background: #0d55ff;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 16px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+        box-shadow: 0 10px 24px rgba(13, 85, 255, 0.25);
+    }
+    .lm-btn-primary:hover {
+        background: #0b42cc;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(13, 85, 255, 0.35);
+    }
+    .lm-btn-outline {
+        border: 1.5px solid #cbd5e1;
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 15px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .lm-btn-outline:hover {
+        border-color: #0d55ff;
+        color: #0d55ff;
+    }
+
+    .lm-hero-right {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .lm-hero-img-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 540px;
+        aspect-ratio: 1/1;
+        border-radius: 24px;
+        overflow: hidden;
+        background: #f1f5f9;
+        box-shadow: 0 24px 60px rgba(13, 85, 255, 0.12);
+    }
+    .lm-hero-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .lm-hero-badge {
+        position: absolute;
+        top: 24px;
+        left: -20px;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: #0d55ff;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        box-shadow: 0 12px 24px rgba(13, 85, 255, 0.35);
+        border: 4px solid #ffffff;
+        z-index: 3;
+    }
+
+    /* 2. BRANDS SECTION */
+    .lm-brands-section {
+        background: #ffffff;
+        border-top: 1px solid #f1f5f9;
+        border-bottom: 1px solid #f1f5f9;
+        padding: 56px 0;
+    }
+    .lm-section-head-center {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 40px;
+        padding: 0 20px;
+    }
+    .lm-eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0d55ff;
+        margin: 0 0 10px;
+    }
+    .lm-section-title {
+        font-size: clamp(26px, 3.5vw, 40px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0;
+    }
+    .lm-section-title span.blue-text {
+        color: #0d55ff;
+    }
+    .lm-brands-grid {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    .lm-brand-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px 20px;
+        text-align: center;
+        transition: all 0.25s ease;
+    }
+    .lm-brand-card:hover {
+        border-color: #0d55ff;
+        background: #ffffff;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(13, 85, 255, 0.08);
+    }
+    .lm-brand-badge {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #0d55ff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 99px;
+        margin-bottom: 12px;
+    }
+    .lm-brand-card h4 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 800;
+        color: #1e293b;
+    }
+    .lm-brand-card p {
+        margin: 0;
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.4;
+    }
+
+    /* 3. SHOP BY CATEGORIES */
+    .lm-categories-section {
+        background: #fbfcfe;
+        padding: 80px 0;
+    }
+    .lm-categories-grid {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+    }
+    .lm-cat-card {
+        background: #ffffff;
+        border: 1px solid #e8eef6;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.25s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .lm-cat-card:hover {
+        border-color: #0d55ff;
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(13, 85, 255, 0.08);
+    }
+    .lm-cat-img-box {
+        aspect-ratio: 1/1;
+        width: 100%;
+        background: #f1f5f9;
+        overflow: hidden;
+    }
+    .lm-cat-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    .lm-cat-card:hover .lm-cat-img-box img {
+        transform: scale(1.05);
+    }
+    .lm-cat-info {
+        padding: 20px;
+        text-align: center;
+    }
+    .lm-cat-info h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+    }
+    .lm-cat-info p {
+        margin: 0 0 12px;
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.4;
+    }
+    .lm-cat-link {
+        font-size: 13px;
+        font-weight: 700;
+        color: #0d55ff;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    /* 4. PRODUCT HIGHLIGHT / FAVORITES */
+    .lm-products-section {
+        background: #ffffff;
+        padding: 80px 0 100px;
+    }
+    .lm-products-head-row {
+        max-width: 1360px;
+        margin: 0 auto 40px;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+    }
+    .lm-products-grid {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+    .lm-prod-card {
+        background: #ffffff;
+        border: 1px solid #eef2f7;
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.25s ease;
+        position: relative;
+    }
+    .lm-prod-card:hover {
+        border-color: #0d55ff;
+        box-shadow: 0 14px 30px rgba(13, 85, 255, 0.08);
+        transform: translateY(-4px);
+    }
+    .lm-prod-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(4px);
+        color: #0d55ff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 99px;
+        z-index: 2;
+        border: 1px solid #e0e7ff;
+    }
+    .lm-prod-img-box {
+        aspect-ratio: 1/1;
+        width: 100%;
+        background: #f8fafc;
+        position: relative;
+        overflow: hidden;
+    }
+    .lm-prod-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+    }
+    .lm-prod-card:hover .lm-prod-img-box img {
+        transform: scale(1.04);
+    }
+    .lm-prod-body {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .lm-prod-brand {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #64748b;
+        margin-bottom: 6px;
+    }
+    .lm-prod-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 8px;
+        line-height: 1.4;
+    }
+    .lm-prod-title a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .lm-prod-title a:hover {
+        color: #0d55ff;
+    }
+    .lm-prod-price {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0d55ff;
+        margin-top: auto;
+        margin-bottom: 14px;
+    }
+    .lm-prod-actions {
+        display: flex;
+        gap: 8px;
+    }
+    .lm-btn-order-wa {
+        flex: 1;
+        background: #0d55ff;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.15s;
+    }
+    .lm-btn-order-wa:hover {
+        background: #0b42cc;
+    }
+    .lm-btn-detail {
+        background: #f1f5f9;
+        color: #475569;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.15s;
+    }
+    .lm-btn-detail:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    /* 5. PROMO BANNER BLUE SECTION */
+    .lm-upgrade-banner {
+        background: #0d55ff;
+        color: #ffffff;
+        padding: 64px 0;
+        margin: 20px 0;
+    }
+    .lm-upgrade-container {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+    .lm-upgrade-text h2 {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0 0 16px;
+    }
+    .lm-upgrade-text p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 0 28px;
+    }
+    .lm-btn-white {
+        background: #ffffff;
+        color: #0d55ff;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s;
+    }
+    .lm-btn-white:hover {
+        background: #f0f5ff;
+        transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .lm-products-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 820px) {
+        .lm-hero-fullscreen {
+            min-height: auto;
+            padding: 40px 20px 60px;
+        }
+        .lm-hero-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 36px;
+        }
+        .lm-hero-left {
+            max-width: 100%;
+        }
+        .lm-hero-actions {
+            justify-content: center;
+        }
+        .lm-hero-badge {
+            left: 20px;
+        }
+        .lm-products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .lm-upgrade-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+    @media (max-width: 480px) {
+        .lm-products-grid {
+            grid-template-columns: 1fr;
+        }
+        .lm-brands-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 </style>
 @endpush
 
-<div class="clean-home">
-    <div class="loader" id="loader" role="status" aria-label="Memuat LiefMarket">
-        <div class="loader-orbit" aria-hidden="true"></div>
-        <div class="loader-logo"><span class="brand-lief">{{ data_get($brand, 'brandName', 'LiefMarket') }}</span></div>
-        <div class="loader-bottom">
-            <span>MENYIAPKAN KATALOG</span>
-            <b id="loader-percent">0%</b>
-            <div role="progressbar" aria-label="Memuat halaman" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <i id="loader-bar" style="transform:scaleX(0)"></i>
-            </div>
-        </div>
-    </div>
-
+<div class="lm-home">
     @include('partials.site-nav')
 
-    <main id="top" class="deck-stack-container">
-        <section class="hero deck-section deck-hero" id="hero">
-            <div class="hero-copy">
-                <p class="eyebrow hero-eyebrow">LIEFMARKET SURABAYA <span>✦</span> 100% ORIGINAL BPOM</p>
-                <h1>{{ $heroTitleFirst }}@if ($heroTitle)<br><em>{{ implode(' ', $heroTitle) }}</em>@endif</h1>
-                <p class="hero-desc">{{ $hero['description'] }}</p>
-                <div class="hero-actions">
-                    <a class="red-button" href="{{ route('products') }}">JELAJAHI PRODUK <span aria-hidden>→</span></a>
-                    <a class="ghost-button" href="{{ route('contact') }}">HUBUNGI KAMI <span aria-hidden>→</span></a>
+    {{-- 1. HERO SECTION FULL SCREEN --}}
+    <section class="lm-hero-fullscreen" id="hero">
+        <div class="lm-hero-container">
+            <div class="lm-hero-left">
+                <div class="lm-hero-tagline">
+                    <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
+                </div>
+                <h1 class="lm-hero-title">
+                    Good things for your <span class="blue-text">everyday.</span>
+                </h1>
+                <p class="lm-hero-desc">
+                    {{ data_get($hero, 'description') ?: 'Belanja kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga dengan jaminan 100% produk asli berizin resmi BPOM.' }}
+                </p>
+                <div class="lm-hero-actions">
+                    <a href="/products" class="lm-btn-primary">
+                        Jelajahi Produk <span>→</span>
+                    </a>
+                    <a href="#brands" class="lm-btn-outline">
+                        Pilihan Brand
+                    </a>
                 </div>
             </div>
-            <div class="hero-art" id="hero-art">
-                <div class="hero-photo" id="hero-photo"><img src="{{ ! empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-32/70.webp' }}" alt="Paket Perawatan LiefMarket" onerror="this.onerror=null;this.src='/images/liefmarket-32/70.webp'"></div>
-                <div class="hero-badge">✓ 100% ORIGINAL BPOM</div>
-            </div>
-        </section>
 
-        <section class="deck-section deck-intro" id="about">
-            <div class="marquee-container marquee-light">
-                <div class="marquee-track">
-                    @foreach ($marqueeList as $item)
-                        <span class="marquee-item"><span class="star">✦</span> {{ $item }}</span>
-                    @endforeach
-                </div>
-                <div class="marquee-track" aria-hidden="true">
-                    @foreach ($marqueeList as $item)
-                        <span class="marquee-item"><span class="star">✦</span> {{ $item }}</span>
-                    @endforeach
-                </div>
-            </div>
-            <div class="intro">
-                <div class="intro-mark">✳</div>
-                <p class="eyebrow">SEJAK AWAL BERSAMA ANDA</p>
-                <h2>{{ $introTitleFirst }}@if ($introTitle)<br><em>{{ implode(' ', $introTitle) }}</em>@endif</h2>
-                <p>{{ $intro['subtitle'] }}</p>
-                <a class="text-link" href="#products">JELAJAHI PRODUK <span aria-hidden>→</span></a>
-                <div class="intro-stats">
-                    @foreach ($intro['items'] as $item)
-                        <div class="intro-stat-item"><strong>{{ $item['value'] }}</strong><span>{{ $item['label'] }}</span></div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-        <div class="deck-recipes-wrapper" id="recipes">
-            <div class="deck-recipes-sticky">
-                <div class="recipe-header-bar">
-                    <div class="section-heading light">
-                        <p class="eyebrow">KATALOG LIEFMARKET ✦</p>
-                        <h2>PRODUK PILIHAN</h2>
-                        <p class="section-copy">Pilihan Terbaik untuk Anda</p>
-                    </div>
-                </div>
-                <div class="horizontal-track-container">
-                    <div class="recipe-horizontal-track" id="recipe-track">
-                        @foreach ($products as $product)
-                            <article class="recipe-card-modern">
-                                <div class="recipe-card-photo">
-                                    <img src="{{ $product->image ? (str_starts_with($product->image, '/') || preg_match('~^https?://~i', $product->image) ? $product->image : asset('storage/'.$product->image)) : '/images/liefmarket-32/1.webp' }}" alt="{{ $product->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-32/1.webp'">
-                                </div>
-                                <div class="recipe-card-body">
-                                    <div class="recipe-card-meta"><span>{{ $product->category }}</span><span>{{ $product->time }}</span></div>
-                                    <h3>{{ $product->name }}</h3>
-                                    <div class="recipe-card-foot">
-                                        <a class="recipe-view-btn" href="{{ route('products.detail', $product->id) }}">Lihat Detail <span aria-hidden>→</span></a>
-                                    </div>
-                                </div>
-                            </article>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="horizontal-controls-bar">
-                    <div class="horizontal-progress-bar">
-                        <span>01</span><div class="bar-track"><div class="bar-fill" id="recipe-bar-fill" style="width:10%"></div></div>
-                        <span id="recipe-count">{{ str_pad((string) $products->count(), 2, '0', STR_PAD_LEFT) }}</span>
-                        <span class="percent-label" id="recipe-percent">0% SLIDE</span>
-                    </div>
-                    <div class="horizontal-nav-arrows">
-                        <button class="nav-arrow-btn" id="recipe-prev" aria-label="Slide sebelumnya">←</button>
-                        <button class="nav-arrow-btn" id="recipe-next" aria-label="Slide berikutnya">→</button>
+            <div class="lm-hero-right">
+                <div class="lm-hero-img-wrapper">
+                    <img src="{{ !empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-32/70.webp' }}" alt="LiefMarket Hero Collection">
+                    <div class="lm-hero-badge">
+                        <span>100%</span>
+                        <span style="font-size: 8px;">ORIGINAL</span>
+                        <span>BPOM</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="deck-products-wrapper" id="products-wrapper">
-            <section class="deck-products-sticky deck-section deck-products" id="products" style="background:#0f2117">
-                <div class="product-ambient-disc" id="product-disc" style="background:#2d5a44"></div>
-                <div class="product-showcase-container">
-                    <div class="section-heading light">
-                        <p class="eyebrow">PRODUK UNGGULAN KAMI ✦</p>
-                        <h2>PILIHAN TEPAT,<br>SELALU ADA</h2>
-                    </div>
-                    <div class="product-3d-stage">
-                        <div class="product-info-panel">
-                            <h3 id="product-name">{{ $showcase[0]['name'] ?? '' }}</h3>
-                            <p class="product-showcase-brand" id="product-brand">{{ $showcase[0]['brand'] ?? '' }}</p>
-                            <p class="product-desc" id="product-desc">{{ $showcase[0]['desc'] ?? '' }}</p>
-                            <div class="product-actions">
-                                <a class="red-button" id="product-detail-link" href="{{ $showcase[0]['detailUrl'] ?? route('products') }}">LIHAT DETAIL <span aria-hidden>→</span></a>
-                                <a class="ghost-button" id="product-whatsapp-link" href="{{ $showcase[0]['whatsappUrl'] ?? route('contact') }}" target="_blank" rel="noopener">BELI SEKARANG VIA WHATSAPP</a>
-                            </div>
-                        </div>
-                        <div class="product-cards-carousel" id="product-carousel">
-                            @foreach ($showcase as $index => $item)
-                                <div class="coverflow-card {{ $index === 0 ? 'is-active' : ($index === count($showcase) - 1 ? 'is-prev' : ($index === 1 ? 'is-next' : 'is-hidden')) }}" data-index="{{ $index }}">
-                                    <img src="{{ ! empty($item['image']) ? (str_starts_with($item['image'], '/') || preg_match('~^https?://~i', $item['image']) ? $item['image'] : asset('storage/'.$item['image'])) : '/images/liefmarket-32/1.webp' }}" alt="{{ $item['name'] }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-32/1.webp'">
-                                    <div class="coverflow-card-info"><h4>{{ $item['name'] }}</h4><span>{{ $item['tagline'] }}</span></div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="product-selector-tabs" id="product-tabs">
-                        @foreach ($showcase as $index => $item)
-                            <button class="product-tab-btn{{ $index === 0 ? ' active' : '' }}" data-index="{{ $index }}"><span class="tab-dot" style="background:{{ $item['color'] }}"></span>{{ $item['name'] }}</button>
-                        @endforeach
-                    </div>
+    {{-- 2. BRAND BRAND YANG ADA DI LIEFMARKET --}}
+    <section class="lm-brands-section" id="brands">
+        <div class="lm-section-head-center">
+            <p class="lm-eyebrow">PARTNER RESMI & DISTRIBUTOR</p>
+            <h2 class="lm-section-title">Brand terpercaya di <span class="blue-text">LiefMarket.</span></h2>
+        </div>
+        <div class="lm-brands-grid">
+            @foreach ($brands as $b)
+                <div class="lm-brand-card">
+                    <span class="lm-brand-badge">{{ $b['badge'] }}</span>
+                    <h4>{{ $b['name'] }}</h4>
+                    <p>{{ $b['desc'] }}</p>
                 </div>
-            </section>
+            @endforeach
+        </div>
+    </section>
+
+    {{-- 3. SHOP BY CATEGORIES --}}
+    <section class="lm-categories-section" id="categories">
+        <div class="lm-section-head-center">
+            <p class="lm-eyebrow">KATEGORI PRODUK</p>
+            <h2 class="lm-section-title">Shop by <span class="blue-text">category.</span></h2>
+        </div>
+        <div class="lm-categories-grid">
+            @foreach ($categories as $cat)
+                <a href="/products?category={{ urlencode($cat['slug']) }}" class="lm-cat-card">
+                    <div class="lm-cat-img-box">
+                        <img src="{{ $cat['img'] }}" alt="{{ $cat['title'] }}" loading="lazy">
+                    </div>
+                    <div class="lm-cat-info">
+                        <h3>{{ $cat['title'] }}</h3>
+                        <p>{{ $cat['desc'] }}</p>
+                        <span class="lm-cat-link">Lihat Produk →</span>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </section>
+
+    {{-- BANNER PROMO BLUE SECTION (SESUAI GAMBAR) --}}
+    <section class="lm-upgrade-banner">
+        <div class="lm-upgrade-container">
+            <div class="lm-upgrade-text">
+                <h2>A little upgrade to your daily routine.</h2>
+                <p>Temukan rangkaian produk perawatan dan herbal alami pilihan yang aman untuk seluruh anggota keluarga tercinta.</p>
+                <a href="/products" class="lm-btn-white">Mulai Belanja Sekarang →</a>
+            </div>
+            <div style="text-align: center;">
+                <img src="/images/liefmarket-32/70.webp" alt="Routine upgrade" style="max-width: 320px; border-radius: 16px; box-shadow: 0 16px 32px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+    </section>
+
+    {{-- 4. PRODUCT HIGHLIGHT / FAVORITES --}}
+    <section class="lm-products-section" id="highlights">
+        <div class="lm-products-head-row">
+            <div>
+                <p class="lm-eyebrow">PILIHAN TERBAIK MINGGU INI</p>
+                <h2 class="lm-section-title">Your everyday <span class="blue-text">favorites.</span></h2>
+            </div>
+            <div>
+                <a href="/products" class="lm-btn-outline" style="font-size: 13px; padding: 10px 18px;">
+                    Lihat Semua ({{ count($products) }}+) →
+                </a>
+            </div>
         </div>
 
-        @include('partials.site-footer')
-    </main>
+        <div class="lm-products-grid">
+            @foreach ($products as $p)
+                @php
+                    $prodWaUrl = $whatsappNumber !== ''
+                        ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin LiefMarket, saya ingin berkonsultasi / memesan '.$p->name.' ('.$p->price.'). Apakah stok masih tersedia?')
+                        : route('contact');
+                    $imgSrc = $p->image ? (str_starts_with($p->image, '/') || preg_match('~^https?://~i', $p->image) ? $p->image : asset('storage/'.$p->image)) : '/images/liefmarket-32/1.webp';
+                @endphp
+                <article class="lm-prod-card">
+                    <span class="lm-prod-badge">{{ $p->tag ?: 'PRODUK PILIHAN' }}</span>
+                    <div class="lm-prod-img-box">
+                        <img src="{{ $imgSrc }}" alt="{{ $p->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-32/1.webp'">
+                    </div>
+                    <div class="lm-prod-body">
+                        <span class="lm-prod-brand">{{ $p->time ?: 'LiefMarket Official' }}</span>
+                        <h3 class="lm-prod-title">
+                            <a href="{{ route('products.detail', $p->id) }}">{{ $p->name }}</a>
+                        </h3>
+                        <div class="lm-prod-price">{{ $p->price }}</div>
+                        <div class="lm-prod-actions">
+                            <a href="{{ $prodWaUrl }}" target="_blank" rel="noopener" class="lm-btn-order-wa">Pesan WA</a>
+                            <a href="{{ route('products.detail', $p->id) }}" class="lm-btn-detail">Detail</a>
+                        </div>
+                    </div>
+                </article>
+            @endforeach
+        </div>
+    </section>
+
+    {{-- 5. FOOTER --}}
+    @include('partials.site-footer')
 </div>
 @endsection
-
-@push('scripts')
-<script>
-(function () {
-    var showcase = @json($showcase);
-    var loader = document.getElementById('loader');
-    var loaderBar = document.getElementById('loader-bar');
-    var loaderPercent = document.getElementById('loader-percent');
-    var progressTrack = loaderBar.parentElement;
-    var start = performance.now();
-
-    function updateLoader(now) {
-        var value = Math.min((now - start) / 1100, 1);
-        var percentage = Math.round(value * 100);
-        loaderBar.style.transform = 'scaleX(' + value + ')';
-        loaderPercent.textContent = percentage + '%';
-        progressTrack.setAttribute('aria-valuenow', String(percentage));
-        if (value < 1) {
-            requestAnimationFrame(updateLoader);
-        } else {
-            setTimeout(function () { loader.remove(); }, 250);
-        }
-    }
-    requestAnimationFrame(updateLoader);
-
-    var recipesWrapper = document.getElementById('recipes');
-    var recipeTrack = document.getElementById('recipe-track');
-    var recipeFill = document.getElementById('recipe-bar-fill');
-    var recipePercent = document.getElementById('recipe-percent');
-    var recipeFrame;
-
-    function handleRecipeScroll() {
-        var totalScrollable = recipesWrapper.offsetHeight - window.innerHeight;
-        var progress = totalScrollable > 0 ? Math.max(0, Math.min(1, -recipesWrapper.getBoundingClientRect().top / totalScrollable)) : 0;
-        var viewportWidth = recipeTrack.parentElement.clientWidth;
-        var maxTranslate = Math.max(0, recipeTrack.scrollWidth - viewportWidth);
-        recipeTrack.style.transform = 'translateX(' + -progress * maxTranslate + 'px)';
-        recipeFill.style.width = Math.max(10, progress * 100) + '%';
-        recipePercent.textContent = Math.round(progress * 100) + '% SLIDE';
-    }
-
-    function scheduleRecipeScroll() {
-        cancelAnimationFrame(recipeFrame);
-        recipeFrame = requestAnimationFrame(handleRecipeScroll);
-    }
-
-    window.addEventListener('scroll', scheduleRecipeScroll, { passive: true });
-    window.addEventListener('resize', scheduleRecipeScroll);
-    handleRecipeScroll();
-
-    function stepScroll(direction) {
-        window.scrollTo({ top: window.scrollY + direction * window.innerHeight * 0.45, behavior: 'smooth' });
-    }
-    document.getElementById('recipe-prev').addEventListener('click', function () { stepScroll(-1); });
-    document.getElementById('recipe-next').addEventListener('click', function () { stepScroll(1); });
-
-    var productsSection = document.getElementById('products');
-    var productName = document.getElementById('product-name');
-    var productBrand = document.getElementById('product-brand');
-    var productDesc = document.getElementById('product-desc');
-    var productDetailLink = document.getElementById('product-detail-link');
-    var productWhatsappLink = document.getElementById('product-whatsapp-link');
-    var coverflowCards = productsSection.querySelectorAll('.coverflow-card');
-    var productTabs = productsSection.querySelectorAll('.product-tab-btn');
-    var productsWrapper = document.getElementById('products-wrapper');
-    var active = 0;
-    var touchStartX = 0;
-    var showcaseFrame;
-
-    function renderShowcase() {
-        var item = showcase[active];
-        if (!item) {
-            return;
-        }
-        var total = showcase.length;
-        productName.textContent = item.name;
-        productBrand.textContent = item.brand || '';
-        productDesc.textContent = item.desc;
-        productDetailLink.href = item.detailUrl;
-        productWhatsappLink.href = item.whatsappUrl;
-
-        coverflowCards.forEach(function (card, index) {
-            var difference = index - active;
-            var className = 'coverflow-card ';
-            if (difference === 0) {
-                className += 'is-active';
-            } else if (difference === -1 || (active === 0 && index === total - 1)) {
-                className += 'is-prev';
-            } else if (difference === 1 || (active === total - 1 && index === 0)) {
-                className += 'is-next';
-            } else {
-                className += 'is-hidden';
-            }
-            card.className = className;
-        });
-        productTabs.forEach(function (tab, index) { tab.classList.toggle('active', index === active); });
-    }
-
-    if (showcase.length > 0) {
-        renderShowcase();
-        function handleShowcaseScroll() {
-            var scrollableDistance = productsWrapper.offsetHeight - window.innerHeight;
-            if (scrollableDistance <= 0) {
-                return;
-            }
-            var progress = Math.max(0, Math.min(1, -productsWrapper.getBoundingClientRect().top / scrollableDistance));
-            var targetIndex = Math.min(showcase.length - 1, Math.floor(progress * showcase.length));
-            if (targetIndex !== active) {
-                active = targetIndex;
-                renderShowcase();
-            }
-        }
-        function scheduleShowcaseScroll() {
-            cancelAnimationFrame(showcaseFrame);
-            showcaseFrame = requestAnimationFrame(handleShowcaseScroll);
-        }
-        window.addEventListener('scroll', scheduleShowcaseScroll, { passive: true });
-        window.addEventListener('resize', scheduleShowcaseScroll);
-        handleShowcaseScroll();
-        productsSection.addEventListener('touchstart', function (event) { touchStartX = event.touches[0].clientX; }, { passive: true });
-        productsSection.addEventListener('touchend', function (event) {
-            var delta = event.changedTouches[0].clientX - touchStartX;
-            if (Math.abs(delta) > 40) {
-                active = (active + (delta < 0 ? 1 : -1) + showcase.length) % showcase.length;
-                renderShowcase();
-            }
-        }, { passive: true });
-        coverflowCards.forEach(function (card) {
-            card.addEventListener('click', function () { active = Number(card.dataset.index); renderShowcase(); });
-        });
-        productTabs.forEach(function (tab) {
-            tab.addEventListener('click', function () { active = Number(tab.dataset.index); renderShowcase(); });
-        });
-    }
-})();
-</script>
-@endpush
