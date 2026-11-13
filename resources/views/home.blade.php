@@ -30,7 +30,9 @@
 @push('head')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Nunito:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
     /* Reset & Base modern styling */
@@ -93,22 +95,22 @@
         margin-bottom: 24px;
     }
     .lm-hero-title {
-        font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-        font-size: clamp(38px, 5.4vw, 72px);
-        font-weight: 800;
-        line-height: 1.06;
+        font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: clamp(44px, 5.8vw, 76px);
+        font-weight: 900;
+        line-height: 1.05;
         letter-spacing: -0.04em;
         color: #ffffff;
         margin: 0 0 24px;
     }
-    .lm-hero-title span.highlight-text {
-        color: #8bbcd6;
-        background: linear-gradient(135deg, #a5d2eb 0%, #6da1bc 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .lm-hero-title span.blue-text {
-        color: #5b8fa8;
+    .lm-hero-title em {
+        font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+        display: inline-block;
+        margin-top: 4px;
     }
     .lm-hero-desc {
         font-size: clamp(16px, 1.8vw, 18px);
@@ -596,7 +598,7 @@
                     <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
                 </div>
                 <h1 class="lm-hero-title">
-                    Perawatan Terbaik<br><span class="highlight-text">Keluarga Anda.</span>
+                    Perawatan<br>Terbaik<br><em>Keluarga Anda.</em>
                 </h1>
                 <p class="lm-hero-desc">
                     {{ data_get($hero, 'description') ?: 'Belanja kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga dengan jaminan 100% produk asli berizin resmi BPOM.' }}
