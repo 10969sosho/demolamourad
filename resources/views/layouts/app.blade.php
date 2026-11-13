@@ -43,11 +43,7 @@
         :root {
             --font-main: '{{ $selectedFont }}', -apple-system, BlinkMacSystemFont, sans-serif !important;
             --font-serif: var(--font-main) !important;
-            --navbar-bg: {{ $navbarBg }} !important;
-            --navbar-text: {{ $navbarText }} !important;
         }
-        .site-nav { background: var(--navbar-bg) !important; }
-        .site-nav-links a { color: var(--navbar-text) !important; }
     </style>
     @stack('head')
 </head>
