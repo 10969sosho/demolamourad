@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Nunito:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
     /* Reset & Base modern styling */
@@ -40,7 +40,7 @@
         background: #ffffff;
         color: #1a1f2c;
         overflow-x: hidden;
-    }
+     font-family: 'Inter', sans-serif; }
 
     /* 1. HERO SECTION FULL SCREEN */
     .lm-hero-fullscreen {
@@ -82,40 +82,38 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: 'Outfit', sans-serif;
-        font-size: 12px;
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
         font-weight: 700;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: #93c5de;
-        background: rgba(147, 197, 222, 0.12);
-        padding: 6px 16px;
-        border-radius: 100px;
-        border: 1px solid rgba(147, 197, 222, 0.25);
+        color: #7eaec4;
         margin-bottom: 24px;
     }
     .lm-hero-title {
-        font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: clamp(44px, 5.8vw, 76px);
-        font-weight: 900;
-        line-height: 1.05;
-        letter-spacing: -0.04em;
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(40px, 5.2vw, 68px);
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: -0.035em;
         color: #ffffff;
         margin: 0 0 24px;
     }
+    .lm-hero-title b, .lm-hero-title strong {
+        font-weight: 700;
+    }
     .lm-hero-title em {
-        font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
-        font-style: italic;
-        font-weight: 500;
-        letter-spacing: -0.01em;
+        font-style: normal;
+        font-weight: 400;
         color: #ffffff;
-        display: inline-block;
-        margin-top: 4px;
     }
     .lm-hero-desc {
-        font-size: clamp(16px, 1.8vw, 18px);
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(16px, 1.6vw, 18px);
+        font-weight: 400;
         line-height: 1.65;
         color: #94a3b8;
+        max-width: 540px;
         margin: 0 0 36px;
     }
     .lm-hero-actions {
@@ -598,7 +596,7 @@
                     <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
                 </div>
                 <h1 class="lm-hero-title">
-                    Perawatan<br>Terbaik<br><em>Keluarga Anda.</em>
+                    Perawatan Terbaik<br>Keluarga Anda.
                 </h1>
                 <p class="lm-hero-desc">
                     {{ data_get($hero, 'description') ?: 'Belanja kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga dengan jaminan 100% produk asli berizin resmi BPOM.' }}

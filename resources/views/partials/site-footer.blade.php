@@ -13,7 +13,7 @@
         color: #4a5568;
         border-top: 1px solid #eef1f6;
         padding: 72px 0 36px;
-        font-family: inherit;
+        font-family: 'Inter', sans-serif;
     }
     .lief-footer-inner {
         max-width: 1360px;

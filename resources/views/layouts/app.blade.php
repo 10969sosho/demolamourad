@@ -38,10 +38,15 @@
     <link rel="stylesheet" href="{{ asset('css/globals.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family={{ $fontParam }}&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --font-main: '{{ $selectedFont }}', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+            --font-serif: var(--font-main) !important;
+        }
+        body, button, input, select, textarea {
+            font-family: var(--font-main) !important;
+        }}', -apple-system, BlinkMacSystemFont, sans-serif !important;
             --font-serif: var(--font-main) !important;
         }
     </style>
