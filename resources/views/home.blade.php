@@ -28,6 +28,10 @@
 @endphp
 
 @push('head')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
     /* Reset & Base modern styling */
     .lm-home {
@@ -42,9 +46,21 @@
         min-height: calc(100vh - 105px);
         display: flex;
         align-items: center;
-        background: #fafcff;
+        background: radial-gradient(circle at 80% 20%, #223348 0%, #151f2e 50%, #0d1520 100%);
+        color: #ffffff;
         overflow: hidden;
-        padding: 40px clamp(20px, 4vw, 64px);
+        padding: 60px clamp(20px, 4vw, 64px);
+    }
+    .lm-hero-fullscreen::before {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(91, 143, 168, 0.15) 0%, transparent 70%);
+        top: -100px;
+        right: -100px;
+        pointer-events: none;
     }
     .lm-hero-container {
         max-width: 1360px;
@@ -68,24 +84,31 @@
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #0d55ff;
+        color: #7eaec4;
+        letter-spacing: 0.15em;
         margin-bottom: 20px;
     }
     .lm-hero-title {
-        font-size: clamp(38px, 5.2vw, 68px);
-        font-weight: 800;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(40px, 5.5vw, 76px);
+        font-weight: 700;
         line-height: 1.08;
-        letter-spacing: -0.03em;
-        color: #0f172a;
+        letter-spacing: -0.02em;
+        color: #ffffff;
         margin: 0 0 24px;
     }
+    .lm-hero-title em {
+        font-style: italic;
+        font-weight: 400;
+        color: #cbd5e1;
+    }
     .lm-hero-title span.blue-text {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .lm-hero-desc {
         font-size: clamp(16px, 1.8vw, 18px);
         line-height: 1.65;
-        color: #64748b;
+        color: #94a3b8;
         margin: 0 0 36px;
     }
     .lm-hero-actions {
@@ -95,7 +118,7 @@
         gap: 16px;
     }
     .lm-btn-primary {
-        background: #0d55ff;
+        background: #5b8fa8;
         color: #ffffff;
         font-size: 15px;
         font-weight: 700;
@@ -109,24 +132,28 @@
         box-shadow: 0 10px 24px rgba(13, 85, 255, 0.25);
     }
     .lm-btn-primary:hover {
-        background: #0b42cc;
+        background: #4a778c;
         transform: translateY(-2px);
         box-shadow: 0 14px 28px rgba(13, 85, 255, 0.35);
     }
     .lm-btn-outline {
-        border: 1.5px solid #cbd5e1;
-        background: #ffffff;
-        color: #1e293b;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 600;
         padding: 15px 28px;
-        border-radius: 8px;
+        border-radius: 50px;
         text-decoration: none;
+        backdrop-filter: blur(8px);
         transition: all 0.2s;
     }
+    .lm-btn-primary {
+        border-radius: 50px !important;
+    }
     .lm-btn-outline:hover {
-        border-color: #0d55ff;
-        color: #0d55ff;
+        border-color: #5b8fa8;
+        color: #5b8fa8;
     }
 
     .lm-hero-right {
@@ -138,12 +165,13 @@
     .lm-hero-img-wrapper {
         position: relative;
         width: 100%;
-        max-width: 540px;
+        max-width: 520px;
         aspect-ratio: 1/1;
-        border-radius: 24px;
+        border-radius: 28px;
         overflow: hidden;
-        background: #f1f5f9;
-        box-shadow: 0 24px 60px rgba(13, 85, 255, 0.12);
+        background: #1e2a38;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
     }
     .lm-hero-img-wrapper img {
         width: 100%;
@@ -158,7 +186,7 @@
         width: 110px;
         height: 110px;
         border-radius: 50%;
-        background: #0d55ff;
+        background: #5b8fa8;
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -191,7 +219,7 @@
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #0d55ff;
+        color: #5b8fa8;
         margin: 0 0 10px;
     }
     .lm-section-title {
@@ -202,7 +230,7 @@
         margin: 0;
     }
     .lm-section-title span.blue-text {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .lm-brands-grid {
         max-width: 1360px;
@@ -221,7 +249,7 @@
         transition: all 0.25s ease;
     }
     .lm-brand-card:hover {
-        border-color: #0d55ff;
+        border-color: #5b8fa8;
         background: #ffffff;
         transform: translateY(-4px);
         box-shadow: 0 12px 24px rgba(13, 85, 255, 0.08);
@@ -229,7 +257,7 @@
     .lm-brand-badge {
         display: inline-block;
         background: #e0e7ff;
-        color: #0d55ff;
+        color: #5b8fa8;
         font-size: 10px;
         font-weight: 700;
         padding: 4px 8px;
@@ -274,7 +302,7 @@
         flex-direction: column;
     }
     .lm-cat-card:hover {
-        border-color: #0d55ff;
+        border-color: #5b8fa8;
         transform: translateY(-4px);
         box-shadow: 0 16px 32px rgba(13, 85, 255, 0.08);
     }
@@ -312,7 +340,7 @@
     .lm-cat-link {
         font-size: 13px;
         font-weight: 700;
-        color: #0d55ff;
+        color: #5b8fa8;
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -351,7 +379,7 @@
         position: relative;
     }
     .lm-prod-card:hover {
-        border-color: #0d55ff;
+        border-color: #5b8fa8;
         box-shadow: 0 14px 30px rgba(13, 85, 255, 0.08);
         transform: translateY(-4px);
     }
@@ -361,7 +389,7 @@
         left: 14px;
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(4px);
-        color: #0d55ff;
+        color: #5b8fa8;
         font-size: 11px;
         font-weight: 700;
         padding: 4px 10px;
@@ -412,12 +440,12 @@
         text-decoration: none;
     }
     .lm-prod-title a:hover {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .lm-prod-price {
         font-size: 16px;
         font-weight: 800;
-        color: #0d55ff;
+        color: #5b8fa8;
         margin-top: auto;
         margin-bottom: 14px;
     }
@@ -427,7 +455,7 @@
     }
     .lm-btn-order-wa {
         flex: 1;
-        background: #0d55ff;
+        background: #5b8fa8;
         color: #ffffff;
         font-size: 13px;
         font-weight: 700;
@@ -438,7 +466,7 @@
         transition: background 0.15s;
     }
     .lm-btn-order-wa:hover {
-        background: #0b42cc;
+        background: #4a778c;
     }
     .lm-btn-detail {
         background: #f1f5f9;
@@ -457,7 +485,7 @@
 
     /* 5. PROMO BANNER BLUE SECTION */
     .lm-upgrade-banner {
-        background: #0d55ff;
+        background: linear-gradient(135deg, #151f2e 0%, #1e2d3e 100%); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);
         color: #ffffff;
         padding: 64px 0;
         margin: 20px 0;
@@ -485,7 +513,7 @@
     }
     .lm-btn-white {
         background: #ffffff;
-        color: #0d55ff;
+        color: #5b8fa8;
         font-size: 14px;
         font-weight: 800;
         padding: 14px 28px;
@@ -555,7 +583,7 @@
                     <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
                 </div>
                 <h1 class="lm-hero-title">
-                    Good things for your <span class="blue-text">everyday.</span>
+                    Perawatan Terbaik<br><em>Keluarga Anda.</em>
                 </h1>
                 <p class="lm-hero-desc">
                     {{ data_get($hero, 'description') ?: 'Belanja kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga dengan jaminan 100% produk asli berizin resmi BPOM.' }}

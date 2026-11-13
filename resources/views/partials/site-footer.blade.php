@@ -29,7 +29,7 @@
     .lief-footer-brand .brand-logo {
         font-size: 24px;
         font-weight: 800;
-        color: #0d55ff;
+        color: #5b8fa8;
         text-decoration: none;
         letter-spacing: -0.5px;
         display: inline-block;
@@ -68,7 +68,7 @@
         transition: color 0.15s;
     }
     .lief-footer-col a:hover {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .lief-footer-bottom {
         padding-top: 32px;

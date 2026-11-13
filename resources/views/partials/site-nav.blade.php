@@ -33,7 +33,7 @@
 <style>
     /* Top announcement bar */
     .top-announcement-bar {
-        background: #0d55ff;
+        background: #111827;
         color: #ffffff;
         font-size: 12px;
         font-weight: 500;
@@ -71,7 +71,7 @@
         gap: 2px;
         font-size: 22px;
         font-weight: 800;
-        color: #0d55ff;
+        color: #5b8fa8;
         letter-spacing: -0.5px;
         text-decoration: none;
     }
@@ -92,7 +92,7 @@
         transition: color 0.15s ease;
     }
     .site-nav-links a:hover, .site-nav-links a.active {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .site-nav-actions {
         display: flex;
@@ -108,7 +108,7 @@
         transition: color 0.15s;
     }
     .nav-action-icon:hover {
-        color: #0d55ff;
+        color: #5b8fa8;
     }
     .site-menu-toggle {
         display: none;
