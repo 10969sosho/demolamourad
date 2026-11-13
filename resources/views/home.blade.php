@@ -30,7 +30,7 @@
 @push('head')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
     /* Reset & Base modern styling */
@@ -80,27 +80,32 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-size: 13px;
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #7eaec4;
-        letter-spacing: 0.15em;
-        margin-bottom: 20px;
+        color: #93c5de;
+        background: rgba(147, 197, 222, 0.12);
+        padding: 6px 16px;
+        border-radius: 100px;
+        border: 1px solid rgba(147, 197, 222, 0.25);
+        margin-bottom: 24px;
     }
     .lm-hero-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(40px, 5.5vw, 76px);
-        font-weight: 700;
-        line-height: 1.08;
-        letter-spacing: -0.02em;
+        font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(38px, 5.4vw, 72px);
+        font-weight: 800;
+        line-height: 1.06;
+        letter-spacing: -0.04em;
         color: #ffffff;
         margin: 0 0 24px;
     }
-    .lm-hero-title em {
-        font-style: italic;
-        font-weight: 400;
-        color: #cbd5e1;
+    .lm-hero-title span.highlight-text {
+        color: #8bbcd6;
+        background: linear-gradient(135deg, #a5d2eb 0%, #6da1bc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .lm-hero-title span.blue-text {
         color: #5b8fa8;
@@ -591,7 +596,7 @@
                     <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
                 </div>
                 <h1 class="lm-hero-title">
-                    Perawatan Terbaik<br><em>Keluarga Anda.</em>
+                    Perawatan Terbaik<br><span class="highlight-text">Keluarga Anda.</span>
                 </h1>
                 <p class="lm-hero-desc">
                     {{ data_get($hero, 'description') ?: 'Belanja kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga dengan jaminan 100% produk asli berizin resmi BPOM.' }}

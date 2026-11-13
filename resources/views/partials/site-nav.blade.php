@@ -13,34 +13,34 @@
 
 @push('head')
 <style>
-    /* Top announcement bar */
+    /* Top announcement bar: Soft steel blue tone */
     .top-announcement-bar {
-        background: #0d1520;
-        color: rgba(255, 255, 255, 0.8);
+        background: #f0f5f9;
+        color: #3b6074;
         font-size: 11px;
-        font-weight: 500;
+        font-weight: 700;
         text-align: center;
-        padding: 7px 16px;
+        padding: 9px 16px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid #e2eaf1;
     }
 
+    /* Navbar: Clean Crisp White, Gen Z minimal modern */
     .site-nav {
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(13, 21, 32, 0.95);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: #ffffff;
+        border-bottom: 1px solid #edf2f7;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         transition: all 0.25s ease;
     }
     .site-nav-inner {
         max-width: 1360px;
         margin: 0 auto;
         padding: 0 clamp(20px, 4vw, 48px);
-        min-height: 70px;
+        min-height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -49,34 +49,39 @@
     .site-logo {
         display: inline-flex;
         align-items: center;
-        gap: 3px;
-        font-size: 22px;
-        font-weight: 800;
-        color: #7eaec4;
-        letter-spacing: -0.3px;
+        gap: 2px;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
         text-decoration: none;
+        color: #5b8fa8;
     }
     .site-logo .brand-market {
-        color: #ffffff;
-        font-weight: 400;
+        color: #0f172a;
+        font-weight: 700;
+        margin-left: 2px;
     }
     .site-nav-links {
         display: flex;
         align-items: center;
-        gap: 36px;
+        gap: 40px;
     }
     .site-nav-links a {
-        color: rgba(255, 255, 255, 0.75);
+        color: #475569;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
+        letter-spacing: -0.01em;
         text-decoration: none;
-        letter-spacing: 0.02em;
         transition: all 0.2s ease;
         padding: 6px 0;
         position: relative;
     }
-    .site-nav-links a:hover, .site-nav-links a.active {
-        color: #ffffff;
+    .site-nav-links a:hover {
+        color: #5b8fa8;
+    }
+    .site-nav-links a.active {
+        color: #5b8fa8;
+        font-weight: 700;
     }
     .site-nav-links a.active::after {
         content: '';
@@ -91,24 +96,29 @@
     .site-nav-actions {
         display: flex;
         align-items: center;
-        gap: 18px;
+        gap: 20px;
     }
     .nav-action-icon {
-        color: rgba(255, 255, 255, 0.75);
+        color: #334155;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        transition: color 0.15s ease;
+        transition: all 0.2s ease;
+        padding: 8px;
+        border-radius: 50%;
+        background: #f8fafc;
     }
     .nav-action-icon:hover {
-        color: #7eaec4;
+        color: #5b8fa8;
+        background: #f1f5f9;
+        transform: translateY(-1px);
     }
     .site-menu-toggle {
         display: none;
         background: transparent;
         border: none;
         font-size: 24px;
-        color: #ffffff;
+        color: #0f172a;
         cursor: pointer;
     }
 
@@ -120,12 +130,12 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: #0d1520;
+            background: #ffffff;
             flex-direction: column;
             padding: 24px;
             gap: 18px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
         }
         .site-nav-links.is-open { display: flex; }
     }
@@ -150,13 +160,13 @@
 
         <div class="site-nav-actions">
             <a href="/products" class="nav-action-icon" title="Cari Produk" aria-label="Search">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
             </a>
             <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" class="nav-action-icon" title="Konsultasi WhatsApp" aria-label="WhatsApp">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0Zm0 0v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-9 9m4.5-1.206a8.959 8.959 0 0 1-4.5 1.207"/></svg>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0Zm0 0v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-9 9m4.5-1.206a8.959 8.959 0 0 1-4.5 1.207"/></svg>
             </a>
             <a href="/products" class="nav-action-icon" title="Keranjang Belanja" aria-label="Bag">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.19-.578-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.19-.578-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
             </a>
             <button class="site-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav-links">☰</button>
         </div>
