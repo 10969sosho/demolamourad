@@ -1,27 +1,9 @@
 @php
-    $navigationLinks = collect($menuLinks ?? [])->filter(fn ($link) => data_get($link, 'label') && data_get($link, 'href'));
-
-    if ($navigationLinks->isEmpty()) {
-        $navigationLinks = collect([
-            ['label' => 'Products', 'href' => '/products'],
-            ['label' => 'Brands', 'href' => '#brands'],
-            ['label' => 'Stories', 'href' => '/articles'],
-            ['label' => 'Promotion', 'href' => '#highlights'],
-        ]);
-    }
-
-    $siteNavigation = $navigationLinks->map(function ($link) {
-        $href = data_get($link, 'href');
-        $path = trim(parse_url($href, PHP_URL_PATH) ?: '', '/');
-
-        return [
-            'label' => data_get($link, 'label'),
-            'href' => $href,
-            'isActive' => $path === ''
-                ? request()->is('')
-                : request()->is($path) || request()->is($path.'/*'),
-        ];
-    });
+    $siteNavigation = [
+        ['label' => 'Produk', 'href' => '/products', 'isActive' => request()->is('products*')],
+        ['label' => 'Tentang Kami', 'href' => '/about', 'isActive' => request()->is('about*')],
+        ['label' => 'Contact', 'href' => '/contact', 'isActive' => request()->is('contact*')],
+    ];
 
     $whatsappNumber = preg_replace('/\D/', '', (string) data_get($content, 'contact.whatsapp', ''));
     $whatsappUrl = $whatsappNumber !== ''
@@ -33,33 +15,32 @@
 <style>
     /* Top announcement bar */
     .top-announcement-bar {
-        background: #111827;
-        color: #ffffff;
-        font-size: 12px;
+        background: #0d1520;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
         font-weight: 500;
         text-align: center;
-        padding: 8px 16px;
-        letter-spacing: 0.02em;
-    }
-    .top-announcement-bar a {
-        color: #fff;
-        text-decoration: underline;
-        margin-left: 8px;
+        padding: 7px 16px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .site-nav {
         position: sticky;
         top: 0;
         z-index: 100;
-        background: #ffffff;
-        border-bottom: 1px solid #eef1f6;
+        background: rgba(13, 21, 32, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         transition: all 0.25s ease;
     }
     .site-nav-inner {
         max-width: 1360px;
         margin: 0 auto;
         padding: 0 clamp(20px, 4vw, 48px);
-        min-height: 72px;
+        min-height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -68,54 +49,66 @@
     .site-logo {
         display: inline-flex;
         align-items: center;
-        gap: 2px;
+        gap: 3px;
         font-size: 22px;
         font-weight: 800;
-        color: #5b8fa8;
-        letter-spacing: -0.5px;
+        color: #7eaec4;
+        letter-spacing: -0.3px;
         text-decoration: none;
     }
     .site-logo .brand-market {
-        color: #1a1f2c;
-        font-weight: 700;
+        color: #ffffff;
+        font-weight: 400;
     }
     .site-nav-links {
         display: flex;
         align-items: center;
-        gap: 32px;
+        gap: 36px;
     }
     .site-nav-links a {
-        color: #4a5568;
+        color: rgba(255, 255, 255, 0.75);
         font-size: 14px;
         font-weight: 500;
         text-decoration: none;
-        transition: color 0.15s ease;
+        letter-spacing: 0.02em;
+        transition: all 0.2s ease;
+        padding: 6px 0;
+        position: relative;
     }
     .site-nav-links a:hover, .site-nav-links a.active {
-        color: #5b8fa8;
+        color: #ffffff;
+    }
+    .site-nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #5b8fa8;
+        border-radius: 2px;
     }
     .site-nav-actions {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 18px;
     }
     .nav-action-icon {
-        color: #4a5568;
+        color: rgba(255, 255, 255, 0.75);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
-        transition: color 0.15s;
+        transition: color 0.15s ease;
     }
     .nav-action-icon:hover {
-        color: #5b8fa8;
+        color: #7eaec4;
     }
     .site-menu-toggle {
         display: none;
         background: transparent;
         border: none;
         font-size: 24px;
-        color: #1a1f2c;
+        color: #ffffff;
         cursor: pointer;
     }
 
@@ -127,12 +120,12 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: #ffffff;
+            background: #0d1520;
             flex-direction: column;
-            padding: 20px 24px;
-            gap: 16px;
-            border-bottom: 1px solid #eef1f6;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            padding: 24px;
+            gap: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.4);
         }
         .site-nav-links.is-open { display: flex; }
     }
@@ -140,7 +133,7 @@
 @endpush
 
 <div class="top-announcement-bar">
-    <span>✦ GRATIS ONGKIR SELURUH INDONESIA DENGAN MINIMAL BELANJA ✦</span>
+    <span>✦ Gratis Ongkir Seluruh Indonesia Dengan Minimal Belanja ✦</span>
 </div>
 
 <header class="site-nav">

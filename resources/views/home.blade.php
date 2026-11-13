@@ -165,13 +165,21 @@
     .lm-hero-img-wrapper {
         position: relative;
         width: 100%;
-        max-width: 520px;
+        max-width: 480px;
         aspect-ratio: 1/1;
         border-radius: 28px;
         overflow: hidden;
-        background: #1e2a38;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+        background: #ffffff;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(91, 143, 168, 0.15);
+    }
+    .lm-hero-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        display: block;
     }
     .lm-hero-img-wrapper img {
         width: 100%;
