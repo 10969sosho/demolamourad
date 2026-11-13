@@ -95,6 +95,11 @@
             grid-template-columns: 1fr;
         }
     }
+
+    /* Force override footer watermark */
+    footer:before, .lief-footer:before {
+        content: "LIEFMARKET" !important;
+    }
 </style>
 @endpush
 
