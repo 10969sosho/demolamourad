@@ -42,11 +42,7 @@
                         <h2><a href="{{ route('products.detail', $product['id']) }}">{{ $product['name'] }}</a></h2>
                         <div class="clean-card-actions">
                             <a class="clean-secondary-link" href="{{ route('products.detail', $product['id']) }}">Lihat detail</a>
-                            @if ($whatsapp !== '')
-                                <a class="clean-button" href="https://wa.me/{{ preg_replace('/\D/', '', $whatsapp) }}?text={{ rawurlencode('Halo LiefMarket, saya ingin memesan '.$product['name'].'.') }}" target="_blank" rel="noopener">Pesan via WhatsApp</a>
-                            @else
-                                <a class="clean-button" href="/contact">Tanya produk</a>
-                            @endif
+                            <button type="button" class="clean-button" onclick="openCheckoutModal('{{ addslashes($product['name']) }}', '{{ addslashes($product['price'] ?? '') }}')" style="border: none; cursor: pointer;">Checkout</button>
                         </div>
                     </div>
                 </article>
@@ -60,6 +56,7 @@
         </nav>
     </main>
 
+    @include('partials.checkout-modal')
     @include('partials.site-footer')
 </div>
 @endsection

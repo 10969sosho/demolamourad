@@ -711,7 +711,7 @@
                         </h3>
                         <div class="lm-prod-price">{{ $p->price }}</div>
                         <div class="lm-prod-actions">
-                            <a href="{{ $prodWaUrl }}" target="_blank" rel="noopener" class="lm-btn-order-wa">Pesan WA</a>
+                            <button type="button" class="lm-btn-order-wa" onclick="openCheckoutModal('{{ addslashes($p->name) }}', '{{ addslashes($p->price) }}')">Checkout</button>
                             <a href="{{ route('products.detail', $p->id) }}" class="lm-btn-detail">Detail</a>
                         </div>
                     </div>
@@ -721,6 +721,7 @@
     </section>
 
     {{-- 5. FOOTER --}}
+    @include('partials.checkout-modal')
     @include('partials.site-footer')
 </div>
 @endsection

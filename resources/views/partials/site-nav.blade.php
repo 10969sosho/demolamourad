@@ -5,7 +5,7 @@
         ['label' => 'Contact', 'href' => '/contact', 'isActive' => request()->is('contact*')],
     ];
 
-    $whatsappNumber = preg_replace('/\D/', '', (string) data_get($content, 'contact.whatsapp', ''));
+    $whatsappNumber = '6282342143876';
     $whatsappUrl = $whatsappNumber !== ''
         ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo LiefMarket, saya ingin berkonsultasi produk.')
         : '/contact';
@@ -47,15 +47,22 @@
         gap: 32px;
     }
     .site-logo {
-        text-transform: lowercase;
         display: inline-flex;
-        align-items: center;
-        gap: 2px;
-        font-size: 24px;
-        font-weight: 900;
+        align-items: baseline;
+        font-size: 26px;
+        font-weight: 800;
         letter-spacing: -0.04em;
         text-decoration: none;
-        color: #5b8fa8;
+        line-height: 1;
+    }
+    .site-logo .logo-lief {
+        color: #a9d2c4;
+        font-weight: 800;
+    }
+    .site-logo .logo-market {
+        color: #555555;
+        font-weight: 800;
+        margin-left: 1px;
     }
     .site-logo .brand-market {
         color: #0f172a;
@@ -149,7 +156,9 @@
 
 <header class="site-nav">
     <div class="site-nav-inner">
-        <a href="/" class="site-logo" aria-label="liefmarket beranda"><span class="brand-lief">liefmarket</span></a>
+        <a href="/" class="site-logo" aria-label="liefmarket beranda">
+            <span class="logo-lief">lief</span><span class="logo-market">market</span>
+        </a>
 
         <nav class="site-nav-links" id="site-nav-links" aria-label="Navigasi Utama">
             @foreach ($siteNavigation as $link)

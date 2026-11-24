@@ -464,10 +464,10 @@
                 </div>
 
                 <div class="product-detail-actions">
-                    <a class="product-btn-whatsapp" href="{{ $whatsappUrl }}" target="_blank" rel="noopener">
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.5ZM12.1 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.4a9.8 9.8 0 0 1-1.5-5.3c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9a9.9 9.9 0 0 1 2.9 7.1c0 5.5-4.5 10-10 10Zm5.5-7.5c-.3-.2-1.7-.9-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-.9 2.4 0 1.4 1 2.7 1.1 2.9.2.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.3-.3-.4-.6-.6Z"/></svg>
-                        Pesan Sekarang via WhatsApp
-                    </a>
+                    <button type="button" class="product-btn-whatsapp" onclick="openCheckoutModal('{{ addslashes($product->name) }}', '{{ addslashes($product->price) }}')" style="border: none; cursor: pointer;">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19.5 7.05h-2.17c-.36-2.91-2.4-4.8-5.33-4.8s-4.97 1.89-5.33 4.8H4.5c-.83 0-1.5.67-1.5 1.5l1.09 11.96C4.16 21.36 4.99 22 6 22h12c1.01 0 1.84-.64 1.91-1.69L21 8.55c0-.83-.67-1.5-1.5-1.5zm-7.5-3.3c1.97 0 3.48 1.25 3.82 3.3H8.18c.34-2.05 1.85-3.3 3.82-3.3zm6.5 16.75H5.5L4.55 8.55h14.9l-.95 11.95zM12 11.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/></svg>
+                        Checkout Sekarang (Shopee, TikTok, WhatsApp)
+                    </button>
                     <a class="product-btn-back" href="{{ route('products') }}">
                         ← Kembali ke Katalog Produk
                     </a>
@@ -502,6 +502,7 @@
         @endif
     </main>
 
+    @include('partials.checkout-modal')
     @include('partials.site-footer')
 </div>
 @endsection
