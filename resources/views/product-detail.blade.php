@@ -440,7 +440,7 @@
                     @if ($product->category)
                         <span class="product-category-tag">{{ $product->category }}</span>
                     @endif
-                    <span class="product-brand-tag">{{ $product->time ?: 'LiefMarket Official Store' }}</span>
+                    <span class="product-brand-tag">{{ $product->time ?: 'liefmarket official store' }}</span>
                 </div>
 
                 <h1>{{ $product->name }}</h1>
@@ -452,7 +452,7 @@
 
                 <div class="product-desc-title">Deskripsi Produk</div>
                 <p class="product-detail-description">
-                    {{ $product->desc ?: 'Produk pilihan LiefMarket untuk menemani kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga Anda dengan jaminan mutu dan keaslian 100%.' }}
+                    {{ $product->desc ?: 'Produk pilihan liefmarket untuk menemani kebutuhan perawatan kulit, tubuh, dan kesehatan keluarga Anda dengan jaminan mutu dan keaslian 100%.' }}
                 </p>
 
                 <div class="product-trust-card">

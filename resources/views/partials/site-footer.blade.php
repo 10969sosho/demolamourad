@@ -129,7 +129,7 @@
     <div class="lief-footer-inner">
         <div class="lief-footer-grid">
             <div class="lief-footer-brand">
-                <a href="/" class="brand-logo">LIEF<span>Market</span></a>
+                <a href="/" class="brand-logo">liefmarket</a>
                 <p>{{ data_get($footer, 'about') ?: 'Solusi terpercaya produk perawatan kecantikan, kesehatan herbal, dan kebutuhan harian keluarga Indonesia.' }}</p>
                 <div class="lief-footer-office">
                     <strong>Office / Hub:</strong><br>
@@ -151,7 +151,7 @@
             <div class="lief-footer-col">
                 <h4>Bantuan</h4>
                 <ul>
-                    <li><a href="/about">Tentang LiefMarket</a></li>
+                    <li><a href="/about">Tentang liefmarket</a></li>
                     <li><a href="/articles">Artikel & Tips</a></li>
                     <li><a href="/contact">Hubungi Kami</a></li>
                     <li><a href="/faq">FAQ & Pengiriman</a></li>
@@ -173,7 +173,7 @@
         </div>
 
         <div class="lief-footer-bottom">
-            <span>{{ data_get($footer, 'copyright') ?: '© '.date('Y').' LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.' }}</span>
+            <span>{{ data_get($footer, 'copyright') ?: '© '.date('Y').' liefmarket indonesia. ALL RIGHTS RESERVED.' }}</span>
             <span class="lief-footer-tagline">GOOD THINGS FOR YOUR EVERYDAY</span>
         </div>
     </div>

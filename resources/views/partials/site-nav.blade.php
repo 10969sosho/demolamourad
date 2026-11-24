@@ -47,6 +47,7 @@
         gap: 32px;
     }
     .site-logo {
+        text-transform: lowercase;
         display: inline-flex;
         align-items: center;
         gap: 2px;
@@ -148,9 +149,7 @@
 
 <header class="site-nav">
     <div class="site-nav-inner">
-        <a href="/" class="site-logo" aria-label="LiefMarket Beranda">
-            <span class="brand-lief">LIEF</span><span class="brand-market">Market</span>
-        </a>
+        <a href="/" class="site-logo" aria-label="liefmarket beranda"><span class="brand-lief">liefmarket</span></a>
 
         <nav class="site-nav-links" id="site-nav-links" aria-label="Navigasi Utama">
             @foreach ($siteNavigation as $link)

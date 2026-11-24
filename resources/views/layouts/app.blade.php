@@ -1,5 +1,5 @@
 @php
-    $siteTitle = data_get($content, 'site.title') ?: (data_get($content, 'navbar.brandName', 'LiefMarket').' — Solusi Perawatan & Produk Asli Terpercaya');
+    $siteTitle = data_get($content, 'site.title') ?: (data_get($content, 'navbar.brandName', 'liefmarket').' — Solusi Perawatan & Produk Asli Terpercaya');
     $siteDesc = data_get($content, 'site.description', data_get($content, 'hero.description', ''));
     $favicon = (string) data_get($content, 'site.favicon', 'favicon.ico');
     $faviconUrl = preg_match('~^https?://~i', $favicon) ? $favicon : (str_starts_with($favicon, 'uploads/') ? asset('storage/'.$favicon) : asset($favicon));
@@ -24,7 +24,7 @@
     $whatsappRaw = (string) data_get($content, 'contact.whatsapp', '');
     $whatsappNumber = preg_replace('/\D/', '', $whatsappRaw);
     $whatsappDefaultUrl = $whatsappNumber !== ''
-        ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin LiefMarket, saya ingin berkonsultasi mengenai produk dan layanan.')
+        ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin liefmarket, saya ingin berkonsultasi mengenai produk dan layanan.')
         : route('contact');
 @endphp
 <!doctype html>
@@ -54,7 +54,7 @@
 </head>
 <body style="{{ $themeStyle }}">
     @yield('content')
-    <a href="{{ $whatsappDefaultUrl }}" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat WhatsApp Admin LiefMarket">
+    <a href="{{ $whatsappDefaultUrl }}" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat WhatsApp Admin liefmarket">
         <svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28">
             <path fill="currentColor" d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.5ZM12.1 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.4a9.8 9.8 0 0 1-1.5-5.3c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9a9.9 9.9 0 0 1 2.9 7.1c0 5.5-4.5 10-10 10Zm5.5-7.5c-.3-.2-1.7-.9-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-.9 2.4 0 1.4 1 2.7 1.1 2.9.2.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.3-.3-.4-.6-.6Z"/>
         </svg>

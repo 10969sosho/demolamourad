@@ -7,7 +7,7 @@
     $brand = data_get($content, 'navbar', []);
     $whatsappNumber = preg_replace('/\D/', '', (string) data_get($content, 'contact.whatsapp', ''));
 
-    // Brands partner in LiefMarket
+    // Brands partner in liefmarket
     $brands = [
         ['name' => 'Viva Cosmetics', 'desc' => 'Perawatan Tradisional Legendaris Indonesia', 'badge' => 'Since 1962'],
         ['name' => 'Ovale Official', 'desc' => 'Pembersih Wajah Ekstrak Alami', 'badge' => 'BPOM Certified'],
@@ -593,7 +593,7 @@
         <div class="lm-hero-container">
             <div class="lm-hero-left">
                 <div class="lm-hero-tagline">
-                    <span>✦</span> LIEFMARKET OFFICIAL STORE <span>✦</span>
+                    <span>✦</span> liefmarket official store <span>✦</span>
                 </div>
                 <h1 class="lm-hero-title">
                     Perawatan Terbaik<br>Keluarga Anda.
@@ -613,7 +613,7 @@
 
             <div class="lm-hero-right">
                 <div class="lm-hero-img-wrapper">
-                    <img src="{{ !empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-3/1.png' }}" alt="LiefMarket Hero Collection">
+                    <img src="{{ !empty($hero['bgImage']) ? (str_starts_with($hero['bgImage'], '/') || preg_match('~^https?://~i', $hero['bgImage']) ? $hero['bgImage'] : asset('storage/'.$hero['bgImage'])) : '/images/liefmarket-3/1.png' }}" alt="liefmarket Hero Collection">
                     <div class="lm-hero-badge">
                         <span>100%</span>
                         <span style="font-size: 8px;">ORIGINAL</span>
@@ -624,11 +624,11 @@
         </div>
     </section>
 
-    {{-- 2. BRAND BRAND YANG ADA DI LIEFMARKET --}}
+    {{-- 2. BRAND BRAND YANG ADA DI liefmarket --}}
     <section class="lm-brands-section" id="brands">
         <div class="lm-section-head-center">
             <p class="lm-eyebrow">PARTNER RESMI & DISTRIBUTOR</p>
-            <h2 class="lm-section-title">Brand terpercaya di <span class="blue-text">LiefMarket.</span></h2>
+            <h2 class="lm-section-title">Brand terpercaya di <span class="blue-text">liefmarket.</span></h2>
         </div>
         <div class="lm-brands-grid">
             @foreach ($brands as $b)
@@ -695,7 +695,7 @@
             @foreach ($products as $p)
                 @php
                     $prodWaUrl = $whatsappNumber !== ''
-                        ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin LiefMarket, saya ingin berkonsultasi / memesan '.$p->name.' ('.$p->price.'). Apakah stok masih tersedia?')
+                        ? 'https://wa.me/'.$whatsappNumber.'?text='.rawurlencode('Halo admin liefmarket, saya ingin berkonsultasi / memesan '.$p->name.' ('.$p->price.'). Apakah stok masih tersedia?')
                         : route('contact');
                     $imgSrc = $p->image ? (str_starts_with($p->image, '/') || preg_match('~^https?://~i', $p->image) ? $p->image : asset('storage/'.$p->image)) : '/images/liefmarket-3/2.png';
                 @endphp
@@ -705,7 +705,7 @@
                         <img src="{{ $imgSrc }}" alt="{{ $p->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-3/2.png'">
                     </div>
                     <div class="lm-prod-body">
-                        <span class="lm-prod-brand">{{ $p->time ?: 'LiefMarket Official' }}</span>
+                        <span class="lm-prod-brand">{{ $p->time ?: 'liefmarket Official' }}</span>
                         <h3 class="lm-prod-title">
                             <a href="{{ route('products.detail', $p->id) }}">{{ $p->name }}</a>
                         </h3>
