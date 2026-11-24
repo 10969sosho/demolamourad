@@ -19,15 +19,19 @@
         content: none !important;
     }
 
+    footer.lief-footer,
     .lief-footer {
-        width: 100%;
-        background: #ffffff;
-        color: #475569;
-        border-top: 1px solid #edf2f7;
-        padding: 72px 0 36px;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        position: relative;
-        overflow: hidden;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: #ffffff !important;
+        color: #475569 !important;
+        border-top: 1px solid #edf2f7 !important;
+        padding: 72px 0 36px !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        position: relative !important;
+        overflow: hidden !important;
+        grid-template-columns: none !important;
     }
     .lief-footer-inner {
         width: 100%;
