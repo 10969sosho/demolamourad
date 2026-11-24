@@ -176,6 +176,9 @@
 
     .catalog-card-image {
         position: relative;
+        text-decoration: none;
+        display: flex;
+        cursor: pointer;
         aspect-ratio: 1 / 1;
         width: 100%;
         background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 100%);
@@ -407,13 +410,13 @@
         <div class="catalog-product-grid" id="catalog-grid">
             @foreach ($products as $product)
                 <article class="catalog-card catalog-product-item" data-category="{{ $product['category'] }}" data-name="{{ $product['name'] }}" data-order="{{ $loop->index }}">
-                    <div class="catalog-card-image">
+                    <a href="{{ route('products.detail', $product['id']) }}" class="catalog-card-image" title="Lihat detail {{ $product['name'] }}">
                         <span class="catalog-card-badge">100% Original BPOM</span>
                         <img src="{{ $product['image'] ? (str_starts_with($product['image'], '/') || preg_match('~^https?://~i', $product['image']) ? $product['image'] : asset('storage/'.$product['image'])) : '/images/liefmarket-3/1.png' }}" 
                              alt="{{ $product['name'] }}" 
                              loading="lazy" 
                              onerror="this.onerror=null;this.src='/images/liefmarket-3/1.png'">
-                    </div>
+                    </a>
                     <div class="catalog-card-body">
                         <span class="catalog-card-category">{{ $product['category'] }}</span>
                         <h2 class="catalog-card-title">

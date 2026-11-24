@@ -701,9 +701,9 @@
                 @endphp
                 <article class="lm-prod-card">
                     <span class="lm-prod-badge">{{ $p->tag ?: 'PRODUK PILIHAN' }}</span>
-                    <div class="lm-prod-img-box">
+                    <a href="{{ route('products.detail', $p->id) }}" class="lm-prod-img-box" title="Lihat detail {{ $p->name }}" style="text-decoration: none; cursor: pointer; display: flex;">
                         <img src="{{ $imgSrc }}" alt="{{ $p->name }}" loading="lazy" onerror="this.onerror=null;this.src='/images/liefmarket-3/2.png'">
-                    </div>
+                    </a>
                     <div class="lm-prod-body">
                         <span class="lm-prod-brand">{{ $p->time ?: 'liefmarket Official' }}</span>
                         <h3 class="lm-prod-title">
