@@ -8,50 +8,72 @@
 
 @push('head')
 <style>
+    /* Complete removal of background watermark */
+    footer:before, 
+    footer:after, 
+    .lief-footer:before, 
+    .lief-footer:after {
+        display: none !important;
+        content: none !important;
+    }
+
     .lief-footer {
-        background: #f7f9fc;
-        color: #4a5568;
-        border-top: 1px solid #eef1f6;
-        padding: 72px 0 36px;
-        font-family: 'Inter', sans-serif;
+        background: #ffffff;
+        color: #475569;
+        border-top: 1px solid #edf2f7;
+        padding: 64px 0 32px;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        position: relative;
+        overflow: hidden;
     }
     .lief-footer-inner {
-        max-width: 1360px;
+        max-width: 1280px;
         margin: 0 auto;
         padding: 0 clamp(20px, 4vw, 48px);
     }
     .lief-footer-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1.5fr;
-        gap: 48px;
-        margin-bottom: 56px;
+        grid-template-columns: 2fr 1fr 1fr 1.4fr;
+        gap: clamp(32px, 4vw, 48px);
+        margin-bottom: 48px;
     }
     .lief-footer-brand .brand-logo {
         font-size: 24px;
         font-weight: 800;
         color: #5b8fa8;
         text-decoration: none;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.03em;
         display: inline-block;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
     .lief-footer-brand .brand-logo span {
-        color: #1a1f2c;
+        color: #0f172a;
+        font-weight: 700;
+        margin-left: 2px;
     }
     .lief-footer-brand p {
         color: #64748b;
         font-size: 14px;
-        line-height: 1.6;
-        max-width: 340px;
-        margin: 0 0 20px;
+        line-height: 1.65;
+        max-width: 320px;
+        margin: 0 0 16px;
+    }
+    .lief-footer-office {
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.5;
+    }
+    .lief-footer-office strong {
+        color: #0f172a;
+        font-weight: 600;
     }
     .lief-footer-col h4 {
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: #1a1f2c;
-        margin: 0 0 20px;
+        color: #0f172a;
+        margin: 0 0 18px;
     }
     .lief-footer-col ul {
         list-style: none;
@@ -65,28 +87,33 @@
         color: #64748b;
         font-size: 14px;
         text-decoration: none;
-        transition: color 0.15s;
+        transition: color 0.15s ease;
     }
     .lief-footer-col a:hover {
         color: #5b8fa8;
     }
     .lief-footer-bottom {
-        padding-top: 32px;
-        border-top: 1px solid #e2e8f0;
+        padding-top: 28px;
+        border-top: 1px solid #edf2f7;
         display: flex;
         align-items: center;
         justify-content: space-between;
         font-size: 13px;
         color: #94a3b8;
     }
+    .lief-footer-tagline {
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: #64748b;
+    }
     @media (max-width: 860px) {
         .lief-footer-grid {
             grid-template-columns: 1fr 1fr;
-            gap: 36px;
+            gap: 32px;
         }
         .lief-footer-bottom {
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             text-align: center;
         }
     }
@@ -94,11 +121,6 @@
         .lief-footer-grid {
             grid-template-columns: 1fr;
         }
-    }
-
-    /* Force override footer watermark */
-    footer:before, .lief-footer:before {
-        content: "LIEFMARKET" !important;
     }
 </style>
 @endpush
@@ -108,10 +130,10 @@
         <div class="lief-footer-grid">
             <div class="lief-footer-brand">
                 <a href="/" class="brand-logo">LIEF<span>Market</span></a>
-                <p>{{ data_get($footer, 'about') ?: 'Kurasi produk perawatan diri, kesehatan herbal, dan kebutuhan harian keluarga berkualitas tinggi 100% original berizin resmi BPOM.' }}</p>
-                <div style="font-size: 13px; color: #64748b;">
+                <p>{{ data_get($footer, 'about') ?: 'Solusi terpercaya produk perawatan kecantikan, kesehatan herbal, dan kebutuhan harian keluarga Indonesia.' }}</p>
+                <div class="lief-footer-office">
                     <strong>Office / Hub:</strong><br>
-                    {{ $address ?: 'Surabaya, Jawa Timur, Indonesia' }}
+                    {{ $address ?: 'Jl. Raya Gubeng No. 123, Surabaya, Jawa Timur' }}
                 </div>
             </div>
 
@@ -145,14 +167,14 @@
                     @if (data_get($contact, 'email'))
                         <li><a href="mailto:{{ data_get($contact, 'email') }}">{{ data_get($contact, 'email') }}</a></li>
                     @endif
-                    <li><span style="color: #64748b; font-size: 14px;">Buka: Senin - Sabtu (08.00 - 17.00 WIB)</span></li>
+                    <li><span style="color: #64748b; font-size: 13px;">Buka: Senin - Sabtu (08.00 - 17.00 WIB)</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="lief-footer-bottom">
-            <span>{{ data_get($footer, 'copyright') ?: '© '.date('Y').' LiefMarket Indonesia. All Rights Reserved.' }}</span>
-            <span>GOOD THINGS FOR YOUR EVERYDAY</span>
+            <span>{{ data_get($footer, 'copyright') ?: '© '.date('Y').' LIEFMARKET INDONESIA. ALL RIGHTS RESERVED.' }}</span>
+            <span class="lief-footer-tagline">GOOD THINGS FOR YOUR EVERYDAY</span>
         </div>
     </div>
 </footer>
